@@ -7,6 +7,7 @@ import CreateProfile from './pages/CreateProfile'
 import './App.css'
 import { TextCard } from './components/cards/CardText'
 import { PresentList } from './components/cards/CardPresent'
+import { HeadingCard } from './components/cards/CardHeading'
 
 function App() {
   return (
@@ -45,6 +46,10 @@ function App() {
         <h5>08</h5>
       </div>
     </PresentList>
+
+    <HeadingCard>
+      <h3>HEADING CARD</h3>
+    </HeadingCard>
 
     </>
 

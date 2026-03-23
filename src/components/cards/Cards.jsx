@@ -40,3 +40,10 @@ export const PresentCard = styled(BaseCard)`
         color: var(--text);
     }   
 `
+
+export const StyledHeadingCard = styled(BaseCard)`
+    h3 {
+        margin: 0;
+    }
+`
+
