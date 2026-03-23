@@ -8,6 +8,7 @@ import './App.css'
 import { TextCard } from './components/cards/CardText'
 import { PresentList } from './components/cards/CardPresent'
 import { HeadingCard } from './components/cards/CardHeading'
+import { InstructionsCard } from './components/cards/CardInstructions'
 
 function App() {
   return (
@@ -50,6 +51,11 @@ function App() {
     <HeadingCard>
       <h3>HEADING CARD</h3>
     </HeadingCard>
+
+    <InstructionsCard>
+      <h3>1. SKAPA PROFIL</h3>
+      <p>Välj namn och avatar för att komma igång.</p>
+    </InstructionsCard>
 
     </>
 

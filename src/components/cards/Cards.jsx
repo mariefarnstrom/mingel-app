@@ -24,26 +24,3 @@ export const BaseCard = styled.div`
     }
 `
 
-export const PresentCard = styled(BaseCard)`
-    div {
-        display: flex;
-        justify-content: space-between;
-        padding: 0rem 2rem;
-    }
-
-    h2 {
-        margin-top: 1rem;
-    }
-
-    h5 {
-        margin: 0.5rem;
-        color: var(--text);
-    }   
-`
-
-export const StyledHeadingCard = styled(BaseCard)`
-    h3 {
-        margin: 0;
-    }
-`
-
