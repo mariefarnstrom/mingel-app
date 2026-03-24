@@ -20,16 +20,17 @@ export const BaseCard = styled.div`
     p {
         letter-spacing: -0.022em;
     }
+
 `
 
-export const StyledHeadingCard = styled(BaseCard)`
+export const HeadingCard = styled(BaseCard)`
     h3 {
         margin: 0;
     }
 `
 
 // Onboarding instructions
-export const StyledInstructionsCard = styled(BaseCard)`
+export const InstructionsCard = styled(BaseCard)`
     padding: 1rem 2rem;
 
     h3 {
@@ -37,8 +38,12 @@ export const StyledInstructionsCard = styled(BaseCard)`
     }
 `
 
+export const BigImageCard = styled(BaseCard)`
+    padding: 5rem;
+`
+
 // Number of players
-export const StyledPresentCard = styled(BaseCard)`
+export const PresentCard = styled(BaseCard)`
     div {
         display: flex;
         justify-content: space-between;
