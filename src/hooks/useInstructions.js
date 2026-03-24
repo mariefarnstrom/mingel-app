@@ -11,7 +11,8 @@ export function useInstructions() {
     useEffect(() => {
         fetch("./src/data/instructions.json")
         .then((response) => response.json())
-        .then((json) => setInstructions(json.instructions));
+        .then((json) => setInstructions(json.instructions))
+        .catch(err => console.error("Kunde inte ladda instruktioner", err));
         }, []);
 
 

@@ -12,7 +12,8 @@ export default function Instructions() {
         totalSteps,
         lang,
         nextStep,
-        previousStep } = useInstructions();
+        previousStep
+    } = useInstructions();
 
     if (!currentStep) return <p>Laddar...</p>;
 
@@ -30,21 +31,28 @@ export default function Instructions() {
             </BigImageCard>
 
             <InstructionsCard>
-                <h3>1. SKAPA PROFIL</h3>
-                <p>Välj namn och avatar för att komma igång.</p>
+                <h3>{currentStep[lang].title.toUpperCase()}</h3>
+                <p>{currentStep[lang].description}</p>
             </InstructionsCard>
 
             <BaseCard>
-                1/4
+                <section className="progressIndicatorContainer">
+                    {Array.from({ length: totalSteps }).map((_, index) => (
+                        <div
+                            key={index}
+                            className={index < stepNumber ? "dot active" : "dot"}
+                        ></div>
+                    ))}
+                </section>
             </BaseCard>
 
             <ButtonRow>
-                <SmallLightButton>
+                <SmallLightButton onClick={previousStep} disabled={stepNumber === 1}>
                     <img src="backwardsArrow.svg" alt="back" />
                     TILLBAKA
                 </SmallLightButton>
-                <SmallButton>
-                    NÄSTA
+                <SmallButton onClick={nextStep}>
+                    {stepNumber === totalSteps ? 'BÖRJA SPELA' : 'NÄSTA'}
                     <img src="forwardArrow.svg" alt="forward" />
                 </SmallButton>
             </ButtonRow>
