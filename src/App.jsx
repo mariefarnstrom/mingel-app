@@ -7,6 +7,7 @@ import CreateProfile from './pages/CreateProfile'
 import './App.css'
 import { BaseCard, PresentCard } from "./components/cards/Cards"
 import ChooseDifficulty from './pages/ChooseDifficulty'
+import FinishedProfile from './pages/FinishedProfile'
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/score" element={<Score />} />
           <Route path="/create-profile" element={<CreateProfile />} />
           <Route path="/choose-difficulty" element={<ChooseDifficulty />} />
+          <Route path="/finished-profile" element={<FinishedProfile />} />
         </Routes>
       </BrowserRouter>
 

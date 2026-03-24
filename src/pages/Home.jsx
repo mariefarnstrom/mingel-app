@@ -41,37 +41,6 @@ export default function Home() {
                 SE SPELREGLER
             </WideButton>
 
-
-
-            {/* <ButtonRow>
-                <SmallLightButton>
-                    <img src="backwardsArrow.svg" alt="back" />
-                    TILLBAKA
-                </SmallLightButton>
-                <SmallButton>
-                    NÄSTA
-                    <img src="forwardArrow.svg" alt="forward" />
-                </SmallButton>
-            </ButtonRow>
-
-            <BigButton>
-                STUDENT
-            </BigButton>
-
-            <NewQuestionButton>
-                GENERERA NY FRÅGA
-            </NewQuestionButton>
-
-            <ChooseProfileRow>
-                <ChooseProfileButton>
-                    WEBBUTVECKLARE
-                </ChooseProfileButton>
-                <ChooseProfileButton>
-                    DIGITALDESIGNER
-                </ChooseProfileButton>
-            </ChooseProfileRow> */}
-
-
         </>
     );
 }
