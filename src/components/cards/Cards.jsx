@@ -18,7 +18,47 @@ export const BaseCard = styled.div`
     }
 
     p {
-        letter-spacing: -2.2%;
+        letter-spacing: -0.022em;
     }
+
+`
+
+export const HeadingCard = styled(BaseCard)`
+    h3 {
+        margin: 0;
+    }
+`
+
+// Onboarding instructions
+export const InstructionsCard = styled(BaseCard)`
+    padding: 1rem 2rem;
+
+    h3 {
+        margin-bottom: 0.5rem;
+    }
+`
+
+export const BigImageCard = styled(BaseCard)`
+    padding: 5rem;
+`
+
+// Number of players
+export const PresentCard = styled(BaseCard)`
+    div {
+        display: flex;
+        justify-content: space-between;
+        padding: 0rem 2rem;
+    }
+
+    h2 {
+        margin-top: 1rem;
+    }
+
+    p {
+        margin: 0.5rem;
+        font-size: 1.5rem;
+        font-family: var(--font-heading);
+        color: var(--text);
+    }   
 `
 
