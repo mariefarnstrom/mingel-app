@@ -21,6 +21,26 @@ export const BaseCard = styled.div`
         letter-spacing: -0.022em;
     }
 
+    .progressIndicatorContainer {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .dot {
+        height: 1rem;
+        width: 1rem;
+        border: 2px solid var(--border);
+        border-radius: 50%;
+    }
+    
+    .dot.active {
+        background-color: var(--border);
+        height: 1rem;
+        width: 1rem;
+        border-radius: 50%;
+    }
+
 `
 
 export const HeadingCard = styled(BaseCard)`
