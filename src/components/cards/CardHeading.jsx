@@ -1,11 +1,4 @@
-import styled from '@emotion/styled';
-import { BaseCard } from "./Cards";
-
-export const StyledHeadingCard = styled(BaseCard)`
-    h3 {
-        margin: 0;
-    }
-`
+import { StyledHeadingCard } from "./Cards";
 
 export function HeadingCard({ children }) {
     return (

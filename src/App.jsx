@@ -6,7 +6,7 @@ import Score from './pages/Score'
 import CreateProfile from './pages/CreateProfile'
 import './App.css'
 import { TextCard } from './components/cards/CardText'
-import { PresentList } from './components/cards/CardPresent'
+import { PresentCard } from './components/cards/CardPresent'
 import { HeadingCard } from './components/cards/CardHeading'
 import { InstructionsCard } from './components/cards/CardInstructions'
 
@@ -29,24 +29,24 @@ function App() {
       <p>Ju fler frågor du ställer, desto högre klättrar du på scoreboarden.</p>
     </TextCard>
 
-    <PresentList>
+    <PresentCard>
       <h2>SPELARE INNE</h2>
 
       <div>
-        <h5>FÖRETAG: </h5>
-        <h5>08</h5>
+        <p>FÖRETAG: </p>
+        <p>08</p>
       </div>
 
       <div>
-        <h5>DIGITAL DESIGNERS: </h5>
-        <h5>08</h5>
+        <p>DIGITAL DESIGNERS: </p>
+        <p>08</p>
       </div>
 
       <div>
-        <h5>WEBBUTVECKLARE: </h5>
-        <h5>08</h5>
+        <p>WEBBUTVECKLARE: </p>
+        <p>08</p>
       </div>
-    </PresentList>
+    </PresentCard>
 
     <HeadingCard>
       <h3>HEADING CARD</h3>
