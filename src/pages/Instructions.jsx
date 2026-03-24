@@ -1,4 +1,4 @@
-import { StyledSmallLightButton, StyledSmallButton } from "../components/buttons/Button";
+import { SmallLightButton, SmallButton } from "../components/buttons/Button";
 import { ButtonRow } from "../components/buttons/ButtonRow";
 import { HeadingCard, BaseCard, InstructionsCard, BigImageCard } from "../components/cards/Cards"
 
@@ -6,35 +6,35 @@ import { HeadingCard, BaseCard, InstructionsCard, BigImageCard } from "../compon
 export default function Instructions() {
     return (
         <>
-        
-        <h1>Instructions</h1>
 
-        <HeadingCard>
-            <h3>SPELREGLER</h3>
-        </HeadingCard>
+            <h1>Instructions</h1>
 
-        <BigImageCard>
-            <img src="../public/turtleWhite.svg" alt="" />
-        </BigImageCard>
+            <HeadingCard>
+                <h3>SPELREGLER</h3>
+            </HeadingCard>
 
-        <InstructionsCard>
-            <h3>1. SKAPA PROFIL</h3>
-            <p>Välj namn och avatar för att komma igång.</p>
-        </InstructionsCard>
+            <BigImageCard>
+                <img src="../public/turtleWhite.svg" alt="" />
+            </BigImageCard>
 
-        <BaseCard>
-            1/4
-        </BaseCard>
-    
+            <InstructionsCard>
+                <h3>1. SKAPA PROFIL</h3>
+                <p>Välj namn och avatar för att komma igång.</p>
+            </InstructionsCard>
+
+            <BaseCard>
+                1/4
+            </BaseCard>
+
             <ButtonRow>
-                <StyledSmallLightButton>
+                <SmallLightButton>
                     <img src="backwardsArrow.svg" alt="back" />
                     TILLBAKA
-                </StyledSmallLightButton>
-                <StyledSmallButton>
+                </SmallLightButton>
+                <SmallButton>
                     NÄSTA
                     <img src="forwardArrow.svg" alt="forward" />
-                </StyledSmallButton>
+                </SmallButton>
             </ButtonRow>
 
         </>

@@ -1,41 +1,54 @@
-import { StyledWideButton, StyledSmallLightButton, StyledSmallButton, StyledSBigButton, StyledNewQuestionButton, StyledChooseProfileButton } from "../components/buttons/Button";
+import { WideButton, SmallLightButton, SmallButton, BigButton, NewQuestionButton, ChooseProfileButton } from "../components/buttons/Button";
+import { BaseCard } from "../components/cards/Cards";
 import { ButtonRow } from "../components/buttons/ButtonRow";
 import { ChooseProfileRow } from "../components/buttons/ChooseProfileRow";
+import { GhostContainer } from "../components/GhostContainer";
 
 export default function Home() {
     return (
         <>
-            <h1>Home</h1>
-            <StyledWideButton>
+            <BaseCard>
+                <h1>VÄLKOMMEN TILL YRGOXP</h1>
+                <p>Spelet som gör det enkelt att börja prata, Samla poäng genom att ställa frågor och vara aktiv i spelet.</p>
+                <p>Ju fler frågor du ställer, desto högre klättrar du på scoreboarden.</p>
+            </BaseCard>
+
+            <GhostContainer>
+                <img src="ghost.svg" alt="Ghost image" />
+            </GhostContainer>
+
+            <WideButton>
                 SE SPELREGLER
-            </StyledWideButton>
+            </WideButton>
+
+
 
             <ButtonRow>
-                <StyledSmallLightButton>
+                <SmallLightButton>
                     <img src="backwardsArrow.svg" alt="back" />
                     TILLBAKA
-                </StyledSmallLightButton>
-                <StyledSmallButton>
+                </SmallLightButton>
+                <SmallButton>
                     NÄSTA
                     <img src="forwardArrow.svg" alt="forward" />
-                </StyledSmallButton>
+                </SmallButton>
             </ButtonRow>
 
-            <StyledSBigButton>
+            <BigButton>
                 STUDENT
-            </StyledSBigButton>
+            </BigButton>
 
-            <StyledNewQuestionButton>
+            <NewQuestionButton>
                 GENERERA NY FRÅGA
-            </StyledNewQuestionButton>
+            </NewQuestionButton>
 
             <ChooseProfileRow>
-                <StyledChooseProfileButton>
+                <ChooseProfileButton>
                     WEBBUTVECKLARE
-                </StyledChooseProfileButton>
-                <StyledChooseProfileButton>
+                </ChooseProfileButton>
+                <ChooseProfileButton>
                     DIGITALDESIGNER
-                </StyledChooseProfileButton>
+                </ChooseProfileButton>
             </ChooseProfileRow>
 
 

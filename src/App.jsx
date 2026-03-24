@@ -6,22 +6,24 @@ import Score from './pages/Score'
 import CreateProfile from './pages/CreateProfile'
 import './App.css'
 import { BaseCard, PresentCard } from "./components/cards/Cards"
+import ChooseDifficulty from './pages/ChooseDifficulty'
 
 
 function App() {
   return (
-      <>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/instructions" element={<Instructions />} />
-        <Route path="/questions" element={<Questions />} />
-        <Route path="/score" element={<Score />} />
-        <Route path="/create-profile" element={<CreateProfile />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/instructions" element={<Instructions />} />
+          <Route path="/questions" element={<Questions />} />
+          <Route path="/score" element={<Score />} />
+          <Route path="/create-profile" element={<CreateProfile />} />
+          <Route path="/choose-difficulty" element={<ChooseDifficulty />} />
+        </Routes>
+      </BrowserRouter>
 
-    {/* <BaseCard>
+      {/* <BaseCard>
       <h1>VÄLKOMMEN TILL YRGOXP</h1>
       <p>Spelet som gör det enkelt att börja prata, Samla poäng genom att ställa frågor och vara aktiv i spelet.</p>
       <p>Ju fler frågor du ställer, desto högre klättrar du på scoreboarden.</p>
@@ -46,7 +48,7 @@ function App() {
       </div>
     </PresentCard> */}
 
-    
+
 
     </>
 
