@@ -62,3 +62,9 @@ export const PresentCard = styled(BaseCard)`
     }   
 `
 
+export const BigButtonsCard = styled(BaseCard)`
+    height: 30rem;
+    gap: 2rem;
+    justify-content: center;
+    padding: 4rem 1.5rem;
+`;
