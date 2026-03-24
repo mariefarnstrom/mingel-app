@@ -4,8 +4,12 @@ import { ButtonRow } from "../components/buttons/ButtonRow";
 import { ChooseProfileRow } from "../components/buttons/ChooseProfileRow";
 import { GhostContainer } from "../components/GhostContainer";
 import { PresentCard } from "../components/cards/Cards";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+
+    const navigate = useNavigate();
+
     return (
         <>
             <BaseCard>
@@ -37,7 +41,7 @@ export default function Home() {
                 <img src="ghost.svg" alt="Ghost image" />
             </GhostContainer>
 
-            <WideButton>
+            <WideButton onClick={() => navigate("/instructions")}>
                 SE SPELREGLER
             </WideButton>
 

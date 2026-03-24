@@ -2,8 +2,12 @@ import { ProfileNameCard } from "../components/cards/Cards";
 import { HeadingCard } from "../components/cards/Cards";
 import { BigImageCard } from "../components/cards/Cards";
 import { WideButton } from "../components/buttons/Button";
+import { useNavigate } from "react-router-dom";
 
 export default function Score() {
+
+    const navigate = useNavigate();
+
     return (
         <>
             <HeadingCard>
@@ -17,7 +21,7 @@ export default function Score() {
                 <span>WILMA SKARSTRÖM SLAYER</span>
                 <span>DIGITAL DESIGNER</span>
             </ProfileNameCard>
-            <WideButton>
+            <WideButton onClick={() => navigate("/choose-difficulty")}>
                 BÖRJA SPELA
             </WideButton>
 
