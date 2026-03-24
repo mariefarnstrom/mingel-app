@@ -1,6 +1,6 @@
-import { StyledWideButton, StyledSmallLightButton, StyledSmallButton, StyledSBigButton, StyledNewQuestionButton, StyledChooseProfileButton } from "../components/buttons/BaseButton";
-import { ButtonRow } from "../components/ButtonRow";
-import { ChooseProfileRow } from "../components/ChooseProfileRow";
+import { StyledWideButton, StyledSmallLightButton, StyledSmallButton, StyledSBigButton, StyledNewQuestionButton, StyledChooseProfileButton } from "../components/buttons/Button";
+import { ButtonRow } from "../components/buttons/ButtonRow";
+import { ChooseProfileRow } from "../components/buttons/ChooseProfileRow";
 
 export default function Home() {
     return (

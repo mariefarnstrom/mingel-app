@@ -1,5 +1,5 @@
-import { StyledSmallLightButton, StyledSmallButton } from "../components/buttons/BaseButton";
-import { ButtonRow } from "../components/ButtonRow";
+import { StyledSmallLightButton, StyledSmallButton } from "../components/buttons/Button";
+import { ButtonRow } from "../components/buttons/ButtonRow";
 
 export default function Instructions() {
     return (

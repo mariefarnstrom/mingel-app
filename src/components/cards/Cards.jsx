@@ -5,9 +5,7 @@ export const BaseCard = styled.div`
     flex-direction: column;
     align-self: center;
 
-    max-width: 100%;
-    min-width: 90vw;
-    margin: 0.2rem 1rem;
+    width: 100%;
     padding: 1.5rem 0.5rem;
 
     border: 2px solid var(--border);

@@ -1,9 +1,8 @@
 import styled from "@emotion/styled";
 
-export const ButtonRow = styled.div`
+export const ChooseProfileRow = styled.div`
     display: flex;
-    gap: 1rem;
-    padding: 1rem;
+    gap: 0.75rem;
 
     > * {
         flex: 1;
