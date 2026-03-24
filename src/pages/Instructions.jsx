@@ -1,5 +1,4 @@
-// Components
-import { StyledSmallLightButton, StyledSmallButton } from "../components/buttons/Button";
+import { SmallLightButton, SmallButton } from "../components/buttons/Button";
 import { ButtonRow } from "../components/buttons/ButtonRow";
 import { HeadingCard, BaseCard, InstructionsCard, BigImageCard } from "../components/cards/Cards"
 
@@ -19,45 +18,35 @@ export default function Instructions() {
 
     return (
         <>
-        
-        <h1>Instructions</h1>
 
-        <HeadingCard>
-            <h3>SPELREGLER</h3>
-        </HeadingCard>
+            <h1>Instructions</h1>
 
-        <BigImageCard>
-            <img src={currentStep.img} alt="" />
-        </BigImageCard>
+            <HeadingCard>
+                <h3>SPELREGLER</h3>
+            </HeadingCard>
 
-        <InstructionsCard>
-            <h3>{stepNumber}. {currentStep[lang].step.toUpperCase()}</h3>
-            <p>{currentStep[lang].description}</p>
-        </InstructionsCard>
+            <BigImageCard>
+                <img src="../public/turtleWhite.svg" alt="" />
+            </BigImageCard>
 
-        <BaseCard>
-            <section className="stepCountContainer">
-            {/* {Array.from({ length: totalSteps }).map((_, index) => (
-                <div 
-                    key={index}
-                    className={`${index + 1 === stepNumber ? 'active' : ''}`}>
-                </div>
+            <InstructionsCard>
+                <h3>1. SKAPA PROFIL</h3>
+                <p>Välj namn och avatar för att komma igång.</p>
+            </InstructionsCard>
 
-            ))} */}
-                
-            {stepNumber} / {totalSteps}
-            </section>
-        </BaseCard>
-    
+            <BaseCard>
+                1/4
+            </BaseCard>
+
             <ButtonRow>
-                <StyledSmallLightButton onClick={previousStep}>
+                <SmallLightButton>
                     <img src="backwardsArrow.svg" alt="back" />
                     TILLBAKA
-                </StyledSmallLightButton>
-                <StyledSmallButton onClick={nextStep}>
+                </SmallLightButton>
+                <SmallButton>
                     NÄSTA
                     <img src="forwardArrow.svg" alt="forward" />
-                </StyledSmallButton>
+                </SmallButton>
             </ButtonRow>
 
         </>
