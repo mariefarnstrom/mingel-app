@@ -15,6 +15,7 @@ export const StyledOption = styled.label`
   div {
     height: 4.5rem;
     font-size: 1.25rem;
+    font-family: var(--font-heading);
 
     display: flex;
     align-items: center;

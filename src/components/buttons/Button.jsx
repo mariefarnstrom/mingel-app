@@ -13,12 +13,12 @@ export const BaseButton = styled.button`
     justify-content: center;
 `;
 
-export const StyledWideButton = styled(BaseButton)`
+export const WideButton = styled(BaseButton)`
     height: 4.25rem;
     font-size: 1.5rem;
 `;
 
-export const StyledSmallLightButton = styled(BaseButton)`
+export const SmallLightButton = styled(BaseButton)`
     height: 4.25rem;
     font-size: 1.5rem;
     background-color: var(--btn-secondary);
@@ -26,17 +26,18 @@ export const StyledSmallLightButton = styled(BaseButton)`
     border: 2px solid var(--btn-secondary-text);
 `;
 
-export const StyledSmallButton = styled(BaseButton)`
+export const SmallButton = styled(BaseButton)`
     height: 4.25rem;
     font-size: 1.5rem;
 `;
 
-export const StyledSBigButton = styled(BaseButton)`
+export const BigButton = styled(BaseButton)`
+    width: 100%;
     height: 7rem;
     font-size: 3.5rem;
 `;
 
-export const StyledNewQuestionButton = styled(BaseButton)`
+export const NewQuestionButton = styled(BaseButton)`
     height: 7rem;
     font-size: 1.5rem;
     background-color: var(--btn-secondary);
@@ -44,7 +45,7 @@ export const StyledNewQuestionButton = styled(BaseButton)`
     border: 2px solid var(--btn-secondary-text);
 `;
 
-export const StyledChooseProfileButton = styled(BaseButton)`
+export const ChooseProfileButton = styled(BaseButton)`
     height: 4.5rem;
     font-size: 1.25rem;
     background-color: var(--btn-secondary);
