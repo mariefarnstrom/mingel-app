@@ -1,5 +1,6 @@
-import { BaseButton, StyledWideButton, StyledSmallButton } from "../components/buttons/BaseButton";
+import { StyledWideButton, StyledSmallLightButton, StyledSmallButton, StyledSBigButton, StyledNewQuestionButton, StyledChooseProfileButton } from "../components/buttons/BaseButton";
 import { ButtonRow } from "../components/ButtonRow";
+import { ChooseProfileRow } from "../components/ChooseProfileRow";
 
 export default function Home() {
     return (
@@ -8,14 +9,36 @@ export default function Home() {
             <StyledWideButton>
                 SE SPELREGLER
             </StyledWideButton>
+
             <ButtonRow>
-                <StyledSmallButton>
+                <StyledSmallLightButton>
+                    <img src="backwardsArrow.svg" alt="back" />
                     TILLBAKA
-                </StyledSmallButton>
+                </StyledSmallLightButton>
                 <StyledSmallButton>
                     NÄSTA
+                    <img src="forwardArrow.svg" alt="forward" />
                 </StyledSmallButton>
             </ButtonRow>
+
+            <StyledSBigButton>
+                STUDENT
+            </StyledSBigButton>
+
+            <StyledNewQuestionButton>
+                GENERERA NY FRÅGA
+            </StyledNewQuestionButton>
+
+            <ChooseProfileRow>
+                <StyledChooseProfileButton>
+                    WEBBUTVECKLARE
+                </StyledChooseProfileButton>
+                <StyledChooseProfileButton>
+                    DIGITALDESIGNER
+                </StyledChooseProfileButton>
+            </ChooseProfileRow>
+
+
         </>
     );
 }
