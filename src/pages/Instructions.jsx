@@ -2,8 +2,20 @@ import { SmallLightButton, SmallButton } from "../components/buttons/Button";
 import { ButtonRow } from "../components/buttons/ButtonRow";
 import { HeadingCard, BaseCard, InstructionsCard, BigImageCard } from "../components/cards/Cards"
 
+// Data
+import { useInstructions } from "../hooks/useInstructions";
 
 export default function Instructions() {
+
+    const { currentStep, 
+            stepNumber, 
+            totalSteps, 
+            lang,
+            nextStep, 
+            previousStep } = useInstructions();
+
+    if (!currentStep) return <p>Laddar...</p>;
+
     return (
         <>
 

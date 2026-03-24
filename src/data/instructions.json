@@ -1,0 +1,52 @@
+{
+    "instructions": [
+        {
+            "id": 1,
+            "img": "/turtleWhite.svg",
+            "sv": {
+                "step": "Skapa profil",
+                "description": "Välj namn och avatar för att komma igång."
+            },
+            "en": {
+                "step": "Create profile",
+                "description": "Choose a name and avatar to get started."
+            }
+        },
+        {
+            "id": 2,
+            "img": "/turtleWhite.svg",
+            "sv": {
+                "step": "Välj nivå",
+                "description": "Välj mellan Easy, Medium eller Hardcore. Svårare frågor ger mer poäng."
+            },
+            "en": {
+                "step": "Choose level",
+                "description": "Choose between Easy, Medium, or Hardcore. Harder questions reward more points."
+            }
+        },
+        {
+            "id": 3,
+            "img": "/turtleWhite.svg",
+            "sv": {
+                "step": "Ställ frågan",
+                "description": "Gå fram till ett företag och ställ frågan för att starta ett samtal. Tryck “Klar” sen."
+            },
+            "en": {
+                "step": "Ask the question",
+                "description": "Approach a company and ask the question to start a conversation. Then press 'Done'."
+            }
+        },
+        {
+            "id": 4,
+            "img": "/turtleWhite.svg",
+            "sv": {
+                "step": "Samla poäng",
+                "description": "Easy ger 1 poäng, Medium 3 och Hardcore 5. Klättra på Scoreboarden och se live hur du ligger till."
+            },
+            "en": {
+                "step": "Collect points",
+                "description": "Easy gives 1 point, Medium 3, and Hardcore 5. Climb the Scoreboard and see your rank live."
+            }
+        }
+    ]
+}
