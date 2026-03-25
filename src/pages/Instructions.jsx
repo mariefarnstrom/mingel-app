@@ -27,7 +27,7 @@ export default function Instructions() {
             </HeadingCard>
 
             <BigImageCard>
-                <img src="../public/turtleBlue.svg" alt="" />
+                <img src="../turtleBlue.svg" alt="" />
             </BigImageCard>
 
             <InstructionsCard>
