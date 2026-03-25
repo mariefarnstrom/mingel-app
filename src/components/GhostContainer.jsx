@@ -5,16 +5,12 @@ export const GhostContainer = styled.div`
     width: 100%;
     height: 4.5rem;
     position: relative;
-    
-    width: 100%;
-    height: 150px;
-    position: relative;  
     overflow: hidden;     
 
     img {
     position: absolute;
-    top: 50%;
-    left: 0%;
+    top: 0.7rem;
+    left: 0;
     transform: translateY(-50%);
     animation: ${ghostMovement} 5s ease-in-out infinite;
     width: 50px;
