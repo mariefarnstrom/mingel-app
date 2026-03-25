@@ -8,9 +8,11 @@ import './App.css'
 import { BaseCard, PresentCard } from "./components/cards/Cards"
 import ChooseDifficulty from './pages/ChooseDifficulty'
 import FinishedProfile from './pages/FinishedProfile'
+import { supabase } from './lib/supabaseClient'
 
 
 function App() {
+        
   return (
     <>
       <BrowserRouter>
@@ -24,6 +26,9 @@ function App() {
           <Route path="/finished-profile" element={<FinishedProfile />} />
         </Routes>
       </BrowserRouter>
+
+      
+
 
       {/* <BaseCard>
       <h1>VÄLKOMMEN TILL YRGOXP</h1>
