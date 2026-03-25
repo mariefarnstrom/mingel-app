@@ -11,6 +11,7 @@ export default function Instructions() {
         stepNumber,
         totalSteps,
         lang,
+        colorMode,
         nextStep,
         previousStep
     } = useInstructions();
@@ -27,7 +28,8 @@ export default function Instructions() {
             </HeadingCard>
 
             <BigImageCard>
-                <img src="../public/turtleBlue.svg" alt="" />
+                <img src={currentStep.img[colorMode]} alt="" />
+                
             </BigImageCard>
 
             <InstructionsCard>

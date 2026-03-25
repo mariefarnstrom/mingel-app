@@ -2,7 +2,10 @@
     "instructions": [
         {
             "id": 1,
-            "img": "/turtleWhite.svg",
+            "img": {
+                "dark": "/turtleWhite.svg",
+                "light": "/turtleBlue.svg"
+                },
             "sv": {
                 "title": "Skapa profil",
                 "description": "Välj namn och avatar för att komma igång."
@@ -14,7 +17,7 @@
         },
         {
             "id": 2,
-            "img": "/turtleWhite.svg",
+            "img": "",
             "sv": {
                 "title": "Välj nivå",
                 "description": "Välj mellan Easy, Medium eller Hardcore. Svårare frågor ger mer poäng."
@@ -26,7 +29,7 @@
         },
         {
             "id": 3,
-            "img": "/turtleWhite.svg",
+            "img": "",
             "sv": {
                 "title": "Ställ frågan",
                 "description": "Gå fram till ett företag och ställ frågan för att starta ett samtal. Tryck “Klar” sen."
@@ -38,7 +41,7 @@
         },
         {
             "id": 4,
-            "img": "/turtleWhite.svg",
+            "img": "",
             "sv": {
                 "title": "Samla poäng",
                 "description": "Easy ger 1 poäng, Medium 3 och Hardcore 5. Klättra på Scoreboarden och se live hur du ligger till."
