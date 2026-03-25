@@ -3,9 +3,12 @@ import { ButtonRow } from "../components/buttons/ButtonRow";
 import { SmallButton, SmallLightButton } from "../components/buttons/Button";
 import { QuestionCard } from "../components/cards/Cards";
 import { NewQuestionButton } from "../components/buttons/Button";
+import { useNavigate } from "react-router-dom";
 
 
 export default function Questions() {
+
+    const navigate = useNavigate();
     return (
         <>
             <HeadingCard>
