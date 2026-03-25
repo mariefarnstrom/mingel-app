@@ -7,13 +7,13 @@ import { useInstructions } from "../hooks/useInstructions";
 
 export default function Instructions() {
 
-    const { currentStep, 
-            stepNumber, 
-            totalSteps, 
-            lang,
-            nextStep, 
-            previousStep 
-        } = useInstructions();
+    const { currentStep,
+        stepNumber,
+        totalSteps,
+        lang,
+        nextStep,
+        previousStep
+    } = useInstructions();
 
     if (!currentStep) return <p>Laddar...</p>;
 
@@ -38,7 +38,7 @@ export default function Instructions() {
             <BaseCard>
                 <section className="progressIndicatorContainer">
                     {Array.from({ length: totalSteps }).map((_, index) => (
-                        <div 
+                        <div
                             key={index}
                             className={index < stepNumber ? "dot active" : "dot"}
                         ></div>

@@ -3,8 +3,13 @@ import { BaseCard } from "../components/cards/Cards";
 import { ButtonRow } from "../components/buttons/ButtonRow";
 import { ChooseProfileRow } from "../components/buttons/ChooseProfileRow";
 import { GhostContainer } from "../components/GhostContainer";
+import { PresentCard } from "../components/cards/Cards";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+
+    const navigate = useNavigate();
+
     return (
         <>
             <BaseCard>
@@ -13,44 +18,32 @@ export default function Home() {
                 <p>Ju fler frågor du ställer, desto högre klättrar du på scoreboarden.</p>
             </BaseCard>
 
+            <PresentCard>
+                <h2>SPELARE INNE</h2>
+
+                <div>
+                    <p>FÖRETAG: </p>
+                    <p>08</p>
+                </div>
+
+                <div>
+                    <p>DIGITAL DESIGNERS: </p>
+                    <p>08</p>
+                </div>
+
+                <div>
+                    <p>WEBBUTVECKLARE: </p>
+                    <p>08</p>
+                </div>
+            </PresentCard>
+
             <GhostContainer>
                 <img src="ghost.svg" alt="Ghost image" />
             </GhostContainer>
 
-            <WideButton>
+            <WideButton onClick={() => navigate("/instructions")}>
                 SE SPELREGLER
             </WideButton>
-
-
-
-            <ButtonRow>
-                <SmallLightButton>
-                    <img src="backwardsArrow.svg" alt="back" />
-                    TILLBAKA
-                </SmallLightButton>
-                <SmallButton>
-                    NÄSTA
-                    <img src="forwardArrow.svg" alt="forward" />
-                </SmallButton>
-            </ButtonRow>
-
-            <BigButton>
-                STUDENT
-            </BigButton>
-
-            <NewQuestionButton>
-                GENERERA NY FRÅGA
-            </NewQuestionButton>
-
-            <ChooseProfileRow>
-                <ChooseProfileButton>
-                    WEBBUTVECKLARE
-                </ChooseProfileButton>
-                <ChooseProfileButton>
-                    DIGITALDESIGNER
-                </ChooseProfileButton>
-            </ChooseProfileRow>
-
 
         </>
     );

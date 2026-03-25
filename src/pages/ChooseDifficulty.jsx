@@ -1,6 +1,7 @@
 import { HeadingCard } from "../components/cards/Cards";
-import { BigButtonsContainer } from "../components/BigButtonsContainer";
 import { BigButton } from "../components/buttons/Button";
+import { BigButtonsCard } from "../components/cards/Cards";
+import { GhostContainer } from "../components/GhostContainer";
 
 export default function ChooseDifficulty() {
     return (
@@ -12,7 +13,7 @@ export default function ChooseDifficulty() {
                 </p>
             </HeadingCard>
 
-            <BigButtonsContainer>
+            <BigButtonsCard>
                 <BigButton>
                     EASY
                 </BigButton>
@@ -22,7 +23,11 @@ export default function ChooseDifficulty() {
                 <BigButton>
                     HARDCORE
                 </BigButton>
-            </BigButtonsContainer>
+            </BigButtonsCard>
+
+            <GhostContainer>
+                <img src="ghost.svg" alt="Ghost image" />
+            </GhostContainer>
 
         </>
     );

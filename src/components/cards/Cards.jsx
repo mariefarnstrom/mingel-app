@@ -82,3 +82,21 @@ export const PresentCard = styled(BaseCard)`
     }   
 `
 
+export const BigButtonsCard = styled(BaseCard)`
+    gap: 2rem;
+    justify-content: center;
+    padding: 4rem 1.5rem;
+`;
+
+export const QuestionCard = styled(BaseCard)`
+    height: 40vh;
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    justify-content: center;
+`
+
+export const ProfileNameCard = styled(BaseCard)`
+    height: 6rem;
+    font-size: 1.5rem;
+    font-family: var(--font-heading);
+`
