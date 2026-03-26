@@ -9,12 +9,13 @@ import { BaseCard, PresentCard } from "./components/cards/Cards"
 import ChooseDifficulty from './pages/ChooseDifficulty'
 import FinishedProfile from './pages/FinishedProfile'
 import { supabase } from './lib/supabaseClient'
-
+import Header from './components/Header'
 
 function App() {
-        
+
   return (
     <>
+      <Header />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -27,7 +28,7 @@ function App() {
         </Routes>
       </BrowserRouter>
 
-      
+
 
 
       {/* <BaseCard>
