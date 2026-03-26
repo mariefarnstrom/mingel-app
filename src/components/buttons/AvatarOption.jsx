@@ -7,6 +7,7 @@ export const HiddenRadio = styled.input`
 export const AvatarOption = styled.label`
   display: block;
   cursor: pointer;
+  width: 100%;
 
   input {
     display: none;
@@ -22,6 +23,13 @@ export const AvatarOption = styled.label`
     color: var(--btn-secondary-text);
     border: 2px solid var(--btn-secondary-text);
     border-radius: 10px;
+
+    overflow: hidden;
+  }
+
+  div svg {
+    width: 50%;
+    height: 50%;
   }
 
   input:checked + div {
@@ -29,4 +37,6 @@ export const AvatarOption = styled.label`
     color: var(--btn-primary-text);
     border: none;
   }
+
+
 `;

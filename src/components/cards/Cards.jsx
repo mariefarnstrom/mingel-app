@@ -44,8 +44,8 @@ export const BaseCard = styled.div`
 `
 
 export const HeadingCard = styled(BaseCard)`
-    h3 {
-        margin: 0;
+    h3, p {
+        margin: 0.4rem;
     }
 `
 
@@ -58,8 +58,9 @@ export const InstructionsCard = styled(BaseCard)`
     }
 `
 
-export const BigImageCard = styled(BaseCard)`
+export const BigIconCard = styled(BaseCard)`
     padding: 5rem;
+    align-items: center;
 `
 
 // Number of players

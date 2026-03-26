@@ -6,6 +6,7 @@ export function useInstructions() {
     const [instructions, setInstructions] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [lang, setLang] = useState("sv");
+    const [colorMode, setColorMode] = useState('light');
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -38,6 +39,7 @@ export function useInstructions() {
         stepNumber: currentIndex + 1,
         totalSteps: instructions.length,
         lang,
+        colorMode,
         nextStep,
         previousStep
     };
