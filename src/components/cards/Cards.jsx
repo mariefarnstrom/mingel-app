@@ -58,8 +58,9 @@ export const InstructionsCard = styled(BaseCard)`
     }
 `
 
-export const BigImageCard = styled(BaseCard)`
+export const BigIconCard = styled(BaseCard)`
     padding: 5rem;
+    align-items: center;
 `
 
 // Number of players

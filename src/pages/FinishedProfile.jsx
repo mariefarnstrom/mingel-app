@@ -1,6 +1,6 @@
 import { ProfileNameCard } from "../components/cards/Cards";
 import { HeadingCard } from "../components/cards/Cards";
-import { BigImageCard } from "../components/cards/Cards";
+import { BigIconCard } from "../components/cards/Cards";
 import { WideButton } from "../components/buttons/Button";
 import { useNavigate } from "react-router-dom";
 
@@ -14,9 +14,9 @@ export default function Score() {
                 <h3>DU ÄR REDO!</h3>
                 <p>Redo att samla poäng och starta samtal?</p>
             </HeadingCard>
-            <BigImageCard>
+            <BigIconCard>
                 <img src="../public/turtleWhite.svg" alt="" />
-            </BigImageCard>
+            </BigIconCard>
             <ProfileNameCard>
                 <span>WILMA SKARSTRÖM SLAYER</span>
                 <span>DIGITAL DESIGNER</span>

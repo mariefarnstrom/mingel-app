@@ -1,7 +1,7 @@
 import { ButtonRow } from "../components/buttons/ButtonRow";
 import { SmallButton, SmallLightButton } from "../components/buttons/Button";
 import { StyledOption, HiddenRadio } from "../components/buttons/StyledOption";
-import { HeadingCard, BaseCard, InstructionsCard, BigImageCard } from "../components/cards/Cards"
+import { HeadingCard, BaseCard, InstructionsCard, BigIconCard } from "../components/cards/Cards"
 import { TextInput } from "../components/TextInput";
 import { AvatarContainer } from "../components/buttons/AvatarContainer";
 import { AvatarOption } from "../components/buttons/AvatarOption";
