@@ -3,9 +3,17 @@ import { SmallButton, SmallLightButton } from "../components/buttons/Button";
 import { StyledOption, HiddenRadio } from "../components/buttons/StyledOption";
 import { HeadingCard, BaseCard, InstructionsCard, BigIconCard } from "../components/cards/Cards"
 import { TextInput } from "../components/TextInput";
-import { AvatarContainer } from "../components/buttons/AvatarContainer";
+import { AvatarContainer, CreateProfileWrapper } from "../components/buttons/AvatarContainer";
 import { AvatarOption } from "../components/buttons/AvatarOption";
 import { useNavigate } from 'react-router-dom';
+
+// Icons
+import RobotIcon from "../components/icons/Robot";
+import PigIcon from "../components/icons/Pig";
+import ToastIcon from "../components/icons/Toast";
+import FishIcon from "../components/icons/Fish";
+import FrogIcon from "../components/icons/Frog";
+import TurtleIcon from "../components/icons/Turtle";
 
 export default function CreateProfile() {
 
@@ -22,11 +30,15 @@ export default function CreateProfile() {
 
             <form action="">
 
+                <CreateProfileWrapper>
                 <h3>NAMN</h3>
-                <TextInput type="text" placeholder="Ange ditt namn">
-
+                <TextInput 
+                    type="text" 
+                    placeholder="Ange ditt namn">
                 </TextInput>
+                </CreateProfileWrapper>
 
+                <CreateProfileWrapper>
                 <h3>VÄLJ KLASS</h3>
                 <ButtonRow>
                     <StyledOption>
@@ -39,34 +51,49 @@ export default function CreateProfile() {
                         <div>DIGITALDESIGNER</div>
                     </StyledOption>
                 </ButtonRow>
+                </CreateProfileWrapper>
 
-                <h3>VÄLJ DIN AVATAR</h3>
-                <AvatarContainer>
-                    <AvatarOption>
-                        <input type="radio" name="profile" value="" />
-                        <div></div>
-                    </AvatarOption>
-                    <AvatarOption>
-                        <input type="radio" name="profile" value="" />
-                        <div></div>
-                    </AvatarOption>
-                    <AvatarOption>
-                        <input type="radio" name="profile" value="" />
-                        <div></div>
-                    </AvatarOption>
-                    <AvatarOption>
-                        <input type="radio" name="profile" value="" />
-                        <div></div>
-                    </AvatarOption>
-                    <AvatarOption>
-                        <input type="radio" name="profile" value="" />
-                        <div></div>
-                    </AvatarOption>
-                    <AvatarOption>
-                        <input type="radio" name="profile" value="" />
-                        <div></div>
-                    </AvatarOption>
-                </AvatarContainer>
+                <CreateProfileWrapper>
+                    <h3>VÄLJ DIN AVATAR</h3>
+                    <AvatarContainer>
+                        <AvatarOption>
+                            <input type="radio" name="profile" value="" />
+                            <div>
+                                <TurtleIcon />
+                            </div>
+                        </AvatarOption>
+                        <AvatarOption>
+                            <input type="radio" name="profile" value="" />
+                            <div>
+                                <ToastIcon />
+                            </div>
+                        </AvatarOption>
+                        <AvatarOption>
+                            <input type="radio" name="profile" value="" />
+                            <div>
+                                <FrogIcon />
+                            </div>
+                        </AvatarOption>
+                        <AvatarOption>
+                            <input type="radio" name="profile" value="" />
+                            <div>
+                                <FishIcon />
+                            </div>
+                        </AvatarOption>
+                        <AvatarOption>
+                            <input type="radio" name="profile" value="" />
+                            <div>
+                                <PigIcon />
+                            </div>
+                        </AvatarOption>
+                        <AvatarOption>
+                            <input type="radio" name="profile" value="" />
+                            <div>
+                                <RobotIcon />
+                            </div>
+                        </AvatarOption>
+                    </AvatarContainer>
+                </CreateProfileWrapper>
 
 
                 <ButtonRow>

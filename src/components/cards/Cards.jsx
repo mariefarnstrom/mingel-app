@@ -44,8 +44,8 @@ export const BaseCard = styled.div`
 `
 
 export const HeadingCard = styled(BaseCard)`
-    h3 {
-        margin: 0;
+    h3, p {
+        margin: 0.4rem;
     }
 `
 

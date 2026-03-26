@@ -7,4 +7,9 @@ export const TextInput = styled.input`
     border: 2px solid var(--text);
     text-align: center;
     font-family: var(--font-body);
+    background: var(--bg);
+
+    ::placeholder {
+        color: var(--text);
+    }
 `;
