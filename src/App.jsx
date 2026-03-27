@@ -10,13 +10,16 @@ import ChooseDifficulty from './pages/ChooseDifficulty'
 import FinishedProfile from './pages/FinishedProfile'
 import { supabase } from './lib/supabaseClient'
 import Header from './components/Header'
+import { useState } from "react";
 
 function App() {
 
+  const [lang, setLang] = useState("sv");
+
   return (
     <>
-      <Header />
       <BrowserRouter>
+        <Header lang={lang} setLang={setLang} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/instructions" element={<Instructions />} />
