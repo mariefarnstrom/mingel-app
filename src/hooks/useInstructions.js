@@ -1,27 +1,24 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-export function useInstructions() {
+// Data
+import instructionsData from "../data/instructions.json";
 
-    const [instructions, setInstructions] = useState([]);
+export function useInstructions() {
+    
+    const instructions = instructionsData.instructions;
     const [currentIndex, setCurrentIndex] = useState(0);
+    const currentStep = instructions[currentIndex];
     const [lang, setLang] = useState("sv");
     const [colorMode, setColorMode] = useState('light');
     const navigate = useNavigate();
 
-    useEffect(() => {
-        fetch("./src/data/instructions.json")
-            .then((response) => response.json())
-            .then((json) => setInstructions(json.instructions))
-            .catch(err => console.error("Kunde inte ladda instruktioner", err));
-    }, []);
-
-
     const nextStep = () => {
         if (currentIndex < instructions.length - 1) {
             setCurrentIndex(prev => prev + 1);
+
             // If on last step -> Go to createProfile
-        } else if (instructions.length > 0) {
+        } else {
             navigate("/create-profile");
         }
     };
@@ -32,10 +29,9 @@ export function useInstructions() {
         }
     };
 
-    const currentStep = instructions[currentIndex];
-
     return {
         currentStep,
+        instructions,
         stepNumber: currentIndex + 1,
         totalSteps: instructions.length,
         lang,
