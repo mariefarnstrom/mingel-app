@@ -20,10 +20,12 @@ import ToastIcon from "../components/icons/Toast";
 import FishIcon from "../components/icons/Fish";
 import FrogIcon from "../components/icons/Frog";
 import TurtleIcon from "../components/icons/Turtle";
+import { ErrorModal } from '../components/ErrorModal';
 
 export default function CreateProfile() {
 
     const navigate = useNavigate();
+    const [errorMessage, setErrorMessage] = useState("");
 
     // Form data
     const [name, setName] = useState("");
@@ -50,7 +52,7 @@ export default function CreateProfile() {
 
         } catch (error) {
             console.error("Fel vid uppladdning: ", error.message);
-            alert("Kunde inte spara profil, försök igen.");
+            setErrorMessage(error.message);
 
         } finally {
             setLoading(false)
@@ -59,6 +61,8 @@ export default function CreateProfile() {
 
     return (
         <>
+            {errorMessage && <ErrorModal errorMessage={errorMessage} onClose={() => setErrorMessage("")} />}
+
             <HeadingCard>
                 <h3>SKAPA DIN KARAKTÄR</h3>
                 <p>
@@ -205,17 +209,6 @@ export default function CreateProfile() {
                     <img src="forwardArrow.svg" alt="forward" />
                 </SmallButton>
             </ButtonRow>
-            
-            {/* <ButtonRow>
-                <SmallLightButton type="button" onClick={() => navigate(-1)}>
-                    <img src="backwardsArrow.svg" alt="back" />
-                    TILLBAKA
-                </SmallLightButton>
-                <SmallButton type="submit">
-                    KLAR
-                    <img src="forwardArrow.svg" alt="forward" />
-                </SmallButton>
-            </ButtonRow> */}
 
         </form>
 
