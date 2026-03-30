@@ -4,8 +4,8 @@ import styled from "@emotion/styled";
 export const MenuOverlay = styled.div`
 position: fixed;
 top: 0;
-left: 0;
 width: 100vw;
+max-width: 460px;
 height: 100vh;
 padding: 1rem;
 background-color: var(--bg);
