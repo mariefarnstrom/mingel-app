@@ -37,16 +37,16 @@ export default function Header({ lang, setLang }) {
                         <StyledMenuLink to="/instructions" onClick={() => setOpen(false)}>REGLER</StyledMenuLink >
                         <StyledMenuLink to="/score" onClick={() => setOpen(false)}>SCOREBOARD</StyledMenuLink >
                         <StyledMenuLink to="/create-profile" onClick={() => setOpen(false)}>ÄNDRA PROFIL</StyledMenuLink >
+                        <StyledMenuLink to="/choose-difficulty" onClick={() => setOpen(false)}>TILL FRÅGOR</StyledMenuLink >
                     </nav>
 
-                    <GhostContainer>
+                    <GhostContainer overlay>
                         <img src="/ghost.svg" alt="Ghost" />
                     </GhostContainer>
 
                     <LanguageToggleDiv>
                         <span>SWITCH TO ENGLISH</span>
                         <LanguageToggle lang={lang} setLang={setLang} />
-
                     </LanguageToggleDiv>
 
                 </MenuOverlay>

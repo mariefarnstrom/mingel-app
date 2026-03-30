@@ -5,7 +5,7 @@ export const ghostMovement = keyframes`
     left: 0%
   }
   25% {
-    left: calc(50% - 25px)
+    left: calc(50% - 50px)
   }
   50% {
     left: calc(100% - 50px)

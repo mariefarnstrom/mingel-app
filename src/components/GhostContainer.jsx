@@ -2,10 +2,12 @@ import styled from "@emotion/styled";
 import { ghostMovement } from "../animations";
 
 export const GhostContainer = styled.div`
-    width: 100%;
+    width: ${({ overlay }) => (overlay ? "93%" : "100%")};;
     height: 4.5rem;
-    position: relative;
     overflow: hidden;
+    position: ${({ overlay }) => (overlay ? "absolute" : "relative")};
+    bottom: ${({ overlay }) => (overlay ? "7rem" : "auto")};
+    top: ${({ overlay }) => (overlay ? "auto" : "0.7rem")};
 
     img {
     position: absolute;
