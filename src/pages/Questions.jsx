@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 // Components
 import { HeadingCard } from "../components/cards/Cards";
@@ -14,6 +15,7 @@ import { supabase } from "../lib/supabaseClient";
 
 export default function Questions() {
 
+    const { level } = useParams();
     const [questions, setQuestions] = useState([]);
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
@@ -26,6 +28,7 @@ export default function Questions() {
             const { data, error } = await supabase
                 .from('questions')
                 .select('*')
+                .eq('level', level);
 
             if (error) {
                 console.error("Error fetching questions:", error);
@@ -37,7 +40,7 @@ export default function Questions() {
 
         fetchData();
 
-    }, []);
+    }, [level]);
 
     // Loading view
     if (loading) return <p>Laddar fråga...</p>
@@ -52,12 +55,12 @@ export default function Questions() {
 
     const id = Math.floor(Math.random() * questions.length);
     console.log(id);
-    
+
     return (
         <>
             <HeadingCard>
                 <h3>FRÅGA {numOfQuestions + 1}</h3>
-                <p>Nivå: {questions[id].question}</p>
+                <p>Nivå: {questions[id].level}</p>
             </HeadingCard>
 
             <QuestionCard>
@@ -78,8 +81,6 @@ export default function Questions() {
                     <img src="forwardArrow.svg" alt="forward" />
                 </SmallButton>
             </ButtonRow>
-
-
 
         </>
     );
