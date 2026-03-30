@@ -57,37 +57,37 @@ export default function CreateProfile() {
                     <h3>VÄLJ DIN AVATAR</h3>
                     <AvatarContainer>
                         <AvatarOption>
-                            <input type="radio" name="profile" value="" />
+                            <input type="radio" name="avatar" value="" />
                             <div>
                                 <TurtleIcon />
                             </div>
                         </AvatarOption>
                         <AvatarOption>
-                            <input type="radio" name="profile" value="" />
+                            <input type="radio" name="avatar" value="" />
                             <div>
                                 <ToastIcon />
                             </div>
                         </AvatarOption>
                         <AvatarOption>
-                            <input type="radio" name="profile" value="" />
+                            <input type="radio" name="avatar" value="" />
                             <div>
                                 <FrogIcon />
                             </div>
                         </AvatarOption>
                         <AvatarOption>
-                            <input type="radio" name="profile" value="" />
+                            <input type="radio" name="avatar" value="" />
                             <div>
                                 <FishIcon />
                             </div>
                         </AvatarOption>
                         <AvatarOption>
-                            <input type="radio" name="profile" value="" />
+                            <input type="radio" name="avatar" value="" />
                             <div>
                                 <PigIcon />
                             </div>
                         </AvatarOption>
                         <AvatarOption>
-                            <input type="radio" name="profile" value="" />
+                            <input type="radio" name="avatar" value="" />
                             <div>
                                 <RobotIcon />
                             </div>
