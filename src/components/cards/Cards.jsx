@@ -101,3 +101,24 @@ export const ProfileNameCard = styled(BaseCard)`
     font-size: 1.5rem;
     font-family: var(--font-heading);
 `
+
+export const ErrorCard = styled(BaseCard)`
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 300px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h3 {
+        color: var(--accent);
+        margin-bottom: 0;
+    }
+
+    button {
+        width: 100px;
+    }
+`
