@@ -27,6 +27,10 @@ export default function CreateProfile() {
     const navigate = useNavigate();
     const [errorMessage, setErrorMessage] = useState("");
 
+    // Fetch profile
+    const savedProfileText = localStorage.getItem('userProfile');
+    const existingProfile = savedProfileText ? JSON.parse(savedProfileText) : null;
+
     // Form data
     const [name, setName] = useState(() => {
         const saved = localStorage.getItem('userProfile');
@@ -48,7 +52,10 @@ export default function CreateProfile() {
         e.preventDefault();
         setLoading(true);
 
-        const profileData = { name, role, avatar };
+        const profileData = { 
+            name: existingProfile ? existingProfile.name : name, 
+            role, 
+            avatar };
 
         try {
             const { data, error } = await supabase
@@ -93,6 +100,7 @@ export default function CreateProfile() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     required
+                    disabled={existingProfile !== null}
                 >
                 </TextInput>
             </CreateProfileWrapper>
