@@ -19,6 +19,7 @@ export default function Questions() {
     const [questions, setQuestions] = useState([]);
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
+    const [currentId, setCurrentId] = useState(null);
 
     // Fetch scores from databse
     useEffect(() => {
@@ -42,32 +43,42 @@ export default function Questions() {
 
     }, [level]);
 
+    useEffect(() => {
+        if (questions.length > 0) {
+            const randomId = Math.floor(Math.random() * questions.length);
+            setCurrentId(randomId);
+        }
+    }, [questions]);
+
+    const handleNewQuestion = () => {
+        if (questions.length > 0) {
+            const randomId = Math.floor(Math.random() * questions.length);
+            setCurrentId(randomId);
+        }
+    }
+
     // Loading view
     if (loading) return <p>Laddar fråga...</p>
     if (questions.length === 0) return <p>Inga frågor hittades. Försök igen.</p>;
-
-    console.log(questions)
+    if (currentId === null) return <p>Laddar fråga...</p>;
 
     const numOfQuestions = 0;
     const easyQuestions = 0;
     const mediumQuestions = 0;
     const hardQuestions = 0;
 
-    const id = Math.floor(Math.random() * questions.length);
-    console.log(id);
-
     return (
         <>
             <HeadingCard>
                 <h3>FRÅGA {numOfQuestions + 1}</h3>
-                <p>Nivå: {questions[id].level}</p>
+                <p>Nivå: {questions[currentId].level}</p>
             </HeadingCard>
 
             <QuestionCard>
-                <p>{questions[id].question}</p>
+                <p>{questions[currentId].question}</p>
             </QuestionCard>
 
-            <NewQuestionButton>
+            <NewQuestionButton onClick={handleNewQuestion}>
                 GENERERA NY FRÅGA
             </NewQuestionButton>
 
