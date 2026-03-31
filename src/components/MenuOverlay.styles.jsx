@@ -4,10 +4,10 @@ import styled from "@emotion/styled";
 export const MenuOverlay = styled.div`
 position: fixed;
 top: 0;
-left: 0;
 width: 100vw;
+max-width: 460px;
 height: 100vh;
-padding: 1rem;
+padding-right: 1rem;
 background-color: var(--bg);
 z-index: 5;
 
@@ -28,9 +28,9 @@ span {
 `
 
 export const LanguageToggleDiv = styled.div`
-    width: calc(100vw - 2rem);
+    width: calc(100% - 2rem);
     height: 5rem;
-    position: fixed;
+    position: absolute;
     display: flex;
     justify-content: space-between;
     align-items: center;
