@@ -5,6 +5,7 @@ import { HamburgerMenu, StyledHeader } from "./Header.styles";
 import { GhostContainer } from "./GhostContainer";
 import { LanguageToggleDiv, MenuOverlay, StyledMenuLink } from "./MenuOverlay.styles";
 import LanguageToggle from "./LanguageToggle";
+import { Link } from "react-router-dom";
 
 // Data
 import { useProfile } from "../hooks/useProfile";
@@ -31,9 +32,9 @@ export default function Header({ lang, setLang }) {
     return (
         <>
             <StyledHeader>
-                <a href="/">
+                <Link to="/">
                     <img src="/logo.svg" alt="" />
-                </a>
+                </Link>
                 <HamburgerMenu onClick={() => setOpen(!open)}>
                     {open ? <img src='/x-icon.svg' alt='' /> : <img src='/hamburger-icon.svg' alt='' />}
                 </HamburgerMenu>
@@ -43,6 +44,7 @@ export default function Header({ lang, setLang }) {
 
                 <MenuOverlay>
                     <nav>
+                        <StyledMenuLink to="/" onClick={() => setOpen(false)}>HEM</StyledMenuLink >
                         <StyledMenuLink to="/instructions" onClick={() => setOpen(false)}>REGLER</StyledMenuLink >
                         <StyledMenuLink to="/score" onClick={() => setOpen(false)}>SCOREBOARD</StyledMenuLink >
                         <StyledMenuLink to="/create-profile" onClick={() => setOpen(false)}>{profile ? 'ÄNDRA PROFIL' : ' SKAPA PROFIL'}</StyledMenuLink >
