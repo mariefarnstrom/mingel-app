@@ -28,9 +28,9 @@ span {
 `
 
 export const LanguageToggleDiv = styled.div`
-    width: calc(100vw - 2rem);
+    width: calc(100% - 2rem);
     height: 5rem;
-    position: fixed;
+    position: absolute;
     display: flex;
     justify-content: space-between;
     align-items: center;

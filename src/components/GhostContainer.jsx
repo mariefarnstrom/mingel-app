@@ -2,14 +2,16 @@ import styled from "@emotion/styled";
 import { ghostMovement } from "../animations";
 
 export const GhostContainer = styled.div`
-    width: 100%;
+    width: ${({ overlay }) => (overlay ? "93%" : "100%")};;
     height: 4.5rem;
-    position: relative;
-    overflow: hidden;     
+    overflow: hidden;
+    position: ${({ overlay }) => (overlay ? "absolute" : "relative")};
+    bottom: ${({ overlay }) => (overlay ? "7rem" : "auto")};
+    top: ${({ overlay }) => (overlay ? "auto" : "0.7rem")};
 
     img {
     position: absolute;
-    top: 0.7rem;
+    top: 2rem;
     left: 0;
     transform: translateY(-50%);
     animation: ${ghostMovement} 5s ease-in-out infinite;
