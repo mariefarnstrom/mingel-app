@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { supabase } from '../lib/supabaseClient';
 
 
-export default function CreateProfile() {
+export default function useCreateProfile() {
 
     const navigate = useNavigate();
     const [errorMessage, setErrorMessage] = useState("");
@@ -62,7 +62,6 @@ export default function CreateProfile() {
             setLoading(false)
         }
     }
-
 
     return {
         name,
