@@ -1,8 +1,4 @@
-import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
-
-// Data
-import { supabase } from '../lib/supabaseClient';
+import useCreateProfile from '../hooks/useCreateProfile';
 
 // Components
 import { ButtonRow } from "../components/buttons/ButtonRow";
@@ -24,40 +20,20 @@ import { ErrorModal } from '../components/ErrorModal';
 
 export default function CreateProfile() {
 
-    const navigate = useNavigate();
-    const [errorMessage, setErrorMessage] = useState("");
-
-    // Form data
-    const [name, setName] = useState("");
-    const [role, setRole] = useState("");
-    const [avatar, setAvatar] = useState("");
-    const [loading, setLoading] = useState(false);
-
-    // Submit function
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setLoading(true);
-
-        try {
-            const { data, error } = await supabase
-                .from('users')
-                .insert([
-                    { name: name, role: role, avatar: avatar }
-                ]);
-
-            if(error) throw error;
-
-            console.log("Profil sparad!", data);
-            navigate('/choose-difficulty')
-
-        } catch (error) {
-            console.error("Fel vid uppladdning: ", error.message);
-            setErrorMessage(error.message);
-
-        } finally {
-            setLoading(false)
-        }
-    }
+    const {
+        name,
+        setName,
+        role,
+        setRole,
+        avatar,
+        setAvatar,
+        loading,
+        errorMessage,
+        setErrorMessage,
+        existingProfile,
+        handleSubmit,
+        navigate,
+    } = useCreateProfile();
 
     return (
         <>
@@ -80,6 +56,7 @@ export default function CreateProfile() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     required
+                    disabled={existingProfile !== null}
                 >
                 </TextInput>
             </CreateProfileWrapper>
@@ -205,7 +182,7 @@ export default function CreateProfile() {
                     TILLBAKA
                 </SmallLightButton>
                 <SmallButton type="submit" disabled={loading}>
-                    {loading ? 'SPARAR...' : 'KLAR'}
+                    {loading ? 'SPARAR...' : 'SPARA'}
                     <img src="forwardArrow.svg" alt="forward" />
                 </SmallButton>
             </ButtonRow>
