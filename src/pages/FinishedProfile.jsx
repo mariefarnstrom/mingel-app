@@ -4,9 +4,32 @@ import { BigIconCard } from "../components/cards/Cards";
 import { WideButton } from "../components/buttons/Button";
 import { useNavigate } from "react-router-dom";
 
-export default function Score() {
+// Icons
+import RobotIcon from "../components/icons/Robot";
+import PigIcon from "../components/icons/Pig";
+import ToastIcon from "../components/icons/Toast";
+import FishIcon from "../components/icons/Fish";
+import FrogIcon from "../components/icons/Frog";
+import TurtleIcon from "../components/icons/Turtle";
+import { ErrorModal } from '../components/ErrorModal';
+
+export default function FinishedProfile() {
 
     const navigate = useNavigate();
+
+    // Fetch profile
+    const savedProfile = JSON.parse(localStorage.getItem('userProfile'));
+
+    const iconMap = {
+        turtle: TurtleIcon,
+        robot: RobotIcon,
+        pig: PigIcon,
+        toast: ToastIcon,
+        fish: FishIcon,
+        frog: FrogIcon,
+    }
+
+    const ProfileIcon = iconMap[savedProfile.avatar];
 
     return (
         <>
@@ -15,11 +38,11 @@ export default function Score() {
                 <p>Redo att samla poäng och starta samtal?</p>
             </HeadingCard>
             <BigIconCard>
-                <img src="../public/turtleWhite.svg" alt="" />
+                {ProfileIcon && <ProfileIcon />}
             </BigIconCard>
             <ProfileNameCard>
-                <span>WILMA SKARSTRÖM SLAYER</span>
-                <span>DIGITAL DESIGNER</span>
+                <p>{savedProfile.name}</p>
+                <p>{savedProfile.role}</p>
             </ProfileNameCard>
             <WideButton onClick={() => navigate("/choose-difficulty")}>
                 BÖRJA SPELA

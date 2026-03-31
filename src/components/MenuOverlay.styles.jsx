@@ -2,17 +2,17 @@ import { Link } from "react-router-dom";
 import styled from "@emotion/styled";
 
 export const MenuOverlay = styled.div`
-position: fixed;
-top: 0;
-width: 100vw;
-max-width: 460px;
-height: 100vh;
-padding-right: 1rem;
-background-color: var(--bg);
-z-index: 5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 1rem;
+  background-color: var(--bg);
+  z-index: 5;
 
-font-family: var(--font-heading);
-color: var(--text);
+  font-family: var(--font-heading);
+  color: var(--text);
 
 nav {
     margin-top: 17vh;
