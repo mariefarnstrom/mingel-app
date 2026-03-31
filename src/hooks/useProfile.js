@@ -11,7 +11,7 @@ export const useProfile = () => {
         setProfile(newData);
     };
 
-    return { profile, updateProfile }
+    return { profile, updateProfile } || null;
 }
 
 
