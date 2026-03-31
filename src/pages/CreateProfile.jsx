@@ -17,7 +17,6 @@ import FishIcon from "../components/icons/Fish";
 import FrogIcon from "../components/icons/Frog";
 import TurtleIcon from "../components/icons/Turtle";
 import { ErrorModal } from '../components/ErrorModal';
-    
 
 export default function CreateProfile() {
 

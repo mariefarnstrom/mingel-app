@@ -14,7 +14,7 @@ export default function CreateProfile() {
     const savedProfileText = localStorage.getItem('userProfile');
     const existingProfile = savedProfileText ? JSON.parse(savedProfileText) : null;
 
-    // Form data
+    // Form data - If profile exists the data is shown from start
     const [name, setName] = useState(() => {
         const saved = localStorage.getItem('userProfile');
         return saved ? JSON.parse(saved).name : "";
@@ -43,25 +43,26 @@ export default function CreateProfile() {
         try {
             const { data, error } = await supabase
                 .from('users')
-                .insert([profileData]);
+                .upsert([profileData], { onConflict: 'name' });
+                
 
             if(error) throw error;
 
             // Save to local storage
             localStorage.setItem('userProfile', JSON.stringify(profileData));
 
-            console.log("Profil sparad!", data);
+            console.log("Profile saved!", data);
             navigate('/finished-profile')
 
         } catch (error) {
-            console.error("Fel vid uppladdning: ", error.message);
+            console.error("Upload error: ", error.message);
             setErrorMessage(error.message);
 
         } finally {
             setLoading(false)
         }
-
     }
+
 
     return {
         name,
