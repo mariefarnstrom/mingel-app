@@ -1,14 +1,43 @@
-import { WideButton, SmallLightButton, SmallButton, BigButton, NewQuestionButton, ChooseProfileButton } from "../components/buttons/Button";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
+// Components
+import { WideButton } from "../components/buttons/Button";
 import { BaseCard } from "../components/cards/Cards";
-import { ButtonRow } from "../components/buttons/ButtonRow";
-import { ChooseProfileRow } from "../components/buttons/ChooseProfileRow";
 import { GhostContainer } from "../components/GhostContainer";
 import { PresentCard } from "../components/cards/Cards";
-import { useNavigate } from "react-router-dom";
+
+// Data
+import { supabase } from "../lib/supabaseClient";
+
 
 export default function Home() {
 
     const navigate = useNavigate();
+    const [users, setUsers] = useState([]);
+
+    
+    const fetchUsers = async () => {
+        const { data, error } = await supabase
+        .from('users')
+        .select('*')
+        .order("score", { ascending: false });
+        
+        if (error) {
+            console.error("Error fetching data:", error);
+        } else {
+            setUsers(data);
+        }
+    };
+    
+    useEffect(() => {
+        fetchUsers();
+    }, []);
+    
+    const digitalDesignersActive = users.filter(user => user.role === 'DD').length;
+    const webDevelopersActive = users.filter(user => user.role === 'WU').length;
+
+    
 
     return (
         <>
@@ -22,18 +51,13 @@ export default function Home() {
                 <h2>SPELARE INNE</h2>
 
                 <div>
-                    <p>FÖRETAG: </p>
-                    <p>08</p>
-                </div>
-
-                <div>
                     <p>DIGITAL DESIGNERS: </p>
-                    <p>08</p>
+                    <p>{digitalDesignersActive}</p>
                 </div>
 
                 <div>
                     <p>WEBBUTVECKLARE: </p>
-                    <p>08</p>
+                    <p>{webDevelopersActive}</p>
                 </div>
             </PresentCard>
 
