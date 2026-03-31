@@ -1,12 +1,19 @@
 import { useState, useEffect } from "react"
+
+// Components
 import { HamburgerMenu, StyledHeader } from "./Header.styles";
 import { GhostContainer } from "./GhostContainer";
 import { LanguageToggleDiv, MenuOverlay, StyledMenuLink } from "./MenuOverlay.styles";
 import LanguageToggle from "./LanguageToggle";
 
+// Data
+import { useProfile } from "../hooks/useProfile";
+
+
 export default function Header({ lang, setLang }) {
 
     const [open, setOpen] = useState(false);
+    const { profile } = useProfile(); // Fetch profile
 
     // Prevent header from scrolling when menu is open
     useEffect(() => {
@@ -15,14 +22,11 @@ export default function Header({ lang, setLang }) {
         } else {
             document.body.style.overflow = '';
         }
-
         return () => {
             document.body.style.overflow = '';
         };
     }, [open]);
 
-    // Fetch profile
-    const savedProfile = JSON.parse(localStorage.getItem('userProfile'));
 
     return (
         <>
@@ -41,8 +45,8 @@ export default function Header({ lang, setLang }) {
                     <nav>
                         <StyledMenuLink to="/instructions" onClick={() => setOpen(false)}>REGLER</StyledMenuLink >
                         <StyledMenuLink to="/score" onClick={() => setOpen(false)}>SCOREBOARD</StyledMenuLink >
-                        <StyledMenuLink to="/create-profile" onClick={() => setOpen(false)}>{savedProfile ? 'ÄNDRA PROFIL' : ' SKAPA PROFIL'}</StyledMenuLink >
-                        { savedProfile && <StyledMenuLink to="/choose-difficulty" onClick={() => setOpen(false)}>TILL FRÅGOR</StyledMenuLink > }
+                        <StyledMenuLink to="/create-profile" onClick={() => setOpen(false)}>{profile ? 'ÄNDRA PROFIL' : ' SKAPA PROFIL'}</StyledMenuLink >
+                        { profile && <StyledMenuLink to="/choose-difficulty" onClick={() => setOpen(false)}>TILL FRÅGOR</StyledMenuLink > }
                     </nav>
 
                     <GhostContainer overlay>

@@ -10,10 +10,7 @@ export default function useCreateProfile() {
 
     const navigate = useNavigate();
     const [errorMessage, setErrorMessage] = useState("");
-
-    // Fetch profile
-    // const savedProfileText = localStorage.getItem('userProfile');
-    const { profile } = useProfile();
+    const { profile } = useProfile(); // Fetch profile
     const existingProfile = profile || null;
 
     // Form data - If profile exists the data is shown from start
@@ -22,7 +19,6 @@ export default function useCreateProfile() {
     const [avatar, setAvatar] = useState(profile?.avatar || "")
     const [loading, setLoading] = useState(false);
 
-    
     // Submit function
     const handleSubmit = async (e) => {
         e.preventDefault();
