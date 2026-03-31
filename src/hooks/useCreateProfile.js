@@ -3,33 +3,22 @@ import { useState } from 'react';
 
 // Data
 import { supabase } from '../lib/supabaseClient';
+import { useProfile } from "../hooks/useProfile";
 
 
 export default function useCreateProfile() {
 
     const navigate = useNavigate();
     const [errorMessage, setErrorMessage] = useState("");
-
-    // Fetch profile
-    const savedProfileText = localStorage.getItem('userProfile');
-    const existingProfile = savedProfileText ? JSON.parse(savedProfileText) : null;
+    const { profile } = useProfile(); // Fetch profile
+    const existingProfile = profile || null;
 
     // Form data - If profile exists the data is shown from start
-    const [name, setName] = useState(() => {
-        const saved = localStorage.getItem('userProfile');
-        return saved ? JSON.parse(saved).name : "";
-    });
-    const [role, setRole] = useState(() => {
-        const saved = localStorage.getItem('userProfile');
-        return saved ? JSON.parse(saved).role : "";
-    });
-    const [avatar, setAvatar] = useState(() => {
-        const saved = localStorage.getItem('userProfile');
-        return saved ? JSON.parse(saved).avatar : "";
-    });
+    const [name, setName] = useState(profile?.name || "");
+    const [role, setRole] = useState(profile?.role || "");
+    const [avatar, setAvatar] = useState(profile?.avatar || "")
     const [loading, setLoading] = useState(false);
 
-    
     // Submit function
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -44,7 +33,6 @@ export default function useCreateProfile() {
             const { data, error } = await supabase
                 .from('users')
                 .upsert([profileData], { onConflict: 'name' });
-                
 
             if(error) throw error;
 

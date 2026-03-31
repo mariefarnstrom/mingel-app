@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 // Components
-import { WideButton } from "../components/buttons/Button";
+import { WideButton, SmallLightButton, SmallButton, BigButton, NewQuestionButton, ChooseProfileButton } from "../components/buttons/Button";
+import { useState, useEffect } from "react";
 import { BaseCard } from "../components/cards/Cards";
 import { GhostContainer } from "../components/GhostContainer";
 import { PresentCard } from "../components/cards/Cards";
