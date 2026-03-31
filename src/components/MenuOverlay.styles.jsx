@@ -6,6 +6,7 @@ export const MenuOverlay = styled.div`
   top: 0;
   left: 0;
   width: 100vw;
+  max-width: 460px;
   height: 100vh;
   padding: 1rem;
   background-color: var(--bg);
@@ -15,27 +16,26 @@ export const MenuOverlay = styled.div`
   color: var(--text);
 
   nav {
-    margin-top: 17vh;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
+      margin-top: 17vh;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5rem;
   }
 
   span {
-    font-size: 2rem;
-}
+      font-size: 2rem;
+  }
 `
 
 export const LanguageToggleDiv = styled.div`
-    width: calc(100% - 2rem);
-    height: 5rem;
-    position: absolute;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    bottom: 0;
-
+  width: calc(100% - 2rem);
+  height: 5rem;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  bottom: 0;
 `
 
 export const StyledMenuLink = styled(Link)`

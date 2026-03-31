@@ -27,7 +27,9 @@ export default function Header({ lang, setLang }) {
     return (
         <>
             <StyledHeader>
-                <img src="/logo.svg" alt="" />
+                <a href="/">
+                    <img src="/logo.svg" alt="" />
+                </a>
                 <HamburgerMenu onClick={() => setOpen(!open)}>
                     {open ? <img src='/x-icon.svg' alt='' /> : <img src='/hamburger-icon.svg' alt='' />}
                 </HamburgerMenu>
