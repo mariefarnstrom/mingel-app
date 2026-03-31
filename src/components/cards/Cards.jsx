@@ -121,4 +121,8 @@ export const ErrorCard = styled(BaseCard)`
     button {
         width: 100px;
     }
+
+    svg {
+        max-height: 3rem;
+    }
 `
