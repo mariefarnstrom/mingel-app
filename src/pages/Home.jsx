@@ -1,10 +1,12 @@
+import { useNavigate } from "react-router-dom";
+
+// Components
 import { WideButton, SmallLightButton, SmallButton, BigButton, NewQuestionButton, ChooseProfileButton } from "../components/buttons/Button";
 import { BaseCard } from "../components/cards/Cards";
 import { ButtonRow } from "../components/buttons/ButtonRow";
 import { ChooseProfileRow } from "../components/buttons/ChooseProfileRow";
 import { GhostContainer } from "../components/GhostContainer";
 import { PresentCard } from "../components/cards/Cards";
-import { useNavigate } from "react-router-dom";
 
 export default function Home() {
 
