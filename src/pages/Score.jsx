@@ -16,9 +16,9 @@ export default function Score() {
 
             <LeaderBoard>
                 {users.map((user, index) => (
-                    <LeaderBoardRow>
+                    <LeaderBoardRow key={user.id}>
                         <Rank>
-                            <span key={user.id}>
+                            <span>
                                 {index + 1}
                             </span>
                         </Rank>
