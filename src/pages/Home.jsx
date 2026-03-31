@@ -15,24 +15,27 @@ export default function Home() {
 
     const navigate = useNavigate();
     const [users, setUsers] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     
-    const fetchUsers = async () => {
-        const { data, error } = await supabase
-        .from('users')
-        .select('*')
-        .order("score", { ascending: false });
-        
-        if (error) {
-            console.error("Error fetching data:", error);
-        } else {
-            setUsers(data);
-        }
-    };
-    
     useEffect(() => {
+        const fetchUsers = async () => {
+            setLoading(true);
+            const { data, error } = await supabase
+            .from('users')
+            .select('role')
+            
+            if (error) {
+                console.error("Error fetching data:", error);
+            } else {
+                setUsers(data);
+            }
+            setLoading(false);
+        }
+
         fetchUsers();
     }, []);
+    
     
     const digitalDesignersActive = users.filter(user => user.role === 'DD').length;
     const webDevelopersActive = users.filter(user => user.role === 'WU').length;
@@ -41,6 +44,7 @@ export default function Home() {
 
     return (
         <>
+
             <BaseCard>
                 <h1>VÄLKOMMEN TILL YRGOXP</h1>
                 <p>Spelet som gör det enkelt att börja prata, Samla poäng genom att ställa frågor och vara aktiv i spelet.</p>
@@ -52,12 +56,12 @@ export default function Home() {
 
                 <div>
                     <p>DIGITAL DESIGNERS: </p>
-                    <p>{digitalDesignersActive}</p>
+                    <p>{loading ? 'Laddar...' : digitalDesignersActive}</p>
                 </div>
 
                 <div>
                     <p>WEBBUTVECKLARE: </p>
-                    <p>{webDevelopersActive}</p>
+                    <p>{loading ? 'Laddar...' : webDevelopersActive}</p>
                 </div>
             </PresentCard>
 
