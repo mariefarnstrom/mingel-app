@@ -14,15 +14,15 @@ export const MenuOverlay = styled.div`
   font-family: var(--font-heading);
   color: var(--text);
 
-nav {
+  nav {
     margin-top: 17vh;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 1.5rem;
-}
+  }
 
-span {
+  span {
     font-size: 2rem;
 }
 `

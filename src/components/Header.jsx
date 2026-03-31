@@ -21,6 +21,9 @@ export default function Header({ lang, setLang }) {
         };
     }, [open]);
 
+    // Fetch profile
+    const savedProfile = JSON.parse(localStorage.getItem('userProfile'));
+
     return (
         <>
             <StyledHeader>
@@ -36,8 +39,8 @@ export default function Header({ lang, setLang }) {
                     <nav>
                         <StyledMenuLink to="/instructions" onClick={() => setOpen(false)}>REGLER</StyledMenuLink >
                         <StyledMenuLink to="/score" onClick={() => setOpen(false)}>SCOREBOARD</StyledMenuLink >
-                        <StyledMenuLink to="/create-profile" onClick={() => setOpen(false)}>ÄNDRA PROFIL</StyledMenuLink >
-                        <StyledMenuLink to="/choose-difficulty" onClick={() => setOpen(false)}>TILL FRÅGOR</StyledMenuLink >
+                        <StyledMenuLink to="/create-profile" onClick={() => setOpen(false)}>{savedProfile ? 'ÄNDRA PROFIL' : ' SKAPA PROFIL'}</StyledMenuLink >
+                        { savedProfile && <StyledMenuLink to="/choose-difficulty" onClick={() => setOpen(false)}>TILL FRÅGOR</StyledMenuLink > }
                     </nav>
 
                     <GhostContainer overlay>
