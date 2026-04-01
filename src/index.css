@@ -74,14 +74,19 @@ body {
   gap: 0.4rem;
   border-inline: 1px solid var(--border);
   text-align: center;
+  background-image: url("background.svg");
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: var(--font-heading);
   color: var(--text-h);
 }
 
-h3, h4, h5, h6 {
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   color: var(--text);
 
