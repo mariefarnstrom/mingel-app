@@ -1,26 +1,33 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabaseClient";
+import { useLanguage } from "./useLanguage";
+import translations from "../translations/translations.json";
 
 export function useScore() {
 
+    const { lang } = useLanguage();
+    const text = translations.score[lang];
+
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [errorMessage, setErrorMessage] = useState("");
 
     // Fetch live scores from databse
     const fetchUsers = async () => {
-        const { data, error } = await supabase
-            .from('users')
-            .select('*')
-            .order("score", { ascending: false });
+        try {
+            const { data, error } = await supabase
+                .from('users')
+                .select('*')
+                .order("score", { ascending: false });
 
-        if (error) {
-            console.error("Error fetching data:", error);
-            setError(error);
-        } else {
+            if (error) throw error;
             setUsers(data);
+        } catch (err) {
+            console.error("Error fetching data:", err);
+            setErrorMessage(text.errorFetching);
+        } finally {
+            setLoading(false);
         }
-        setLoading(false);
     };
 
     useEffect(() => {
@@ -67,6 +74,6 @@ export function useScore() {
     return {
         users,
         loading,
-        error
+        errorMessage
     }
 };

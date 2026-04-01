@@ -1,33 +1,41 @@
 import { useState, useEffect } from "react";
 import { supabase } from "../lib/supabaseClient";
 import { useNavigate } from "react-router-dom";
+import { useLanguage } from "./useLanguage";
+import translations from "../translations/translations.json";
 
 export function useQuestions(level) {
     const navigate = useNavigate();
+    const { lang } = useLanguage();
+    const text = translations.questions[lang];
 
     const [questions, setQuestions] = useState([]);
     const [loading, setLoading] = useState(false);
     const [currentId, setCurrentId] = useState(null);
+    const [errorMessage, setErrorMessage] = useState("");
 
     useEffect(() => {
         setLoading(true);
 
         const fetchData = async () => {
-            const { data, error } = await supabase
-                .from('questions')
-                .select('*')
-                .eq('level', level);
+            try {
+                const { data, error } = await supabase
+                    .from('questions')
+                    .select('*')
+                    .eq('level', level);
 
-            if (error) {
-                console.error("Error fetching questions:", error);
-            } else {
+                if (error) throw error;
                 setQuestions(data);
+            } catch (err) {
+                console.error("Error fetching questions:", err.message);
+                setErrorMessage(text.errorFetching);
+            } finally {
+                setLoading(false);
             }
-            setLoading(false);
         };
 
         fetchData();
-    }, [level]);
+    }, [level, text]);
 
     useEffect(() => {
         if (questions.length > 0) {
@@ -46,7 +54,8 @@ export function useQuestions(level) {
         const storedUser = JSON.parse(localStorage.getItem("userProfile"));
 
         if (!storedUser) {
-            console.error("Ingen användare hittades");
+            console.error("No user found");
+            setErrorMessage(text.errorNoUser);
             return;
         }
         const name = storedUser.name;
@@ -57,7 +66,8 @@ export function useQuestions(level) {
             .eq("name", name)
             .single();
         if (error) {
-            console.error("Kunde inte hämta poäng.", error);
+            console.error("Could not fetch score.", error);
+            setErrorMessage(text.errorFetchingScore);
             return;
         }
 
@@ -81,7 +91,8 @@ export function useQuestions(level) {
             .eq("name", name);
 
         if (updateError) {
-            console.error("Kunde inte uppdatera poäng:", updateError);
+            console.error("Could not update score:", updateError);
+            setErrorMessage(text.errorUpdatingScore);
         } else {
             navigate('/score');
         }
@@ -91,6 +102,8 @@ export function useQuestions(level) {
         questions,
         loading,
         currentId,
+        errorMessage,
+        setErrorMessage,
         setRandomQuestion,
         handleCompleted
     };

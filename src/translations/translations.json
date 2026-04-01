@@ -26,14 +26,16 @@
       "description1": "Spelet som gör det enkelt att börja prata. Samla poäng genom att ställa frågor och vara aktiv i spelet.",
       "description2": "Ju fler frågor du ställer, desto högre klättrar du på scoreboarden.",
       "registeredPlayers": "Registrerade spelare",
-      "seeRules": "Se spelregler"
+      "seeRules": "Se spelregler",
+      "errorFetching":"Kunde inte hämta spelare. Försök igen."
     },
     "en": {
       "title": "Welcome to YrgoXP",
       "description1": "The game that makes it easy to start talking. Collect points by asking questions and being active in the game.",
       "description2": "The more questions you ask, the higher you climb on the scoreboard.",
       "registeredPlayers": "Registered players",
-      "seeRules": "See rules"
+      "seeRules": "See rules",
+      "errorFetching":"Could not fetch players. Try again."
     }
   },
 
@@ -165,7 +167,11 @@
       "points": "poäng",
       "generateNew": "Generera ny fråga",
       "back": "Tillbaka",
-      "done": "Klar"
+      "done": "Klar",
+      "errorFetching": "Kunde inte hämta frågor. Försök igen.",
+      "errorNoUser": "Ingen användare hittades. Skapa en profil först.",
+      "errorFetchingScore": "Kunde inte hämta din poäng. Försök igen.",
+      "errorUpdatingScore": "Kunde inte uppdatera poäng. Försök igen."
     },
     "en": {
       "level": "Level",
@@ -174,7 +180,11 @@
       "points": "points",
       "generateNew": "Generate new question",
       "back": "Back",
-      "done": "Done"
+      "done": "Done",
+      "errorFetching": "Could not fetch questions. Try again.",
+      "errorNoUser": "No user found. Create a profile first.",
+      "errorFetchingScore": "Could not fetch your score. Try again.",
+      "errorUpdatingScore": "Could not update score. Try again."
     }
   },
 
@@ -182,12 +192,14 @@
     "sv": {
       "heading": "Scoreboard",
       "description": "Se vem som leder just nu!",
-      "loading": "Laddar scoreboard..."
+      "loading": "Laddar scoreboard...",
+      "errorFetching": "Kunde inte hämta scoreboard. Försök igen."
     },
     "en": {
       "heading": "Scoreboard",
       "description": "See who's leading right now!",
-      "loading": "Loading scoreboard..."
+      "loading": "Loading scoreboard...",
+      "errorFetching": "Could not fetch scoreboard. Try again."
     }
   },
 

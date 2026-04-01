@@ -6,6 +6,7 @@ import { WideButton } from "../components/buttons/Button";
 import { BaseCard } from "../components/cards/Cards";
 import { GhostContainer } from "../components/GhostContainer";
 import { RegisteredPlayersCard } from "../components/cards/Cards";
+import { ErrorModal } from "../components/ErrorModal";
 
 // Data / Language
 import { supabase } from "../lib/supabaseClient";
@@ -17,6 +18,7 @@ export default function Home() {
     const navigate = useNavigate();
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("");
     const { lang } = useLanguage();
     const text = translations.home[lang];
     const textCommon = translations.common[lang];
@@ -24,16 +26,19 @@ export default function Home() {
     useEffect(() => {
         const fetchUsers = async () => {
             setLoading(true);
-            const { data, error } = await supabase
-            .from('users')
-            .select('role')
-            
-            if (error) {
-                console.error("Error fetching data:", error);
-            } else {
+            try {
+                const { data, error } = await supabase
+                    .from('users')
+                    .select('role');
+                
+                if (error) throw error;
                 setUsers(data);
+            } catch (err) {
+                console.error("Error fetching users:", err.message);
+                setErrorMessage(text.errorFetching);
+            } finally {
+                setLoading(false);
             }
-            setLoading(false);
         }
 
         fetchUsers();
@@ -45,6 +50,8 @@ export default function Home() {
 
     return (
         <>
+            {errorMessage && <ErrorModal errorMessage={errorMessage} onClose={() => setErrorMessage("")} />}
+
             <BaseCard>
                 <h1>{text.title.toUpperCase()}</h1>
                 <p>{text.description1}</p>
