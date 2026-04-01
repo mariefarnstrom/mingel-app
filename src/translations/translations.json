@@ -38,6 +38,10 @@
   },
 
   "instructions": {
+    "heading": {
+      "sv": "Spelregler",
+      "en": "Rules"
+    },
     "sv": [
       {
         "id": 1,
@@ -61,7 +65,7 @@
         "id": 4,
         "icon": "star",
         "title": "Samla poäng",
-        "description": "Easy ger 1 poäng, Medium 2 och Hardcore 5. Klättra på Scoreboarden och se live hur du ligger till."
+        "description": "Easy ger 1poäng, Medium 2 och Hardcore 5. Klättra på Scoreboarden och se live hur du ligger till."
       }
     ],
     "en": [

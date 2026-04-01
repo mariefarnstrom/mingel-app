@@ -23,7 +23,9 @@ const iconMap = {
 export default function Instructions() {
 
     const { lang } = useLanguage();
+    const text = translations.instructions[lang];
     const textCommon = translations.common[lang];
+    const heading = translations.instructions.heading[lang];
     
     const { currentStep,
         stepNumber,
@@ -39,7 +41,7 @@ export default function Instructions() {
     return (
         <>
             <HeadingCard>
-                <h3>{currentStep.title.toUpperCase()}</h3>
+                <h3>{heading.toUpperCase()}</h3>
             </HeadingCard>
 
             <BigIconCard>
