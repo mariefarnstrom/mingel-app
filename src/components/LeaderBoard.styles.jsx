@@ -30,13 +30,14 @@ export const UserWrapper = styled.div`
 `;
 
 export const UserAvatar = styled.div`
-    height: 2.375rem;
+    height: 2rem;
     aspect-ratio: 1 / 1;
     margin-left: 0.5rem;
+    margin-right: 0.2rem;
 
     svg {
-        max-width: 80%;
-        max-height: 80%;
+        max-width: 100%;
+        max-height: 100%;
     }
 `;
 
