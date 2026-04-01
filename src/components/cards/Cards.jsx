@@ -21,6 +21,7 @@ export const BaseCard = styled.div`
         letter-spacing: -0.022em;
     }
 
+    // Instructions step indicator
     .progressIndicatorContainer {
         display: flex;
         justify-content: center;
@@ -64,7 +65,7 @@ export const BigIconCard = styled(BaseCard)`
 `
 
 // Number of players
-export const PresentCard = styled(BaseCard)`
+export const RegisteredPlayersCard = styled(BaseCard)`
     div {
         display: flex;
         justify-content: space-between;
@@ -83,11 +84,28 @@ export const PresentCard = styled(BaseCard)`
     }   
 `
 
+// ChooseDifficulty
 export const BigButtonsCard = styled(BaseCard)`
     gap: 2rem;
     justify-content: center;
     padding: 4rem 1.5rem;
-`;
+`
+
+// ChooseDifficulty
+export const PointCard = styled(BaseCard)`
+    position: absolute;
+    right: -1rem;
+    top: -1rem;
+    width: 3.5rem;
+    height: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--text);
+    font-size: 1.5rem;
+`
 
 export const QuestionCard = styled(BaseCard)`
     height: 40vh;

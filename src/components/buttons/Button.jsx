@@ -35,6 +35,7 @@ export const BigButton = styled(BaseButton)`
     width: 100%;
     height: 7rem;
     font-size: 3.5rem;
+    position: relative;
 `;
 
 export const NewQuestionButton = styled(BaseButton)`
