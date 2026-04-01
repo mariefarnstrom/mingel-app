@@ -47,12 +47,12 @@ export default function Home() {
 
             <BaseCard>
                 <h1>VÄLKOMMEN TILL YRGOXP</h1>
-                <p>Spelet som gör det enkelt att börja prata, Samla poäng genom att ställa frågor och vara aktiv i spelet.</p>
+                <p>Spelet som gör det enkelt att börja prata. Samla poäng genom att ställa frågor och vara aktiv i spelet.</p>
                 <p>Ju fler frågor du ställer, desto högre klättrar du på scoreboarden.</p>
             </BaseCard>
 
             <RegisteredPlayersCard>
-                <h2>SPELARE INNE</h2>
+                <h2>REGISTRERADE SPELARE</h2>
 
                 <div>
                     <p>DIGITAL DESIGNERS: </p>

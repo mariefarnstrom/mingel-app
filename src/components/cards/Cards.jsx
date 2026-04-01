@@ -47,6 +47,8 @@ export const BaseCard = styled.div`
 export const HeadingCard = styled(BaseCard)`
     h3, p {
         margin: 0.4rem;
+        max-width: 80%;
+        align-self: center;
     }
 `
 
@@ -118,6 +120,11 @@ export const ProfileNameCard = styled(BaseCard)`
     height: 6rem;
     font-size: 1.5rem;
     font-family: var(--font-heading);
+
+    p {
+        margin: 0;
+        font-family: var(--font-heading);
+    }
 `
 
 export const ErrorCard = styled(BaseCard)`
