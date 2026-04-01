@@ -1,15 +1,16 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-// Data
-import instructionsData from "../data/instructions.json";
+// Languge
+import { useLanguage } from "./useLanguage";
+import translations from "../translations/translations.json";
 
 export function useInstructions() {
     
-    const instructions = instructionsData.instructions;
+    const { lang } = useLanguage();
+    const instructions = translations.instructions[lang];
     const [currentIndex, setCurrentIndex] = useState(0);
     const currentStep = instructions[currentIndex];
-    const [lang, setLang] = useState("sv");
     const [colorMode, setColorMode] = useState('light');
     const navigate = useNavigate();
 
@@ -36,7 +37,6 @@ export function useInstructions() {
         instructions,
         stepNumber: currentIndex + 1,
         totalSteps: instructions.length,
-        lang,
         colorMode,
         nextStep,
         previousStep

@@ -1,19 +1,24 @@
 import { useState, useEffect } from "react"
+import { Link } from "react-router-dom";
 
 // Components
 import { HamburgerMenu, StyledHeader } from "./Header.styles";
 import { GhostContainer } from "./GhostContainer";
 import { LanguageToggleDiv, MenuOverlay, StyledMenuLink } from "./MenuOverlay.styles";
 import LanguageToggle from "./LanguageToggle";
-import { Link } from "react-router-dom";
+
+// Translations
+import { useLanguage } from "../hooks/useLanguage";
+import translations from "../translations/translations.json";
 
 // Data
 import { useProfile } from "../hooks/useProfile";
 
 
-export default function Header({ lang, setLang }) {
+export default function Header() {
 
     const [open, setOpen] = useState(false);
+    const { lang } = useLanguage();
     const { profile } = useProfile(); // Fetch profile
 
     // Prevent header from scrolling when menu is open
@@ -27,6 +32,8 @@ export default function Header({ lang, setLang }) {
             document.body.style.overflow = '';
         };
     }, [open]);
+
+    const text = translations.header[lang];
 
 
     return (
@@ -44,11 +51,35 @@ export default function Header({ lang, setLang }) {
 
                 <MenuOverlay>
                     <nav>
-                        <StyledMenuLink to="/" onClick={() => setOpen(false)}>HEM</StyledMenuLink >
-                        <StyledMenuLink to="/instructions" onClick={() => setOpen(false)}>REGLER</StyledMenuLink >
-                        <StyledMenuLink to="/score" onClick={() => setOpen(false)}>SCOREBOARD</StyledMenuLink >
-                        <StyledMenuLink to="/create-profile" onClick={() => setOpen(false)}>{profile ? 'ÄNDRA PROFIL' : ' SKAPA PROFIL'}</StyledMenuLink >
-                        { profile && <StyledMenuLink to="/choose-difficulty" onClick={() => setOpen(false)}>TILL FRÅGOR</StyledMenuLink > }
+                        <StyledMenuLink 
+                            to="/" 
+                            onClick={() => setOpen(false)}>
+                                {text.home.toUpperCase()}
+                        </StyledMenuLink >
+
+                        <StyledMenuLink 
+                            to="/instructions" 
+                            onClick={() => setOpen(false)}>
+                                {text.rules.toUpperCase()}
+                        </StyledMenuLink >
+
+                        <StyledMenuLink 
+                            to="/score" 
+                            onClick={() => setOpen(false)}>
+                                {text.scoreboard.toUpperCase()}
+                        </StyledMenuLink >
+
+                        <StyledMenuLink 
+                            to="/create-profile" 
+                            onClick={() => setOpen(false)}>
+                                {profile ? text.changeProfile.toUpperCase() : text.createProfile.toUpperCase() }
+                        </StyledMenuLink >
+
+                        { profile && <StyledMenuLink 
+                            to="/choose-difficulty" 
+                            onClick={() => setOpen(false)}>
+                                {text.toQuestions.toUpperCase()}
+                        </StyledMenuLink > }
                     </nav>
 
                     <GhostContainer overlay>
@@ -56,8 +87,8 @@ export default function Header({ lang, setLang }) {
                     </GhostContainer>
 
                     <LanguageToggleDiv>
-                        <span>SWITCH TO ENGLISH</span>
-                        <LanguageToggle lang={lang} setLang={setLang} />
+                        <span>{text.toggleLanguage.toUpperCase()}</span>
+                        <LanguageToggle />
                     </LanguageToggleDiv>
 
                 </MenuOverlay>

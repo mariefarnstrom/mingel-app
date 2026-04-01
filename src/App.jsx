@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { useState } from "react";
 import './App.css'
+import { LanguageProvider } from './contexts/LanguageContext';
 
 // Pages
 import Home from './pages/Home'
@@ -17,21 +17,21 @@ import Header from './components/Header'
 
 function App() {
 
-  const [lang, setLang] = useState("sv");
-
   return (
     <>
       <BrowserRouter>
-        <Header lang={lang} setLang={setLang} />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/instructions" element={<Instructions />} />
-          <Route path="/questions/:level" element={<Questions />} />
-          <Route path="/score" element={<Score />} />
-          <Route path="/create-profile" element={<CreateProfile />} />
-          <Route path="/choose-difficulty" element={<ChooseDifficulty />} />
-          <Route path="/finished-profile" element={<FinishedProfile />} />
-        </Routes>
+        <LanguageProvider>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/instructions" element={<Instructions />} />
+            <Route path="/questions/:level" element={<Questions />} />
+            <Route path="/score" element={<Score />} />
+            <Route path="/create-profile" element={<CreateProfile />} />
+            <Route path="/choose-difficulty" element={<ChooseDifficulty />} />
+            <Route path="/finished-profile" element={<FinishedProfile />} />
+          </Routes>
+        </LanguageProvider>
       </BrowserRouter>
 
     </>
