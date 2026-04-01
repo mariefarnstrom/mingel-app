@@ -105,7 +105,8 @@
       "namePlaceholder": "Ange ditt namn",
       "chooseClass": "Välj klass",
       "chooseAvatar": "Välj din avatar",
-      "submit": "Skapa profil"
+      "submit": "Skapa profil",
+      "nameExists": "Det finns redan en spelare med det här namnet. Välj ett annat."
     },
     "en": {
       "heading": "Create your character",
@@ -114,7 +115,8 @@
       "namePlaceholder": "Enter your name",
       "chooseClass": "Choose class",
       "chooseAvatar": "Choose your avatar",
-      "submit": "Create profile"
+      "submit": "Create profile",
+      "nameExists": "A player with this name already exists. Choose another."
     }
   },
 
