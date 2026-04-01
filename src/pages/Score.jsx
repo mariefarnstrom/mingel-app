@@ -1,67 +1,11 @@
-import { useEffect, useState } from "react";
-import { supabase } from "../lib/supabaseClient";
 import { HeadingCard } from "../components/cards/Cards";
+import { useScore } from "../hooks/useScore";
+import { LeaderBoard, LeaderBoardRow, Rank, UserInfo, UserScore } from "../components/LeaderBoard.styles";
 
 export default function Score() {
+    const { users, loading, error } = useScore();
 
-    const [users, setUsers] = useState([]);
-
-    // Fetch live scores from databse
-    useEffect(() => {
-        fetchUsers();
-        const channel = supabase
-            .channel("scoreboard")
-            .on(
-                "postgres_changes",
-                {
-                    event: "*",
-                    schema: "public",
-                    table: "users",
-                },
-                (payload) => {
-                    console.log("Change recieved!", payload);
-
-                    setUsers((prev) => {
-                        let updated = [...prev];
-
-                        if (payload.eventType === "UPDATE") {
-                            updated = updated.map(u =>
-                                u.id === payload.new.id ? payload.new : u
-                            );
-                        }
-
-                        if (payload.eventType === "INSERT") {
-                            updated = [...updated, payload.new];
-                        }
-
-                        if (payload.eventType === "DELETE") {
-                            updated = updated.filter(u => u.id !== payload.old.id);
-                        }
-
-                        return updated.sort((a, b) => b.score - a.score);
-                    });
-                }
-            )
-            .subscribe();
-
-        return () =>
-            supabase.removeChannel(channel);
-    }, []);
-
-    const fetchUsers = async () => {
-        const { data, error } = await supabase
-            .from('users')
-            .select('*')
-            .order("score", { ascending: false });
-
-        if (error) {
-            console.error("Error fetching data:", error);
-        } else {
-            setUsers(data);
-
-        }
-    };
-
+    if (loading) return <p>Laddar scoreboard...</p>;
 
     return (
         <>
@@ -70,12 +14,27 @@ export default function Score() {
                 <p>Se vem som leder just nu!</p>
             </HeadingCard>
 
-            {users.map((user, index) => (
-                <p key={user.id}>
-                    {index + 1}. {user.name} - {user.score}
-                </p>
+            <LeaderBoard>
+                {users.map((user, index) => (
+                    <LeaderBoardRow key={user.id}>
+                        <Rank>
+                            <span>
+                                {index + 1}
+                            </span>
+                        </Rank>
+                        <UserInfo>
+                            <span>{user.name}</span>
+                            <span>{user.role}</span>
+                        </UserInfo>
+                        <UserScore>
+                            <span>{user.score}p</span>
+                        </UserScore>
 
-            ))}
+                    </LeaderBoardRow>
+
+                ))}
+            </LeaderBoard>
         </>
     );
+
 }
