@@ -1,8 +1,10 @@
-import { HeadingCard } from "../components/cards/Cards";
+import { useNavigate } from "react-router-dom";
+
+// Components
+import { HeadingCard, PointCard } from "../components/cards/Cards";
 import { BigButton } from "../components/buttons/Button";
 import { BigButtonsCard } from "../components/cards/Cards";
 import { GhostContainer } from "../components/GhostContainer";
-import { useNavigate } from "react-router-dom";
 
 export default function ChooseDifficulty() {
 
@@ -16,20 +18,21 @@ export default function ChooseDifficulty() {
         <>
             <HeadingCard>
                 <h3>VÄLJ DIN NIVÅ</h3>
-                <p>
-                    Hur utmanande vill du att din fråga ska vara?
-                </p>
+                <p>Hur utmanande vill du att din fråga ska vara?</p>
             </HeadingCard>
 
             <BigButtonsCard>
                 <BigButton onClick={() => handleClick("easy")}>
                     EASY
+                    <PointCard>1p</PointCard>
                 </BigButton>
                 <BigButton onClick={() => handleClick("medium")}>
                     MEDIUM
+                    <PointCard>2p</PointCard>
                 </BigButton>
                 <BigButton onClick={() => handleClick("hard")}>
                     HARDCORE
+                    <PointCard>5p</PointCard>
                 </BigButton>
             </BigButtonsCard>
 

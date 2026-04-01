@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 // Components
-import { WideButton, SmallLightButton, SmallButton, BigButton, NewQuestionButton, ChooseProfileButton } from "../components/buttons/Button";
-import { useState, useEffect } from "react";
+import { WideButton } from "../components/buttons/Button";
 import { BaseCard } from "../components/cards/Cards";
 import { GhostContainer } from "../components/GhostContainer";
-import { PresentCard } from "../components/cards/Cards";
+import { RegisteredPlayersCard } from "../components/cards/Cards";
 
 // Data
 import { supabase } from "../lib/supabaseClient";
@@ -47,12 +47,12 @@ export default function Home() {
 
             <BaseCard>
                 <h1>VÄLKOMMEN TILL YRGOXP</h1>
-                <p>Spelet som gör det enkelt att börja prata, Samla poäng genom att ställa frågor och vara aktiv i spelet.</p>
+                <p>Spelet som gör det enkelt att börja prata. Samla poäng genom att ställa frågor och vara aktiv i spelet.</p>
                 <p>Ju fler frågor du ställer, desto högre klättrar du på scoreboarden.</p>
             </BaseCard>
 
-            <PresentCard>
-                <h2>SPELARE INNE</h2>
+            <RegisteredPlayersCard>
+                <h2>REGISTRERADE SPELARE</h2>
 
                 <div>
                     <p>DIGITAL DESIGNERS: </p>
@@ -63,7 +63,7 @@ export default function Home() {
                     <p>WEBBUTVECKLARE: </p>
                     <p>{loading ? 'Laddar...' : webDevelopersActive}</p>
                 </div>
-            </PresentCard>
+            </RegisteredPlayersCard>
 
             <GhostContainer>
                 <img src="ghost.svg" alt="Ghost image" />

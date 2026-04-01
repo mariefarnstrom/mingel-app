@@ -31,20 +31,26 @@ export default function FinishedProfile() {
         frog: FrogIcon,
     }
 
+    const roleMap = {
+        DD: 'Digital Designer',
+        WU: 'Webbutvecklare',
+    }
+
     const ProfileIcon = iconMap[profile.avatar];
+    const ProfileRole = roleMap[profile.role]
 
     return (
         <>
             <HeadingCard>
                 <h3>DU ÄR REDO!</h3>
-                <p>Redo att samla poäng och starta samtal?</p>
+                <p>Dags att börja samla poäng och starta samtal.</p>
             </HeadingCard>
             <BigIconCard>
                 {ProfileIcon && <ProfileIcon />}
             </BigIconCard>
             <ProfileNameCard>
-                <p>{profile.name}</p>
-                <p>{profile.role}</p>
+                <p>{profile.name.toUpperCase()}</p>
+                <p>{ProfileRole.toUpperCase()}</p>
             </ProfileNameCard>
             <WideButton onClick={() => navigate("/choose-difficulty")}>
                 BÖRJA SPELA
