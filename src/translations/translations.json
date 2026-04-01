@@ -153,7 +153,7 @@
 
   "questions": {
     "sv": {
-      "level": "Nivå:",
+      "level": "Nivå",
       "loading": "Laddar fråga...",
       "notFound": "Inga frågor hittades. Försök igen.",
       "points": "poäng",
@@ -162,7 +162,7 @@
       "done": "Klar"
     },
     "en": {
-      "level": "Level:",
+      "level": "Level",
       "loading": "Loading question...",
       "notFound": "No questions found. Try again.",
       "points": "points",
@@ -189,17 +189,19 @@
     "sv": {
       "back": "Tillbaka",
       "next": "Nästa",
+      "done": "Klar",
       "loading": "Laddar...",
       "save": "Spara",
       "saving": "Sparar...",
       "webDeveloper": "Webbutvecklare",
-      "webDevelopers": "Webbutvecklare:",
+      "webDevelopers": "Webbutvecklare",
       "digitalDesigner": "Digital designer",
-      "digitalDesigners": "Digital designers:"
+      "digitalDesigners": "Digital designers"
     },
     "en": {
       "back": "Back",
       "next": "Next",
+      "done": "Done",
       "loading": "Loading...",
       "save": "Save",
       "saving": "Saving...",

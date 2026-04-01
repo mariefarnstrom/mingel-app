@@ -1,33 +1,47 @@
+// Components
 import { HeadingCard } from "../components/cards/Cards";
-import { useScore } from "../hooks/useScore";
 import { LeaderBoard, LeaderBoardRow, Rank, UserInfo, UserScore } from "../components/LeaderBoard.styles";
 
-export default function Score() {
-    const { users, loading, error } = useScore();
+// Data / Language
+import { useScore } from "../hooks/useScore";
+import { useLanguage } from "../hooks/useLanguage";
+import translations from "../translations/translations.json";
 
-    if (loading) return <p>Laddar scoreboard...</p>;
+export default function Score() {
+
+    const { users, loading, error } = useScore();
+    const { lang } = useLanguage();
+    const text = translations.score[lang];
+    const textCommon = translations.common[lang];
+
+    const roleMap = {
+        DD: textCommon.digitalDesigner,
+        WU: textCommon.webDeveloper,
+    }
+
+    if (loading) return <p>{text.loading}</p>;
 
     return (
         <>
             <HeadingCard>
-                <h3>SCOREBOARD</h3>
-                <p>Se vem som leder just nu!</p>
+                <h3>{text.heading.toUpperCase()}</h3>
+                <p>{text.description}</p>
             </HeadingCard>
 
             <LeaderBoard>
                 {users.map((user, index) => (
                     <LeaderBoardRow key={user.id}>
                         <Rank>
-                            <span>
+                            <p>
                                 {index + 1}
-                            </span>
+                            </p>
                         </Rank>
                         <UserInfo>
-                            <span>{user.name}</span>
-                            <span>{user.role}</span>
+                            <p>{user.name}</p>
+                            <p>{roleMap[user.role]}</p>
                         </UserInfo>
                         <UserScore>
-                            <span>{user.score}p</span>
+                            <p>{user.score}p</p>
                         </UserScore>
 
                     </LeaderBoardRow>

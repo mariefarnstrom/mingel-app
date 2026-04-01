@@ -55,12 +55,12 @@ export default function Home() {
                 <h2>{text.registeredPlayers.toUpperCase()}</h2>
 
                 <div>
-                    <p>{textCommon.digitalDesigner.toUpperCase()}</p>
+                    <p>{textCommon.digitalDesigners.toUpperCase()}:</p>
                     <p>{loading ? textCommon.loading : digitalDesignersActive}</p>
                 </div>
 
                 <div>
-                    <p>{textCommon.webDevelopers.toUpperCase()}</p>
+                    <p>{textCommon.webDevelopers.toUpperCase()}:</p>
                     <p>{loading ? textCommon.loading : webDevelopersActive}</p>
                 </div>
             </RegisteredPlayersCard>
