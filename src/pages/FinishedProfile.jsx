@@ -14,13 +14,18 @@ import FishIcon from "../components/icons/Fish";
 import FrogIcon from "../components/icons/Frog";
 import TurtleIcon from "../components/icons/Turtle";
 
-// Data
+// Data / Language
 import { useProfile } from "../hooks/useProfile";
+import { useLanguage } from "../hooks/useLanguage"; 
+import translations from "../translations/translations.json";
 
 export default function FinishedProfile() {
 
     const navigate = useNavigate();
     const { profile } = useProfile(); // Fetch profile
+    const { lang } = useLanguage();
+    const text = translations.finishedProfile[lang];
+    const textCommon = translations.common[lang];
 
     const iconMap = {
         turtle: TurtleIcon,
@@ -32,8 +37,8 @@ export default function FinishedProfile() {
     }
 
     const roleMap = {
-        DD: 'Digital Designer',
-        WU: 'Webbutvecklare',
+        DD: textCommon.digitalDesigner,
+        WU: textCommon.webDeveloper,
     }
 
     const ProfileIcon = iconMap[profile.avatar];
@@ -42,8 +47,8 @@ export default function FinishedProfile() {
     return (
         <>
             <HeadingCard>
-                <h3>DU ÄR REDO!</h3>
-                <p>Dags att börja samla poäng och starta samtal.</p>
+                <h3>{text.heading.toUpperCase()}</h3>
+                <p>{text.description}</p>
             </HeadingCard>
             <BigIconCard>
                 {ProfileIcon && <ProfileIcon />}
@@ -53,7 +58,7 @@ export default function FinishedProfile() {
                 <p>{ProfileRole.toUpperCase()}</p>
             </ProfileNameCard>
             <WideButton onClick={() => navigate("/choose-difficulty")}>
-                BÖRJA SPELA
+                {text.button.toUpperCase()}
             </WideButton>
 
         </>

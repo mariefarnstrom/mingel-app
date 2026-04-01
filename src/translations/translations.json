@@ -19,15 +19,13 @@
       "toggleLanguage": "Ändra till svenska"
     }
   },
+
   "home": {
     "sv": {
       "title": "Välkommen till YrgoXP",
       "description1": "Spelet som gör det enkelt att börja prata. Samla poäng genom att ställa frågor och vara aktiv i spelet.",
       "description2": "Ju fler frågor du ställer, desto högre klättrar du på scoreboarden.",
       "registeredPlayers": "Registrerade spelare",
-      "digitalDesigners": "Digital designers:",
-      "webDevelopers": "Webbutvecklare:",
-      "loadingUsers": "Laddar...",
       "seeRules": "Se spelregler"
     },
     "en": {
@@ -35,12 +33,10 @@
       "description1": "The game that makes it easy to start talking. Collect points by asking questions and being active in the game.",
       "description2": "The more questions you ask, the higher you climb on the scoreboard.",
       "registeredPlayers": "Registered players",
-      "digitalDesigners": "Digital designers:",
-      "webDevelopers": "Web developers:",
-      "loadingUsers": "Loading...",
       "seeRules": "See rules"
     }
   },
+
   "instructions": {
     "sv": [
       {
@@ -95,6 +91,43 @@
       }
     ]
   },
+
+
+  "createProfile": {
+    "sv": {
+      "heading": "Skapa din karaktär",
+      "description": "Skapa din avatar för att komma igång.",
+      "name": "Namn",
+      "namePlaceholder": "Ange ditt namn",
+      "chooseClass": "Välj klass",
+      "chooseAvatar": "Välj din avatar",
+      "submit": "Skapa profil"
+    },
+    "en": {
+      "heading": "Create your character",
+      "description": "Create your avatar to get started.",
+      "name": "Name",
+      "namePlaceholder": "Enter your name",
+      "chooseClass": "Choose class",
+      "chooseAvatar": "Choose your avatar",
+      "submit": "Create profile"
+    }
+  },
+
+
+  "finishedProfile": {
+    "sv": {
+      "heading": "Du är redo!",
+      "description": "Dags att börja samla poäng och starta samtal.",
+      "button": "Börja spela!"
+    },
+    "en": {
+      "heading": "You are ready!",
+      "description": "It's time to collect points by starting conversations.",
+      "button": "Start playing!"
+    }
+  },
+
   "chooseDifficulty": {
     "sv": {
       "heading": "Välj din nivå",
@@ -117,6 +150,7 @@
       "hardcorePoints": "5p"
     }
   },
+
   "questions": {
     "sv": {
       "level": "Nivå:",
@@ -137,6 +171,7 @@
       "done": "Done"
     }
   },
+
   "score": {
     "sv": {
       "heading": "Scoreboard",
@@ -149,26 +184,7 @@
       "loading": "Loading scoreboard..."
     }
   },
-  "createProfile": {
-    "sv": {
-      "heading": "Skapa din karaktär",
-      "description": "Skapa din avatar för att komma igång.",
-      "name": "Namn",
-      "namePlaceholder": "Ange ditt namn",
-      "chooseClass": "Välj klass",
-      "chooseAvatar": "Välj din avatar",
-      "submit": "Skapa profil"
-    },
-    "en": {
-      "heading": "Create your character",
-      "description": "Create your avatar to get started.",
-      "name": "Name",
-      "namePlaceholder": "Enter your name",
-      "chooseClass": "Choose class",
-      "chooseAvatar": "Choose your avatar",
-      "submit": "Create profile"
-    }
-  },
+
   "common": {
     "sv": {
       "back": "Tillbaka",
@@ -177,7 +193,9 @@
       "save": "Spara",
       "saving": "Sparar...",
       "webDeveloper": "Webbutvecklare",
-      "digitalDesigner": "Digital designer"
+      "webDevelopers": "Webbutvecklare:",
+      "digitalDesigner": "Digital designer",
+      "digitalDesigners": "Digital designers:"
     },
     "en": {
       "back": "Back",
@@ -186,7 +204,9 @@
       "save": "Save",
       "saving": "Saving...",
       "webDeveloper": "Web developer",
-      "digitalDesigner": "Digital designer"
+      "webDevelopers": "Web developers:",
+      "digitalDesigner": "Digital designer",
+      "digitalDesigners": "Digital designers:"
     }
   }
 }
