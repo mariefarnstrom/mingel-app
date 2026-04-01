@@ -5,6 +5,7 @@ export const LeaderBoard = styled.div`
     border-radius: 10px;
     overflow: hidden;
     font-family: var(--font-heading);
+    background-color: var(--bg);
 `;
 
 export const LeaderBoardRow = styled.div`
