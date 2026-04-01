@@ -21,7 +21,7 @@ export const BaseCard = styled.div`
         letter-spacing: -0.022em;
     }
 
-    // Instructions step indicator
+    /* Instructions step indicator */
     .progressIndicatorContainer {
         display: flex;
         justify-content: center;
