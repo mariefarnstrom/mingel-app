@@ -12,20 +12,58 @@ export const LeaderBoardRow = styled.div`
     border-bottom: 2px solid var(--text);
     display: grid;
     grid-template-columns: 4.7rem 1fr 5rem;
+    align-items: center;
 `;
 
 export const Rank = styled.div`
+    height: 100%;
     border-right: 2px solid var(--text);
+    font-size: 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`;
+
+export const UserWrapper = styled.div`
+    display: flex;
+    align-items: center;
+`;
+
+export const UserAvatar = styled.div`
+    height: 2.375rem;
+    aspect-ratio: 1 / 1;
+    margin-left: 0.5rem;
+
+    svg {
+        max-width: 80%;
+        max-height: 80%;
+    }
 `;
 
 export const UserInfo = styled.div`
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1rem;
     span {
         color: var(--text);
+        text-align: start;
+    }
+
+    span:nth-of-type(2) {
+        color: var(--accent);
+        font-size: 0.875rem;
     }
 `;
 
 export const UserScore = styled.div`
     span {
         color: var(--accent);
+        font-size: 1.5rem;
+        margin-right: 0.5rem;
+    }
+
+    span svg {
+        width: 1rem;
+        height: auto;
     }
 `;

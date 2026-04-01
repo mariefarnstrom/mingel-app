@@ -6,7 +6,7 @@
       "scoreboard": "Scoreboard",
       "changeProfile": "Ändra profil",
       "createProfile": "Skapa profil",
-      "toQuestions": "Till frågor",
+      "toQuestions": "Gå till frågor",
       "toggleLanguage": "Switch to English"
     },
     "en": {
@@ -15,11 +15,10 @@
       "scoreboard": "Scoreboard",
       "changeProfile": "Change profile",
       "createProfile": "Create profile",
-      "toQuestions": "To questions",
+      "toQuestions": "Go to questions",
       "toggleLanguage": "Ändra till svenska"
     }
   },
-
   "home": {
     "sv": {
       "title": "Välkommen till YrgoXP",
@@ -27,7 +26,7 @@
       "description2": "Ju fler frågor du ställer, desto högre klättrar du på scoreboarden.",
       "registeredPlayers": "Registrerade spelare",
       "seeRules": "Se spelregler",
-      "errorFetching":"Kunde inte hämta spelare. Försök igen."
+      "errorFetching": "Kunde inte hämta spelare. Försök igen."
     },
     "en": {
       "title": "Welcome to YrgoXP",
@@ -35,10 +34,9 @@
       "description2": "The more questions you ask, the higher you climb on the scoreboard.",
       "registeredPlayers": "Registered players",
       "seeRules": "See rules",
-      "errorFetching":"Could not fetch players. Try again."
+      "errorFetching": "Could not fetch players. Try again."
     }
   },
-
   "instructions": {
     "heading": {
       "sv": "Spelregler",
@@ -97,8 +95,6 @@
       }
     ]
   },
-
-
   "createProfile": {
     "sv": {
       "heading": "Skapa din karaktär",
@@ -121,8 +117,6 @@
       "nameExists": "A player with this name already exists. Choose another."
     }
   },
-
-
   "finishedProfile": {
     "sv": {
       "heading": "Du är redo!",
@@ -135,7 +129,6 @@
       "button": "Start playing!"
     }
   },
-
   "chooseDifficulty": {
     "sv": {
       "heading": "Välj din nivå",
@@ -158,7 +151,6 @@
       "hardcorePoints": "5p"
     }
   },
-
   "questions": {
     "sv": {
       "level": "Nivå",
@@ -187,7 +179,6 @@
       "errorUpdatingScore": "Could not update score. Try again."
     }
   },
-
   "score": {
     "sv": {
       "heading": "Scoreboard",
@@ -202,7 +193,6 @@
       "errorFetching": "Could not fetch scoreboard. Try again."
     }
   },
-
   "common": {
     "sv": {
       "back": "Tillbaka",
