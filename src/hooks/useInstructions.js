@@ -26,6 +26,8 @@ export function useInstructions() {
     const previousStep = () => {
         if (currentIndex > 0) {
             setCurrentIndex(prev => prev - 1);
+        } else {
+            navigate(-1);
         }
     };
 

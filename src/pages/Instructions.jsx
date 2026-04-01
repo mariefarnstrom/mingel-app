@@ -63,7 +63,7 @@ export default function Instructions() {
             </BaseCard>
 
             <ButtonRow>
-                <SmallLightButton onClick={previousStep} disabled={stepNumber === 1}>
+                <SmallLightButton onClick={previousStep}>
                     <img src="backwardsArrow.svg" alt="back" />
                     TILLBAKA
                 </SmallLightButton>
