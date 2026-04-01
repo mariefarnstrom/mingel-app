@@ -1,6 +1,9 @@
+import { Navigate, useNavigate } from "react-router-dom";
+
 // Components
 import { HeadingCard } from "../components/cards/Cards";
 import { LeaderBoard, LeaderBoardRow, Rank, UserInfo, UserScore } from "../components/LeaderBoard.styles";
+import { ErrorModal } from "../components/ErrorModal";
 
 // Data / Language
 import { useScore } from "../hooks/useScore";
@@ -9,7 +12,13 @@ import translations from "../translations/translations.json";
 
 export default function Score() {
 
-    const { users, loading, error } = useScore();
+    const { 
+        users, 
+        loading, 
+        errorMessage
+    } = useScore();
+
+    const navigate = useNavigate();
     const { lang } = useLanguage();
     const text = translations.score[lang];
     const textCommon = translations.common[lang];
@@ -23,6 +32,8 @@ export default function Score() {
 
     return (
         <>
+            {errorMessage && <ErrorModal errorMessage={errorMessage} onClose={() => navigate(-1)} />}
+
             <HeadingCard>
                 <h3>{text.heading.toUpperCase()}</h3>
                 <p>{text.description}</p>

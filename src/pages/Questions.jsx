@@ -11,6 +11,7 @@ import { NewQuestionButton } from "../components/buttons/Button";
 // Language
 import { useLanguage } from "../hooks/useLanguage";
 import translation from "../translations/translations.json";
+import { ErrorModal } from "../components/ErrorModal";
 
 
 export default function Questions() {
@@ -25,17 +26,23 @@ export default function Questions() {
         questions,
         loading,
         currentId,
+        errorMessage,
+        setErrorMessage,
         setRandomQuestion,
         handleCompleted
     } = useQuestions(level);
 
     // Loading view
     if (loading) return <p>{text.loading}</p>
-    if (questions.length === 0) return <p>{text.notFound}</p>;
+    if (questions.length === 0) return (
+        <ErrorModal errorMessage={text.notFound} onClose={() => navigate(-1)} />
+    );
     if (currentId === null) return <p>{text.loading}</p>;
 
     return (
         <>
+            {errorMessage && <ErrorModal errorMessage={errorMessage} onClose={() => setErrorMessage("")} />}
+
             <HeadingCard>
                 <h3>{text.level.toUpperCase()}: {questions[currentId].level.toUpperCase()}</h3>
                 <p>{questions[currentId].level} {text.points}</p>
