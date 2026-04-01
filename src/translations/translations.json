@@ -67,7 +67,7 @@
         "id": 4,
         "icon": "star",
         "title": "Samla poäng",
-        "description": "Easy ger 1poäng, Medium 2 och Hardcore 5. Klättra på Scoreboarden och se live hur du ligger till."
+        "description": "Easy ger 1 poäng, Medium 2 och Hardcore 5. Klättra på Scoreboarden och se live hur du ligger till."
       }
     ],
     "en": [
@@ -93,7 +93,7 @@
         "id": 4,
         "icon": "star",
         "title": "Collect points",
-        "description": "Easy gives 1 point, Medium 3, and Hardcore 5. Climb the Scoreboard and see your rank live."
+        "description": "Easy gives 1 point, Medium 2, and Hardcore 5. Climb the Scoreboard and see your rank live."
       }
     ]
   },
