@@ -2,8 +2,10 @@ import { SmallLightButton, SmallButton } from "../components/buttons/Button";
 import { ButtonRow } from "../components/buttons/ButtonRow";
 import { HeadingCard, BaseCard, InstructionsCard, BigIconCard } from "../components/cards/Cards"
 
-// Data
+// Data / Language
 import { useInstructions } from "../hooks/useInstructions";
+import { useLanguage } from "../hooks/useLanguage";
+import translations from "../translations/translations.json";
 
 // Icons
 import GhostIcon from "../components/icons/Ghost";
@@ -20,26 +22,26 @@ const iconMap = {
 
 export default function Instructions() {
 
+    const { lang } = useLanguage();
+    const text = translations.instructions[lang];
+    const textCommon = translations.common[lang];
+    const heading = translations.instructions.heading[lang];
+    
     const { currentStep,
         stepNumber,
         totalSteps,
-        lang,
         colorMode,
         nextStep,
         previousStep
     } = useInstructions();
-
+    
     if (!currentStep) return <p>Laddar...</p>;
-
     const CurrentIcon = iconMap[currentStep.icon];
 
     return (
         <>
-
-            <h1>Instructions</h1>
-
             <HeadingCard>
-                <h3>SPELREGLER</h3>
+                <h3>{heading.toUpperCase()}</h3>
             </HeadingCard>
 
             <BigIconCard>
@@ -47,8 +49,8 @@ export default function Instructions() {
             </BigIconCard>
 
             <InstructionsCard>
-                <h3>{currentStep[lang].title.toUpperCase()}</h3>
-                <p>{currentStep[lang].description}</p>
+                <h3>{currentStep.title.toUpperCase()}</h3>
+                <p>{currentStep.description}</p>
             </InstructionsCard>
 
             <BaseCard>
@@ -65,10 +67,10 @@ export default function Instructions() {
             <ButtonRow>
                 <SmallLightButton onClick={previousStep}>
                     <img src="backwardsArrow.svg" alt="back" />
-                    TILLBAKA
+                    {textCommon.back.toUpperCase()}
                 </SmallLightButton>
                 <SmallButton onClick={nextStep}>
-                    NÄSTA
+                    {textCommon.next.toUpperCase()}
                     <img src="forwardArrow.svg" alt="forward" />
                 </SmallButton>
             </ButtonRow>

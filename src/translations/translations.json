@@ -1,0 +1,218 @@
+{
+  "header": {
+    "sv": {
+      "home": "Hem",
+      "rules": "Regler",
+      "scoreboard": "Scoreboard",
+      "changeProfile": "Ändra profil",
+      "createProfile": "Skapa profil",
+      "toQuestions": "Till frågor",
+      "toggleLanguage": "Switch to English"
+    },
+    "en": {
+      "home": "Home",
+      "rules": "Rules",
+      "scoreboard": "Scoreboard",
+      "changeProfile": "Change profile",
+      "createProfile": "Create profile",
+      "toQuestions": "To questions",
+      "toggleLanguage": "Ändra till svenska"
+    }
+  },
+
+  "home": {
+    "sv": {
+      "title": "Välkommen till YrgoXP",
+      "description1": "Spelet som gör det enkelt att börja prata. Samla poäng genom att ställa frågor och vara aktiv i spelet.",
+      "description2": "Ju fler frågor du ställer, desto högre klättrar du på scoreboarden.",
+      "registeredPlayers": "Registrerade spelare",
+      "seeRules": "Se spelregler"
+    },
+    "en": {
+      "title": "Welcome to YrgoXP",
+      "description1": "The game that makes it easy to start talking. Collect points by asking questions and being active in the game.",
+      "description2": "The more questions you ask, the higher you climb on the scoreboard.",
+      "registeredPlayers": "Registered players",
+      "seeRules": "See rules"
+    }
+  },
+
+  "instructions": {
+    "heading": {
+      "sv": "Spelregler",
+      "en": "Rules"
+    },
+    "sv": [
+      {
+        "id": 1,
+        "icon": "ghost",
+        "title": "Skapa profil",
+        "description": "Välj namn och avatar för att komma igång."
+      },
+      {
+        "id": 2,
+        "icon": "rocket",
+        "title": "Välj nivå",
+        "description": "Välj mellan Easy, Medium eller Hardcore. Svårare frågor ger mer poäng."
+      },
+      {
+        "id": 3,
+        "icon": "megaphone",
+        "title": "Ställ frågan",
+        "description": "Gå fram till ett företag och ställ frågan för att starta ett samtal. Tryck \"Klar\" sen."
+      },
+      {
+        "id": 4,
+        "icon": "star",
+        "title": "Samla poäng",
+        "description": "Easy ger 1poäng, Medium 2 och Hardcore 5. Klättra på Scoreboarden och se live hur du ligger till."
+      }
+    ],
+    "en": [
+      {
+        "id": 1,
+        "icon": "ghost",
+        "title": "Create profile",
+        "description": "Choose a name and avatar to get started."
+      },
+      {
+        "id": 2,
+        "icon": "rocket",
+        "title": "Choose level",
+        "description": "Choose between Easy, Medium, or Hardcore. Harder questions reward more points."
+      },
+      {
+        "id": 3,
+        "icon": "megaphone",
+        "title": "Ask the question",
+        "description": "Approach a company and ask the question to start a conversation. Then press 'Done'."
+      },
+      {
+        "id": 4,
+        "icon": "star",
+        "title": "Collect points",
+        "description": "Easy gives 1 point, Medium 3, and Hardcore 5. Climb the Scoreboard and see your rank live."
+      }
+    ]
+  },
+
+
+  "createProfile": {
+    "sv": {
+      "heading": "Skapa din karaktär",
+      "description": "Skapa din avatar för att komma igång.",
+      "name": "Namn",
+      "namePlaceholder": "Ange ditt namn",
+      "chooseClass": "Välj klass",
+      "chooseAvatar": "Välj din avatar",
+      "submit": "Skapa profil"
+    },
+    "en": {
+      "heading": "Create your character",
+      "description": "Create your avatar to get started.",
+      "name": "Name",
+      "namePlaceholder": "Enter your name",
+      "chooseClass": "Choose class",
+      "chooseAvatar": "Choose your avatar",
+      "submit": "Create profile"
+    }
+  },
+
+
+  "finishedProfile": {
+    "sv": {
+      "heading": "Du är redo!",
+      "description": "Dags att börja samla poäng och starta samtal.",
+      "button": "Börja spela!"
+    },
+    "en": {
+      "heading": "You are ready!",
+      "description": "It's time to collect points by starting conversations.",
+      "button": "Start playing!"
+    }
+  },
+
+  "chooseDifficulty": {
+    "sv": {
+      "heading": "Välj din nivå",
+      "description": "Hur utmanande vill du att din fråga ska vara?",
+      "easy": "Easy",
+      "medium": "Medium",
+      "hardcore": "Hardcore",
+      "easyPoints": "1p",
+      "mediumPoints": "3p",
+      "hardcorePoints": "5p"
+    },
+    "en": {
+      "heading": "Choose your level",
+      "description": "How challenging do you want your question to be?",
+      "easy": "Easy",
+      "medium": "Medium",
+      "hardcore": "Hardcore",
+      "easyPoints": "1p",
+      "mediumPoints": "3p",
+      "hardcorePoints": "5p"
+    }
+  },
+
+  "questions": {
+    "sv": {
+      "level": "Nivå",
+      "loading": "Laddar fråga...",
+      "notFound": "Inga frågor hittades. Försök igen.",
+      "points": "poäng",
+      "generateNew": "Generera ny fråga",
+      "back": "Tillbaka",
+      "done": "Klar"
+    },
+    "en": {
+      "level": "Level",
+      "loading": "Loading question...",
+      "notFound": "No questions found. Try again.",
+      "points": "points",
+      "generateNew": "Generate new question",
+      "back": "Back",
+      "done": "Done"
+    }
+  },
+
+  "score": {
+    "sv": {
+      "heading": "Scoreboard",
+      "description": "Se vem som leder just nu!",
+      "loading": "Laddar scoreboard..."
+    },
+    "en": {
+      "heading": "Scoreboard",
+      "description": "See who's leading right now!",
+      "loading": "Loading scoreboard..."
+    }
+  },
+
+  "common": {
+    "sv": {
+      "back": "Tillbaka",
+      "next": "Nästa",
+      "done": "Klar",
+      "loading": "Laddar...",
+      "save": "Spara",
+      "saving": "Sparar...",
+      "webDeveloper": "Webbutvecklare",
+      "webDevelopers": "Webbutvecklare",
+      "digitalDesigner": "Digital designer",
+      "digitalDesigners": "Digital designers"
+    },
+    "en": {
+      "back": "Back",
+      "next": "Next",
+      "done": "Done",
+      "loading": "Loading...",
+      "save": "Save",
+      "saving": "Saving...",
+      "webDeveloper": "Web developer",
+      "webDevelopers": "Web developers",
+      "digitalDesigner": "Digital designer",
+      "digitalDesigners": "Digital designers"
+    }
+  }
+}

@@ -1,6 +1,9 @@
 import { ToggleContainer, ToggleButton, Slider } from "./LanguageToggle.styles";
+import { useLanguage } from "../hooks/useLanguage";
 
-export default function LanguageToggle({ lang, setLang }) {
+export default function LanguageToggle() {
+    const { lang, setLang } = useLanguage();
+    
     return (
         <ToggleContainer role="group" aria-label="Choose language">
             <ToggleButton

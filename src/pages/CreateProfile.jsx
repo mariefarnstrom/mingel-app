@@ -1,5 +1,9 @@
 import useCreateProfile from '../hooks/useCreateProfile';
 
+// Language
+import { useLanguage } from '../hooks/useLanguage';
+import translations from "../translations/translations.json";
+
 // Components
 import { ButtonRow } from "../components/buttons/ButtonRow";
 import { SmallButton, SmallLightButton } from "../components/buttons/Button";
@@ -35,24 +39,26 @@ export default function CreateProfile() {
         navigate,
     } = useCreateProfile();
 
+    const { lang } = useLanguage();
+    const text = translations.createProfile[lang];
+    const textCommon = translations.common[lang];
+
     return (
         <>
             {errorMessage && <ErrorModal errorMessage={errorMessage} onClose={() => setErrorMessage("")} />}
 
             <HeadingCard>
-                <h3>SKAPA DIN KARAKTÄR</h3>
-                <p>
-                    Skapa din avatar för att komma igång.
-                </p>
+                <h3>{text.heading.toUpperCase()}</h3>
+                <p>{text.description}</p>
             </HeadingCard>
 
             <form onSubmit={handleSubmit}>
 
             <CreateProfileWrapper>
-                <h3>NAMN</h3>
+                <h3>{text.name.toUpperCase()}</h3>
                 <TextInput 
                     type="text" 
-                    placeholder="Ange ditt namn"
+                    placeholder={text.namePlaceholder}
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     required
@@ -62,7 +68,7 @@ export default function CreateProfile() {
             </CreateProfileWrapper>
 
             <CreateProfileWrapper>
-                <h3>VÄLJ KLASS</h3>
+                <h3>{text.chooseClass.toUpperCase()}</h3>
                 <ButtonRow>
                     <StyledOption>
                         <input 
@@ -73,7 +79,7 @@ export default function CreateProfile() {
                             onChange={(e) => setRole(e.target.value)}
                             required
                         />
-                        <div>WEBBUTVECKLARE</div>
+                        <div>{textCommon.webDeveloper.toUpperCase()}</div>
                     </StyledOption>
 
                     <StyledOption>
@@ -84,14 +90,14 @@ export default function CreateProfile() {
                             checked={role === 'DD'}
                             onChange={(e) => setRole(e.target.value)}
                             required
-                        />
-                        <div>DIGITALDESIGNER</div>
+                            />
+                        <div>{textCommon.digitalDesigner.toUpperCase()}</div>
                     </StyledOption>
                 </ButtonRow>
             </CreateProfileWrapper>
 
             <CreateProfileWrapper>
-                <h3>VÄLJ DIN AVATAR</h3>
+                <h3>{text.chooseAvatar.toUpperCase()}</h3>
                 
                 <AvatarContainer>
                     <AvatarOption>
@@ -179,10 +185,10 @@ export default function CreateProfile() {
             <ButtonRow>
                 <SmallLightButton type="button" onClick={() => navigate(-1)}>
                     <img src="backwardsArrow.svg" alt="back" />
-                    TILLBAKA
+                    {textCommon.back.toUpperCase()}
                 </SmallLightButton>
                 <SmallButton type="submit" disabled={loading}>
-                    {loading ? 'SPARAR...' : 'SPARA'}
+                    {loading ? textCommon.saving.toUpperCase() : textCommon.save.toUpperCase()}
                     <img src="forwardArrow.svg" alt="forward" />
                 </SmallButton>
             </ButtonRow>
