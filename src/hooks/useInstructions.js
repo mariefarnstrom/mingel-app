@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-// Languge
+// Language
 import { useLanguage } from "./useLanguage";
 import translations from "../translations/translations.json";
 

@@ -22,6 +22,9 @@ const iconMap = {
 
 export default function Instructions() {
 
+    const { lang } = useLanguage();
+    const textCommon = translations.common[lang];
+    
     const { currentStep,
         stepNumber,
         totalSteps,
@@ -29,13 +32,9 @@ export default function Instructions() {
         nextStep,
         previousStep
     } = useInstructions();
-
+    
     if (!currentStep) return <p>Laddar...</p>;
-
     const CurrentIcon = iconMap[currentStep.icon];
-    const { lang } = useLanguage();
-    const text = translations.instructions[lang];
-    const textCommon = translations.common[lang];
 
     return (
         <>

@@ -61,7 +61,7 @@
         "id": 4,
         "icon": "star",
         "title": "Samla poäng",
-        "description": "Easy ger 1 poäng, Medium 3 och Hardcore 5. Klättra på Scoreboarden och se live hur du ligger till."
+        "description": "Easy ger 1 poäng, Medium 2 och Hardcore 5. Klättra på Scoreboarden och se live hur du ligger till."
       }
     ],
     "en": [
@@ -206,9 +206,9 @@
       "save": "Save",
       "saving": "Saving...",
       "webDeveloper": "Web developer",
-      "webDevelopers": "Web developers:",
+      "webDevelopers": "Web developers",
       "digitalDesigner": "Digital designer",
-      "digitalDesigners": "Digital designers:"
+      "digitalDesigners": "Digital designers"
     }
   }
 }

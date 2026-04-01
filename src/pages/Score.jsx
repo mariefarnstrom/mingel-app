@@ -32,16 +32,14 @@ export default function Score() {
                 {users.map((user, index) => (
                     <LeaderBoardRow key={user.id}>
                         <Rank>
-                            <p>
-                                {index + 1}
-                            </p>
+                            <span>{index + 1}</span>
                         </Rank>
                         <UserInfo>
-                            <p>{user.name}</p>
-                            <p>{roleMap[user.role]}</p>
+                            <span>{user.name}</span>
+                            <span>{roleMap[user.role]}</span>
                         </UserInfo>
                         <UserScore>
-                            <p>{user.score}p</p>
+                            <span>{user.score}p</span>
                         </UserScore>
 
                     </LeaderBoardRow>
