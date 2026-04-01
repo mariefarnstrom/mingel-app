@@ -30,7 +30,7 @@ export default function useCreateProfile() {
         setErrorMessage("");
 
         try {
-            // If profile exixts - Update
+            // If profile exists - Update
             if (existingProfile) {
                 const profileData = { 
                     name: existingProfile.name, 
