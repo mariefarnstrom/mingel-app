@@ -156,10 +156,7 @@
       "name": "Namn",
       "namePlaceholder": "Ange ditt namn",
       "chooseClass": "Välj klass",
-      "webDeveloper": "Webbutvecklare",
-      "digitalDesigner": "Digitaldesigner",
       "chooseAvatar": "Välj din avatar",
-      "back": "Tillbaka",
       "submit": "Skapa profil"
     },
     "en": {
@@ -168,10 +165,7 @@
       "name": "Name",
       "namePlaceholder": "Enter your name",
       "chooseClass": "Choose class",
-      "webDeveloper": "Web developer",
-      "digitalDesigner": "Digital designer",
       "chooseAvatar": "Choose your avatar",
-      "back": "Back",
       "submit": "Create profile"
     }
   },
@@ -179,12 +173,20 @@
     "sv": {
       "back": "Tillbaka",
       "next": "Nästa",
-      "loading": "Laddar..."
+      "loading": "Laddar...",
+      "save": "Spara",
+      "saving": "Sparar...",
+      "webDeveloper": "Webbutvecklare",
+      "digitalDesigner": "Digital designer"
     },
     "en": {
       "back": "Back",
       "next": "Next",
-      "loading": "Loading..."
+      "loading": "Loading...",
+      "save": "Save",
+      "saving": "Saving...",
+      "webDeveloper": "Web developer",
+      "digitalDesigner": "Digital designer"
     }
   }
 }
