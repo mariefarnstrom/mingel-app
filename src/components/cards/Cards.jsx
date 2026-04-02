@@ -50,6 +50,10 @@ export const HeadingCard = styled(BaseCard)`
         max-width: 80%;
         align-self: center;
     }
+
+    h3 {
+        font-size: 2rem;
+    }
 `
 
 // Onboarding instructions
