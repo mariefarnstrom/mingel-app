@@ -44,7 +44,7 @@ export default function useCreateProfile() {
             
             // Ensure minimum name length (2 characters) to prevent empty or single-character names
             if (trimmedName.length < 2) {
-                throw new Error("Name must be at least 2 characters long");
+                throw new Error(text.errorNameLength);
             }
 
             // If profile exists - Update

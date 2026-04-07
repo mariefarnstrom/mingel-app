@@ -106,7 +106,8 @@
       "submit": "Skapa profil",
       "nameExists": "Det finns redan en spelare med det här namnet. Välj ett annat.",
       "errorRole": "Du måste välja en klass.",
-      "errorAvatar": "Du måste välja en avatar."
+      "errorAvatar": "Du måste välja en avatar.",
+      "errorNameLength": "Ditt namn måste vara minst två tecken långt."
     },
     "en": {
       "heading": "Create your character",
@@ -118,7 +119,8 @@
       "submit": "Create profile",
       "nameExists": "A player with this name already exists. Choose another.",
       "errorRole": "Please select a class.",
-      "errorAvatar": "Please select an avatar."
+      "errorAvatar": "Please select an avatar.",
+      "errorNameLength": "Name must be at least two characters long."
     }
   },
   "finishedProfile": {
