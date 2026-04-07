@@ -90,7 +90,7 @@ export default function Score() {
                                 <span>{String(index + 1).padStart(2, "0")}</span>
                             </Rank>
                             <UserWrapper>
-                                <UserAvatar>
+                                <UserAvatar thisUser={thisUser}>
                                     {ScoreboardIcon && <ScoreboardIcon />}
                                 </UserAvatar>
                                 <UserInfo thisUser={thisUser}>

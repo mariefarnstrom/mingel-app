@@ -43,6 +43,7 @@ export const UserAvatar = styled.div`
     svg {
         max-width: 100%;
         max-height: 100%;
+        color: ${({ thisUser }) => (thisUser ? "var(--bg)" : "var(--text)")};
     }
 `;
 
