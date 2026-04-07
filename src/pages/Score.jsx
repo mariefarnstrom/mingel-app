@@ -3,10 +3,10 @@ import { useEffect, useRef } from "react";
 
 // Components
 import { HeadingCard } from "../components/cards/Cards";
-import { LeaderBoard, LeaderBoardRow, Rank, UserWrapper, UserAvatar, UserInfo, UserScore } from "../components/LeaderBoard.styles";
+import { LeaderBoardWrapper, LeaderBoard, LeaderBoardRow, Rank, UserWrapper, UserAvatar, UserInfo, UserScore } from "../components/LeaderBoard.styles";
 import { ErrorModal } from "../components/ErrorModal";
 import { SmallButton, SmallLightButton } from "../components/buttons/Button";
-import { ButtonRow } from "../components/buttons/ButtonRow";
+import { ButtonRowScoreboard } from "../components/buttons/ButtonRow";
 
 // Data / Language
 import { useScore } from "../hooks/useScore";
@@ -42,7 +42,7 @@ export default function Score() {
     }, [users])
 
     const { profile } = useProfile();
-    const thisUserName = profile.name;
+    const thisUserName = profile?.name;
 
     const navigate = useNavigate();
     const { lang } = useLanguage();
@@ -71,45 +71,48 @@ export default function Score() {
         <>
             {errorMessage && <ErrorModal errorMessage={errorMessage} onClose={() => navigate(-1)} />}
 
-            <HeadingCard>
-                <h3>{text.heading.toUpperCase()}</h3>
-                <p>{text.description}</p>
-            </HeadingCard>
+            <LeaderBoardWrapper>
+                <HeadingCard>
+                    <h3>{text.heading.toUpperCase()}</h3>
+                    <p>{text.description}</p>
+                </HeadingCard>
+            
+                <LeaderBoard>
+                    {users.map((user, index) => {
+                        const ScoreboardIcon = iconMap[user.avatar];
+                        const thisUser = user.name === thisUserName;
+                        return (
+                            <LeaderBoardRow
+                                key={user.id}
+                                ref={thisUser ? userRowRef : null}
+                                thisUser={thisUser}
+                            >
+                                <Rank thisUser={thisUser}>
+                                    <span>{String(index + 1).padStart(2, "0")}</span>
+                                </Rank>
+                                <UserWrapper>
+                                    <UserAvatar thisUser={thisUser}>
+                                        {ScoreboardIcon && <ScoreboardIcon />}
+                                    </UserAvatar>
+                                    <UserInfo thisUser={thisUser}>
+                                        <span>
+                                            {user.name}
+                                        </span>
+                                        <span>
+                                            {roleMap[user.role].toUpperCase()}
+                                        </span>
+                                    </UserInfo>
+                                </UserWrapper>
+                                <UserScore>
+                                    <span>{user.score}p <img src="/flame-icon.svg" alt="" aria-hidden="true" /></span>
+                                </UserScore>
+                            </LeaderBoardRow>
+                        )
+                    })}
+                </LeaderBoard>
+            </LeaderBoardWrapper>
 
-            <LeaderBoard>
-                {users.map((user, index) => {
-                    const ScoreboardIcon = iconMap[user.avatar];
-                    const thisUser = user.name === thisUserName;
-                    return (
-                        <LeaderBoardRow
-                            key={user.id}
-                            ref={thisUser ? userRowRef : null}
-                            thisUser={thisUser}
-                        >
-                            <Rank thisUser={thisUser}>
-                                <span>{String(index + 1).padStart(2, "0")}</span>
-                            </Rank>
-                            <UserWrapper>
-                                <UserAvatar thisUser={thisUser}>
-                                    {ScoreboardIcon && <ScoreboardIcon />}
-                                </UserAvatar>
-                                <UserInfo thisUser={thisUser}>
-                                    <span>
-                                        {user.name}
-                                    </span>
-                                    <span>
-                                        {roleMap[user.role].toUpperCase()}
-                                    </span>
-                                </UserInfo>
-                            </UserWrapper>
-                            <UserScore>
-                                <span>{user.score}p <img src="/flame-icon.svg" alt="" aria-hidden="true" /></span>
-                            </UserScore>
-                        </LeaderBoardRow>
-                    )
-                })}
-            </LeaderBoard>
-            <ButtonRow>
+            <ButtonRowScoreboard>
                 <SmallLightButton type="button" onClick={() => navigate(-1)}>
                     <img src="backwardsArrow.svg" alt="back" />
                     {textCommon.back.toUpperCase()}
@@ -118,7 +121,7 @@ export default function Score() {
                     {textCommon.next.toUpperCase()}
                     <img src="forwardArrow.svg" alt="forward" />
                 </SmallButton>
-            </ButtonRow>
+            </ButtonRowScoreboard>
         </>
     );
 

@@ -1,11 +1,27 @@
 import styled from "@emotion/styled";
 
+export const LeaderBoardWrapper = styled.section`
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+    overflow: hidden;
+    padding-bottom: 6.25rem;
+`
+
 export const LeaderBoard = styled.div`
     border: 2px solid var(--text);
     border-radius: 10px;
-    overflow: hidden;
+
     font-family: var(--font-heading);
     background-color: var(--bg);
+    margin-bottom: 0.5rem;
+
+    flex: 1;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-behavior: smooth;
 `;
 
 export const LeaderBoardRow = styled.div`
