@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
-// Data
+// Data / Language
 import { supabase } from '../lib/supabaseClient';
 import { useProfile } from "../hooks/useProfile";
 import { useLanguage } from "../hooks/useLanguage";
@@ -30,6 +30,23 @@ export default function useCreateProfile() {
         setErrorMessage("");
 
         try {
+
+            // Check that role and avatar are selected
+            if (!role) {
+                throw new Error(text.errorRole)
+            }
+            if (!avatar) {
+                throw new Error(text.errorAvatar)
+            }
+
+            // Trim and validate the name input
+            const trimmedName = name.trim();
+            
+            // Ensure minimum name length (2 characters) to prevent empty or single-character names
+            if (trimmedName.length < 2) {
+                throw new Error("Name must be at least 2 characters long");
+            }
+
             // If profile exists - Update
             if (existingProfile) {
                 const profileData = { 
@@ -49,11 +66,11 @@ export default function useCreateProfile() {
                 console.log("Profile updated!", data);
                 navigate('/finished-profile');
             } else {
-                // If new profile - check for duplicate name
+                // Check for duplicate name using case-insensitive search to prevent duplicate entries
                 const { data: existingUser, error: checkError } = await supabase
                     .from('users')
                     .select('name')
-                    .eq('name', name)
+                    .ilike('name', trimmedName)
                     .maybeSingle();
 
                 if (checkError) throw checkError;
@@ -61,9 +78,9 @@ export default function useCreateProfile() {
                     throw new Error(text.nameExists);
                 }
 
-                // If unique name, create profile
+                // Create profile with trimmed, validated name
                 const profileData = { 
-                    name, 
+                    name: trimmedName, 
                     role, 
                     avatar 
                 };

@@ -81,6 +81,7 @@ h1,
 h2 {
   font-family: var(--font-heading);
   color: var(--text-h);
+  line-height: normal;
 }
 
 h3,
@@ -89,7 +90,7 @@ h5,
 h6 {
   font-family: var(--font-heading);
   color: var(--text);
-
+  line-height: normal;
 }
 
 h1 {
