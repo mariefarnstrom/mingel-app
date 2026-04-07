@@ -14,8 +14,8 @@ export const LeaderBoardRow = styled.div`
     display: grid;
     grid-template-columns: 4.7rem 1fr 5.3rem;
     align-items: center;
-    
     padding-right: 0.5rem;
+    background-color: ${({ thisUser }) => (thisUser ? "var(--text)" : "transparent")};
 `;
 
 export const Rank = styled.div`
@@ -25,6 +25,8 @@ export const Rank = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: white;
+    color: ${({ thisUser }) => (thisUser ? "var(--accent)" : "var(--text)")};
 `;
 
 export const UserWrapper = styled.div`
@@ -50,7 +52,7 @@ export const UserInfo = styled.div`
     line-height: 1.1rem;
 
     span {
-        color: var(--text);
+        color: ${({ thisUser }) => (thisUser ? "var(--bg)" : "var(--text)")};
         text-align: start;
     }
 
