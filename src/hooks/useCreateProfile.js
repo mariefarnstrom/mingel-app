@@ -47,6 +47,12 @@ export default function useCreateProfile() {
                 throw new Error(text.errorNameLength);
             }
 
+            const validName = /^[a-zA-Z0-9äöåÄÖÅ-]+$/.test(trimmedName);
+
+            if(!validName) {
+                throw new Error(text.errorChars)
+            }
+            
             // If profile exists - Update
             if (existingProfile) {
                 const profileData = { 
