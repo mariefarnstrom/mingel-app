@@ -6,6 +6,9 @@ import { BigButton } from "../components/buttons/Button";
 import { BigButtonsCard } from "../components/cards/Cards";
 import { GhostContainer } from "../components/GhostContainer";
 
+// Icons
+import GhostIcon from "../components/icons/Ghost";
+
 // Language
 import { useLanguage } from "../hooks/useLanguage";
 import translations from "../translations/translations.json";
@@ -43,7 +46,7 @@ export default function ChooseDifficulty() {
             </BigButtonsCard>
 
             <GhostContainer>
-                <img src="ghost.svg" alt="Ghost image" />
+                <GhostIcon />
             </GhostContainer>
 
         </>

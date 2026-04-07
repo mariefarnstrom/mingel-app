@@ -8,6 +8,9 @@ import { GhostContainer } from "../components/GhostContainer";
 import { RegisteredPlayersCard } from "../components/cards/Cards";
 import { ErrorModal } from "../components/ErrorModal";
 
+// Icons
+import GhostIcon from "../components/icons/Ghost";
+
 // Data / Language
 import { supabase } from "../lib/supabaseClient";
 import { useLanguage } from "../hooks/useLanguage";
@@ -73,7 +76,7 @@ export default function Home() {
             </RegisteredPlayersCard>
 
             <GhostContainer>
-                <img src="ghost.svg" alt="Ghost image" />
+                <GhostIcon />
             </GhostContainer>
 
             <WideButton onClick={() => navigate("/instructions")}>
