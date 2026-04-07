@@ -9,12 +9,12 @@ export const GhostContainer = styled.div`
     bottom: ${({ overlay }) => (overlay ? "7rem" : "auto")};
     top: ${({ overlay }) => (overlay ? "auto" : "0.7rem")};
 
-    img {
-    position: absolute;
-    top: 2rem;
-    left: 0;
-    transform: translateY(-50%);
-    animation: ${ghostMovement} 5s ease-in-out infinite;
-    width: 50px;
+    img, svg {
+        position: absolute;
+        top: 2rem;
+        left: 0;
+        transform: translateY(-50%);
+        animation: ${ghostMovement} 5s ease-in-out infinite;
+        width: 50px;
     }
 `;

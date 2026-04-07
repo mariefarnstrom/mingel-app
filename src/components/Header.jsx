@@ -7,12 +7,13 @@ import { GhostContainer } from "./GhostContainer";
 import { LanguageToggleDiv, MenuOverlay, StyledMenuLink } from "./MenuOverlay.styles";
 import LanguageToggle from "./LanguageToggle";
 
-// Translations
+// Icons
+import GhostIcon from "./icons/Ghost";
+
+// Data / Language
+import { useProfile } from "../hooks/useProfile";
 import { useLanguage } from "../hooks/useLanguage";
 import translations from "../translations/translations.json";
-
-// Data
-import { useProfile } from "../hooks/useProfile";
 
 
 export default function Header() {
@@ -83,7 +84,7 @@ export default function Header() {
                     </nav>
 
                     <GhostContainer overlay>
-                        <img src="/ghost.svg" alt="Ghost" />
+                        <GhostIcon />
                     </GhostContainer>
 
                     <LanguageToggleDiv>
