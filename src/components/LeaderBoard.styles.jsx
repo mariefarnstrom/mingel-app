@@ -4,21 +4,18 @@ export const LeaderBoardWrapper = styled.section`
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    flex: 1;
-    justify-content: flex-start;
-    height: 100dvh;
+    max-height: calc(100dvh - 200px);
 `
 
 export const LeaderBoard = styled.div`
     border: 2px solid var(--text);
     border-radius: 10px;
-    overflow: hidden;
 
     font-family: var(--font-heading);
     background-color: var(--bg);
+    margin-bottom: 0.5rem;
 
-    max-height: 33rem;
-    overflow-y: scroll;
+    overflow-y: auto;
     scroll-behavior: smooth;
 `;
 

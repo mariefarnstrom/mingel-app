@@ -8,3 +8,12 @@ export const ButtonRow = styled.div`
         flex: 1;
     }
 `;
+
+export const ButtonRowScoreboard = styled(ButtonRow)`
+    position: fixed;
+    bottom: 0;
+
+    padding: 1rem;
+    width: stretch;
+    align-self: center;
+`

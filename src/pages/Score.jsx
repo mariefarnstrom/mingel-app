@@ -6,7 +6,7 @@ import { HeadingCard } from "../components/cards/Cards";
 import { LeaderBoardWrapper, LeaderBoard, LeaderBoardRow, Rank, UserWrapper, UserAvatar, UserInfo, UserScore } from "../components/LeaderBoard.styles";
 import { ErrorModal } from "../components/ErrorModal";
 import { SmallButton, SmallLightButton } from "../components/buttons/Button";
-import { ButtonRow } from "../components/buttons/ButtonRow";
+import { ButtonRow, ButtonRowScoreboard } from "../components/buttons/ButtonRow";
 
 // Data / Language
 import { useScore } from "../hooks/useScore";
@@ -72,22 +72,11 @@ export default function Score() {
             {errorMessage && <ErrorModal errorMessage={errorMessage} onClose={() => navigate(-1)} />}
 
             <LeaderBoardWrapper>
-            <HeadingCard>
-                <h3>{text.heading.toUpperCase()}</h3>
-                <p>{text.description}</p>
-            </HeadingCard>
-
-            <ButtonRow>
-                    <SmallLightButton type="button" onClick={() => navigate(-1)}>
-                        <img src="backwardsArrow.svg" alt="back" />
-                        {textCommon.back.toUpperCase()}
-                    </SmallLightButton>
-                    <SmallButton type="button" onClick={() => navigate("/choose-difficulty")}>
-                        {textCommon.next.toUpperCase()}
-                        <img src="forwardArrow.svg" alt="forward" />
-                    </SmallButton>
-                </ButtonRow>
-        
+                <HeadingCard>
+                    <h3>{text.heading.toUpperCase()}</h3>
+                    <p>{text.description}</p>
+                </HeadingCard>
+            
                 <LeaderBoard>
                     {users.map((user, index) => {
                         const ScoreboardIcon = iconMap[user.avatar];
@@ -121,8 +110,18 @@ export default function Score() {
                         )
                     })}
                 </LeaderBoard>
-                
             </LeaderBoardWrapper>
+
+            <ButtonRowScoreboard>
+                <SmallLightButton type="button" onClick={() => navigate(-1)}>
+                    <img src="backwardsArrow.svg" alt="back" />
+                    {textCommon.back.toUpperCase()}
+                </SmallLightButton>
+                <SmallButton type="button" onClick={() => navigate("/choose-difficulty")}>
+                    {textCommon.next.toUpperCase()}
+                    <img src="forwardArrow.svg" alt="forward" />
+                </SmallButton>
+            </ButtonRowScoreboard>
         </>
     );
 
