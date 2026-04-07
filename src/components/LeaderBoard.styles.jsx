@@ -4,7 +4,9 @@ export const LeaderBoardWrapper = styled.section`
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    max-height: calc(100dvh - 200px);
+    flex: 1;
+    overflow: hidden;
+    padding-bottom: 6.25rem;
 `
 
 export const LeaderBoard = styled.div`
@@ -15,6 +17,9 @@ export const LeaderBoard = styled.div`
     background-color: var(--bg);
     margin-bottom: 0.5rem;
 
+    flex: 1;
+    min-height: 0;
+    overflow-x: hidden;
     overflow-y: auto;
     scroll-behavior: smooth;
 `;

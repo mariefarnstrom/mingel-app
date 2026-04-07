@@ -6,7 +6,7 @@ import { HeadingCard } from "../components/cards/Cards";
 import { LeaderBoardWrapper, LeaderBoard, LeaderBoardRow, Rank, UserWrapper, UserAvatar, UserInfo, UserScore } from "../components/LeaderBoard.styles";
 import { ErrorModal } from "../components/ErrorModal";
 import { SmallButton, SmallLightButton } from "../components/buttons/Button";
-import { ButtonRow, ButtonRowScoreboard } from "../components/buttons/ButtonRow";
+import { ButtonRowScoreboard } from "../components/buttons/ButtonRow";
 
 // Data / Language
 import { useScore } from "../hooks/useScore";

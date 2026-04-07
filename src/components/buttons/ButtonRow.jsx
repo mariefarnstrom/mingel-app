@@ -12,8 +12,10 @@ export const ButtonRow = styled.div`
 export const ButtonRowScoreboard = styled(ButtonRow)`
     position: fixed;
     bottom: 0;
+    left: 0;
+    right: 0;
 
     padding: 1rem;
-    width: stretch;
-    align-self: center;
+    width: 100%;
+    box-sizing: border-box;
 `
