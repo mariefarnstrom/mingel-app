@@ -8,6 +8,7 @@ export const TextInput = styled.input`
     text-align: center;
     font-family: var(--font-body);
     background: var(--bg);
+    font-size: 1rem;
 
     ::placeholder {
         color: var(--text);

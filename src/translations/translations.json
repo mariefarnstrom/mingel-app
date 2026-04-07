@@ -104,7 +104,11 @@
       "chooseClass": "Välj klass",
       "chooseAvatar": "Välj din avatar",
       "submit": "Skapa profil",
-      "nameExists": "Det finns redan en spelare med det här namnet. Välj ett annat."
+      "nameExists": "Det finns redan en spelare med det här namnet. Välj ett annat.",
+      "errorRole": "Du måste välja en klass.",
+      "errorAvatar": "Du måste välja en avatar.",
+      "errorNameLength": "Ditt namn måste vara minst två tecken långt.",
+      "errorChars": "Namnet får endast innehålla bokstäver, siffror och bindestreck."
     },
     "en": {
       "heading": "Create your character",
@@ -114,7 +118,11 @@
       "chooseClass": "Choose class",
       "chooseAvatar": "Choose your avatar",
       "submit": "Create profile",
-      "nameExists": "A player with this name already exists. Choose another."
+      "nameExists": "A player with this name already exists. Choose another.",
+      "errorRole": "Please select a class.",
+      "errorAvatar": "Please select an avatar.",
+      "errorNameLength": "Name must be at least two characters long.",
+      "errorChars": "Your name can only contain letters, numbers, and hyphens."
     }
   },
   "finishedProfile": {

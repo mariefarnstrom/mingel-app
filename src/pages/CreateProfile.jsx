@@ -58,6 +58,7 @@ export default function CreateProfile() {
                 <h3>{text.name.toUpperCase()}</h3>
                 <TextInput 
                     type="text" 
+                    maxLength="20"
                     placeholder={text.namePlaceholder}
                     value={name}
                     onChange={(e) => setName(e.target.value)}
@@ -77,7 +78,6 @@ export default function CreateProfile() {
                             value="WU" 
                             checked={role === 'WU'}
                             onChange={(e) => setRole(e.target.value)}
-                            required
                         />
                         <div>{textCommon.webDeveloper.toUpperCase()}</div>
                     </StyledOption>
@@ -89,7 +89,6 @@ export default function CreateProfile() {
                             value="DD" 
                             checked={role === 'DD'}
                             onChange={(e) => setRole(e.target.value)}
-                            required
                             />
                         <div>{textCommon.digitalDesigner.toUpperCase()}</div>
                     </StyledOption>
@@ -107,7 +106,6 @@ export default function CreateProfile() {
                             value="turtle" 
                             checked={avatar === "turtle"}
                             onChange={(e) => setAvatar(e.target.value)}
-                            required
                         />
                         <div>
                             <TurtleIcon />
@@ -120,7 +118,6 @@ export default function CreateProfile() {
                             value="toast" 
                             checked={avatar === "toast"}
                             onChange={(e) => setAvatar(e.target.value)}
-                            required
                         />
                         <div>
                             <ToastIcon />
@@ -133,7 +130,6 @@ export default function CreateProfile() {
                             value="frog" 
                             checked={avatar === "frog"}
                             onChange={(e) => setAvatar(e.target.value)}
-                            required
                         />
                         <div>
                             <FrogIcon />
@@ -146,7 +142,6 @@ export default function CreateProfile() {
                             value="fish" 
                             checked={avatar === "fish"}
                             onChange={(e) => setAvatar(e.target.value)}
-                            required
                         />
                         <div>
                             <FishIcon />
@@ -159,7 +154,6 @@ export default function CreateProfile() {
                             value="pig" 
                             checked={avatar === "pig"}
                             onChange={(e) => setAvatar(e.target.value)}
-                            required
                         />
                         <div>
                             <PigIcon />
@@ -172,7 +166,6 @@ export default function CreateProfile() {
                             value="robot" 
                             checked={avatar === "robot"}
                             onChange={(e) => setAvatar(e.target.value)}
-                            required
                         />
                         <div>
                             <RobotIcon />
