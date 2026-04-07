@@ -77,7 +77,7 @@ export default function Score() {
                                 </UserInfo>
                             </UserWrapper>
                             <UserScore>
-                                <span>{user.score}p {RocketIcon && <RocketIcon />}</span>
+                                <span>{user.score}p <img src="/flame-icon.svg" alt="Flame" /></span>
                             </UserScore>
                         </LeaderBoardRow>
                     )

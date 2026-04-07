@@ -12,8 +12,10 @@ export const LeaderBoardRow = styled.div`
     height: 5.5625rem;
     border-bottom: 2px solid var(--text);
     display: grid;
-    grid-template-columns: 4.7rem 1fr 5rem;
+    grid-template-columns: 4.7rem 1fr 5.3rem;
     align-items: center;
+    
+    padding-right: 0.5rem;
 `;
 
 export const Rank = styled.div`
@@ -34,7 +36,7 @@ export const UserAvatar = styled.div`
     height: 2rem;
     aspect-ratio: 1 / 1;
     margin-left: 0.5rem;
-    margin-right: 0.2rem;
+    margin-right: 0.5rem;
 
     svg {
         max-width: 100%;
@@ -46,6 +48,7 @@ export const UserInfo = styled.div`
     display: flex;
     flex-direction: column;
     line-height: 1.1rem;
+
     span {
         color: var(--text);
         text-align: start;
@@ -62,6 +65,11 @@ export const UserScore = styled.div`
         color: var(--accent);
         font-size: 1.5rem;
         margin-right: 0.5rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 0.5rem;
     }
 
     span svg {
