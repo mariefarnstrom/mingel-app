@@ -19,7 +19,6 @@ import ToastIcon from "../components/icons/Toast";
 import FishIcon from "../components/icons/Fish";
 import FrogIcon from "../components/icons/Frog";
 import TurtleIcon from "../components/icons/Turtle";
-import RocketIcon from "../components/icons/Rocket";
 
 export default function Score() {
 
@@ -77,7 +76,7 @@ export default function Score() {
                                 </UserInfo>
                             </UserWrapper>
                             <UserScore>
-                                <span>{user.score}p {RocketIcon && <RocketIcon />}</span>
+                                <span>{user.score}p <img src="/flame-icon.svg" alt="" aria-hidden="true" /></span>
                             </UserScore>
                         </LeaderBoardRow>
                     )
