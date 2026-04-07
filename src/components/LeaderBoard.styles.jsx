@@ -19,7 +19,7 @@ export const LeaderBoard = styled.div`
 
     flex: 1;
     min-height: 0;
-    max-height: calc(100dvh - 350px); // Remove to make list flow down
+    max-height: calc(100vh - 350px); /* Remove to make list flow down */
     overflow-x: hidden;
     overflow-y: auto;
     scroll-behavior: smooth;
