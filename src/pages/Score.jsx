@@ -1,4 +1,5 @@
 import { Navigate, useNavigate } from "react-router-dom";
+import { useEffect, useRef } from "react";
 
 // Components
 import { HeadingCard } from "../components/cards/Cards";
@@ -9,6 +10,7 @@ import { ButtonRow } from "../components/buttons/ButtonRow";
 
 // Data / Language
 import { useScore } from "../hooks/useScore";
+import { useProfile } from "../hooks/useProfile";
 import { useLanguage } from "../hooks/useLanguage";
 import translations from "../translations/translations.json";
 
@@ -27,6 +29,20 @@ export default function Score() {
         loading,
         errorMessage
     } = useScore();
+
+    const userRowRef = useRef(null);
+
+    useEffect(() => {
+        if (userRowRef.current) {
+            userRowRef.current.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+        }
+    }, [users])
+
+    const { profile } = useProfile();
+    const thisUserName = profile.name;
 
     const navigate = useNavigate();
     const { lang } = useLanguage();
@@ -49,6 +65,8 @@ export default function Score() {
 
     if (loading) return <p>{text.loading}</p>;
 
+    console.log("id:et:", thisUserName, "Profile:", profile);
+
     return (
         <>
             {errorMessage && <ErrorModal errorMessage={errorMessage} onClose={() => navigate(-1)} />}
@@ -60,19 +78,28 @@ export default function Score() {
 
             <LeaderBoard>
                 {users.map((user, index) => {
-                    const ScoreboardIcon = iconMap[user.avatar]
+                    const ScoreboardIcon = iconMap[user.avatar];
+                    const thisUser = user.name === thisUserName;
                     return (
-                        <LeaderBoardRow key={user.id}>
-                            <Rank>
+                        <LeaderBoardRow
+                            key={user.id}
+                            ref={thisUser ? userRowRef : null}
+                            thisUser={thisUser}
+                        >
+                            <Rank thisUser={thisUser}>
                                 <span>{String(index + 1).padStart(2, "0")}</span>
                             </Rank>
                             <UserWrapper>
-                                <UserAvatar>
+                                <UserAvatar thisUser={thisUser}>
                                     {ScoreboardIcon && <ScoreboardIcon />}
                                 </UserAvatar>
-                                <UserInfo>
-                                    <span>{user.name}</span>
-                                    <span>{roleMap[user.role].toUpperCase()}</span>
+                                <UserInfo thisUser={thisUser}>
+                                    <span>
+                                        {user.name}
+                                    </span>
+                                    <span>
+                                        {roleMap[user.role].toUpperCase()}
+                                    </span>
                                 </UserInfo>
                             </UserWrapper>
                             <UserScore>
