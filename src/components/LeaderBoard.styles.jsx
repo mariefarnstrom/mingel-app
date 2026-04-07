@@ -6,7 +6,7 @@ export const LeaderBoardWrapper = styled.section`
     gap: 0.5rem;
     flex: 1;
     overflow: hidden;
-    padding-bottom: 6.25rem;
+    padding-bottom: 5rem;
 `
 
 export const LeaderBoard = styled.div`
@@ -19,6 +19,7 @@ export const LeaderBoard = styled.div`
 
     flex: 1;
     min-height: 0;
+    max-height: calc(100vh - 350px); /* Remove to make list flow down */
     overflow-x: hidden;
     overflow-y: auto;
     scroll-behavior: smooth;
