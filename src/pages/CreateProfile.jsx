@@ -58,7 +58,7 @@ export default function CreateProfile() {
                 <h3>{text.name.toUpperCase()}</h3>
                 <TextInput 
                     type="text" 
-                    maxLength="50"
+                    maxLength="20"
                     placeholder={text.namePlaceholder}
                     value={name}
                     onChange={(e) => setName(e.target.value)}

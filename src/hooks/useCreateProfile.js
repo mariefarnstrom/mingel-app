@@ -42,7 +42,7 @@ export default function useCreateProfile() {
             // Trim and validate the name input
             const trimmedName = name.trim();
             
-            // Ensure minimum name length (2 characters) to prevent empty or single-character names
+            // Ensure minimum name length to prevent empty or single-character names
             if (trimmedName.length < 2) {
                 throw new Error(text.errorNameLength);
             }
