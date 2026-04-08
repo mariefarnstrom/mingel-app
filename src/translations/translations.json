@@ -22,7 +22,7 @@
   "home": {
     "sv": {
       "title": "Välkommen till YrgoXP",
-      "description1": "Spelet som gör det enkelt att börja prata. Samla poäng genom att ställa frågor och vara aktiv i spelet.",
+      "description1": "Spelet som gör det enkelt att börja prata. Samla XP genom att ställa frågor och vara aktiv i spelet.",
       "description2": "Ju fler frågor du ställer, desto högre klättrar du på scoreboarden.",
       "registeredPlayers": "Registrerade spelare",
       "seeRules": "Se spelregler",
@@ -30,7 +30,7 @@
     },
     "en": {
       "title": "Welcome to YrgoXP",
-      "description1": "The game that makes it easy to start talking. Collect points by asking questions and being active in the game.",
+      "description1": "The game that makes it easy to start talking. Collect XP by asking questions and being active in the game.",
       "description2": "The more questions you ask, the higher you climb on the scoreboard.",
       "registeredPlayers": "Registered players",
       "seeRules": "See rules",
@@ -53,7 +53,7 @@
         "id": 2,
         "icon": "rocket",
         "title": "Välj nivå",
-        "description": "Välj mellan Easy, Medium eller Hardcore. Svårare frågor ger mer poäng."
+        "description": "Välj mellan Easy, Medium eller Hardcore. Svårare frågor ger mer XP."
       },
       {
         "id": 3,
@@ -64,8 +64,8 @@
       {
         "id": 4,
         "icon": "star",
-        "title": "Samla poäng",
-        "description": "Easy ger 1 poäng, Medium 2 och Hardcore 5. Klättra på Scoreboarden och se live hur du ligger till."
+        "title": "Samla XP",
+        "description": "Easy ger 1 XP, Medium 2 och Hardcore 5. Klättra på Scoreboarden och se live hur du ligger till."
       }
     ],
     "en": [
@@ -79,7 +79,7 @@
         "id": 2,
         "icon": "rocket",
         "title": "Choose level",
-        "description": "Choose between Easy, Medium, or Hardcore. Harder questions reward more points."
+        "description": "Choose between Easy, Medium, or Hardcore. Harder questions reward more XP."
       },
       {
         "id": 3,
@@ -90,7 +90,7 @@
       {
         "id": 4,
         "icon": "star",
-        "title": "Collect points",
+        "title": "Collect XP",
         "description": "Easy gives 1 point, Medium 2, and Hardcore 5. Climb the Scoreboard and see your rank live."
       }
     ]
@@ -128,12 +128,12 @@
   "finishedProfile": {
     "sv": {
       "heading": "Du är redo!",
-      "description": "Dags att börja samla poäng och starta samtal.",
+      "description": "Dags att börja samla XP och starta samtal.",
       "button": "Börja spela!"
     },
     "en": {
       "heading": "You are ready!",
-      "description": "It's time to collect points by starting conversations.",
+      "description": "It's time to collect XP by starting conversations.",
       "button": "Start playing!"
     }
   },
@@ -144,9 +144,9 @@
       "easy": "Easy",
       "medium": "Medium",
       "hardcore": "Hardcore",
-      "easyPoints": "1p",
-      "mediumPoints": "3p",
-      "hardcorePoints": "5p"
+      "easyPoints": "1xp",
+      "mediumPoints": "3xp",
+      "hardcorePoints": "5xp"
     },
     "en": {
       "heading": "Choose your level",
@@ -154,9 +154,9 @@
       "easy": "Easy",
       "medium": "Medium",
       "hardcore": "Hardcore",
-      "easyPoints": "1p",
-      "mediumPoints": "3p",
-      "hardcorePoints": "5p"
+      "easyPoints": "1xp",
+      "mediumPoints": "3xp",
+      "hardcorePoints": "5xp"
     }
   },
   "questions": {
@@ -164,20 +164,20 @@
       "level": "Nivå",
       "loading": "Laddar fråga...",
       "notFound": "Inga frågor hittades. Försök igen.",
-      "points": "poäng",
+      "points": "xp",
       "generateNew": "Generera ny fråga",
       "back": "Tillbaka",
       "done": "Klar",
       "errorFetching": "Kunde inte hämta frågor. Försök igen.",
       "errorNoUser": "Ingen användare hittades. Skapa en profil först.",
-      "errorFetchingScore": "Kunde inte hämta din poäng. Försök igen.",
-      "errorUpdatingScore": "Kunde inte uppdatera poäng. Försök igen."
+      "errorFetchingScore": "Kunde inte hämta din XP. Försök igen.",
+      "errorUpdatingScore": "Kunde inte uppdatera XP. Försök igen."
     },
     "en": {
       "level": "Level",
       "loading": "Loading question...",
       "notFound": "No questions found. Try again.",
-      "points": "points",
+      "points": "xp",
       "generateNew": "Generate new question",
       "back": "Back",
       "done": "Done",
