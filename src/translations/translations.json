@@ -91,7 +91,7 @@
         "id": 4,
         "icon": "star",
         "title": "Collect XP",
-        "description": "Easy gives 1 point, Medium 3, and Hardcore 5. Climb the Scoreboard and see your rank live."
+        "description": "Easy gives 1 XP, Medium 3, and Hardcore 5. Climb the Scoreboard and see your rank live."
       }
     ]
   },
