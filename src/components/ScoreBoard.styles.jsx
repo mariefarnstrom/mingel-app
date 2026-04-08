@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const LeaderBoardWrapper = styled.section`
+export const ScoreBoardWrapper = styled.section`
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -9,7 +9,7 @@ export const LeaderBoardWrapper = styled.section`
     padding-bottom: 5rem;
 `
 
-export const LeaderBoard = styled.div`
+export const ScoreBoardContainer = styled.div`
     border: 2px solid var(--text);
     border-radius: 10px;
 
@@ -25,7 +25,7 @@ export const LeaderBoard = styled.div`
     scroll-behavior: smooth;
 `;
 
-export const LeaderBoardRow = styled.div`
+export const ScoreBoardRow = styled.div`
     height: 5.5625rem;
     border-bottom: 2px solid var(--text);
     display: grid;

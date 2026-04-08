@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 
 // Components
 import { HeadingCard } from "../components/cards/Cards.styles";
-import { LeaderBoardWrapper, LeaderBoard, LeaderBoardRow, Rank, UserWrapper, UserAvatar, UserInfo, UserScore } from "../components/LeaderBoard.styles";
+import { ScoreBoardWrapper, ScoreBoardContainer, ScoreBoardRow, Rank, UserWrapper, UserAvatar, UserInfo, UserScore } from "../components/ScoreBoard.styles";
 import { ErrorModal } from "../components/ErrorModal";
 import { SmallButton, SmallLightButton } from "../components/buttons/Button.styles";
 import { ButtonRowScoreboard } from "../components/buttons/ButtonRow.styles";
@@ -22,7 +22,7 @@ import FishIcon from "../components/icons/Fish";
 import FrogIcon from "../components/icons/Frog";
 import TurtleIcon from "../components/icons/Turtle";
 
-export default function Score() {
+export default function ScoreBoard() {
 
     const {
         users,
@@ -69,18 +69,18 @@ export default function Score() {
         <>
             {errorMessage && <ErrorModal errorMessage={errorMessage} onClose={() => navigate(-1)} />}
 
-            <LeaderBoardWrapper>
+            <ScoreBoardWrapper>
                 <HeadingCard>
                     <h3>{text.heading.toUpperCase()}</h3>
                     <p>{text.description}</p>
                 </HeadingCard>
 
-                <LeaderBoard>
+                <ScoreBoardContainer>
                     {users.map((user, index) => {
                         const ScoreboardIcon = iconMap[user.avatar];
                         const thisUser = user.name === thisUserName;
                         return (
-                            <LeaderBoardRow
+                            <ScoreBoardRow
                                 key={user.id}
                                 ref={thisUser ? userRowRef : null}
                                 thisUser={thisUser}
@@ -104,11 +104,11 @@ export default function Score() {
                                 <UserScore>
                                     <span>{user.score}p <img src="/flame-icon.svg" alt="" aria-hidden="true" /></span>
                                 </UserScore>
-                            </LeaderBoardRow>
+                            </ScoreBoardRow>
                         )
                     })}
-                </LeaderBoard>
-            </LeaderBoardWrapper>
+                </ScoreBoardContainer>
+            </ScoreBoardWrapper>
 
             <ButtonRowScoreboard>
                 <SmallLightButton type="button" onClick={() => navigate(-1)}>

@@ -6,7 +6,7 @@ import { LanguageProvider } from './contexts/LanguageContext';
 import Home from './pages/Home'
 import Instructions from './pages/Instructions'
 import Questions from './pages/Questions'
-import Score from './pages/Score'
+import ScoreBoard from './pages/ScoreBoard'
 import CreateProfile from './pages/CreateProfile'
 import ChooseDifficulty from './pages/ChooseDifficulty'
 import FinishedProfile from './pages/FinishedProfile'
@@ -26,7 +26,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/instructions" element={<Instructions />} />
             <Route path="/questions/:level" element={<Questions />} />
-            <Route path="/score" element={<Score />} />
+            <Route path="/score" element={<ScoreBoard />} />
             <Route path="/create-profile" element={<CreateProfile />} />
             <Route path="/choose-difficulty" element={<ChooseDifficulty />} />
             <Route path="/finished-profile" element={<FinishedProfile />} />
