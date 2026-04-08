@@ -17,5 +17,7 @@ export const ButtonRowScoreboard = styled(ButtonRow)`
 
     padding: 1rem;
     width: 100%;
-    box-sizing: border-box;
+    max-width: 480px;
+    left: 50%;
+    transform: translateX(-50%);
 `
