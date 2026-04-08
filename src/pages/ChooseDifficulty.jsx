@@ -33,15 +33,15 @@ export default function ChooseDifficulty() {
             <BigButtonsCard>
                 <BigButton onClick={() => handleClick("easy")}>
                     {text.easy.toUpperCase()}
-                    <PointCard>1p</PointCard>
+                    <PointCard>xp</PointCard>
                 </BigButton>
                 <BigButton onClick={() => handleClick("medium")}>
                     {text.medium.toUpperCase()}
-                    <PointCard>2p</PointCard>
+                    <PointCard>xp</PointCard>
                 </BigButton>
                 <BigButton onClick={() => handleClick("hard")}>
                     {text.hardcore.toUpperCase()}
-                    <PointCard>5p</PointCard>
+                    <PointCard>xp</PointCard>
                 </BigButton>
             </BigButtonsCard>
 
