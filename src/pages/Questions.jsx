@@ -52,7 +52,7 @@ export default function Questions() {
             </HeadingCard>
 
             <QuestionCard>
-                <p>{questions[currentId].question}</p>
+                <p>{questions[currentId][`question_${lang}`]}</p>
             </QuestionCard>
 
             <NewQuestionButton onClick={setRandomQuestion}>
