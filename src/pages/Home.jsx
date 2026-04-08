@@ -14,6 +14,7 @@ import GhostIcon from "../components/icons/Ghost";
 // Data / Language
 import { supabase } from "../lib/supabaseClient";
 import { useLanguage } from "../hooks/useLanguage";
+import useCreateProfile from "../hooks/useCreateProfile";
 import translations from "../translations/translations.json";
 
 export default function Home() {
@@ -25,7 +26,8 @@ export default function Home() {
     const { lang } = useLanguage();
     const text = translations.home[lang];
     const textCommon = translations.common[lang];
-    
+    const { existingProfile } = useCreateProfile();
+
     useEffect(() => {
         const fetchUsers = async () => {
             setLoading(true);
@@ -33,7 +35,7 @@ export default function Home() {
                 const { data, error } = await supabase
                     .from('users')
                     .select('role');
-                
+
                 if (error) throw error;
                 setUsers(data);
             } catch (err) {
@@ -46,8 +48,8 @@ export default function Home() {
 
         fetchUsers();
     }, []);
-    
-    
+
+
     const digitalDesignersActive = users.filter(user => user.role === 'DD').length;
     const webDevelopersActive = users.filter(user => user.role === 'WU').length;
 
@@ -79,8 +81,10 @@ export default function Home() {
                 <GhostIcon />
             </GhostContainer>
 
-            <WideButton onClick={() => navigate("/instructions")}>
-                {text.seeRules.toUpperCase()}
+            <WideButton onClick={() => navigate(existingProfile !== null ? "/choose-difficulty" : "/instructions")}>
+                {(existingProfile !== null
+                    ? text.toQuestions
+                    : text.seeRules).toUpperCase()}
             </WideButton>
 
         </>
