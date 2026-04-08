@@ -7,8 +7,8 @@ import translations from "../translations/translations.json";
 // Components
 import { ButtonRow } from "../components/buttons/ButtonRow.styles";
 import { SmallButton, SmallLightButton } from "../components/buttons/Button.styles";
-import { StyledOption, HiddenRadio } from "../components/buttons/StyledOption.styles";
-import { HeadingCard, BaseCard, InstructionsCard } from "../components/cards/Cards.styles"
+import { StyledOption } from "../components/buttons/StyledOption.styles";
+import { HeadingCard} from "../components/cards/Cards.styles"
 import { TextInput } from "../components/TextInput.styles";
 import { AvatarContainer, CreateProfileWrapper } from "../components/buttons/AvatarContainer.styles";
 import { AvatarOption } from "../components/buttons/AvatarOption.styles";
