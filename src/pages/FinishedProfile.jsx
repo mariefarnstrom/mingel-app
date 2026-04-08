@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom";
 
 // Components
-import { ProfileNameCard } from "../components/cards/Cards";
-import { HeadingCard } from "../components/cards/Cards";
-import { BigIconCard } from "../components/cards/Cards";
-import { WideButton } from "../components/buttons/Button";
+import { ProfileNameCard } from "../components/cards/Cards.styles";
+import { HeadingCard } from "../components/cards/Cards.styles";
+import { BigIconCard } from "../components/cards/Cards.styles";
+import { WideButton } from "../components/buttons/Button.styles";
 
 // Icons
 import RobotIcon from "../components/icons/Robot";

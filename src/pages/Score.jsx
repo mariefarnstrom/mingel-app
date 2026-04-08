@@ -2,11 +2,11 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { useEffect, useRef } from "react";
 
 // Components
-import { HeadingCard } from "../components/cards/Cards";
+import { HeadingCard } from "../components/cards/Cards.styles";
 import { LeaderBoardWrapper, LeaderBoard, LeaderBoardRow, Rank, UserWrapper, UserAvatar, UserInfo, UserScore } from "../components/LeaderBoard.styles";
 import { ErrorModal } from "../components/ErrorModal";
-import { SmallButton, SmallLightButton } from "../components/buttons/Button";
-import { ButtonRowScoreboard } from "../components/buttons/ButtonRow";
+import { SmallButton, SmallLightButton } from "../components/buttons/Button.styles";
+import { ButtonRowScoreboard } from "../components/buttons/ButtonRow.styles";
 
 // Data / Language
 import { useScore } from "../hooks/useScore";

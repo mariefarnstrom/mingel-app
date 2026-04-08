@@ -2,10 +2,10 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 // Components
-import { WideButton } from "../components/buttons/Button";
-import { BaseCard } from "../components/cards/Cards";
-import { GhostContainer } from "../components/GhostContainer";
-import { RegisteredPlayersCard } from "../components/cards/Cards";
+import { WideButton } from "../components/buttons/Button.styles";
+import { BaseCard } from "../components/cards/Cards.styles";
+import { GhostContainer } from "../components/GhostContainer.styles";
+import { RegisteredPlayersCard } from "../components/cards/Cards.styles";
 import { ErrorModal } from "../components/ErrorModal";
 
 // Icons

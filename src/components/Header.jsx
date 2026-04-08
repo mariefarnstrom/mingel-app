@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 // Components
 import { HamburgerMenu, StyledHeader } from "./Header.styles";
-import { GhostContainer } from "./GhostContainer";
+import { GhostContainer } from "./GhostContainer.styles";
 import { LanguageToggleDiv, MenuOverlay, StyledMenuLink } from "./MenuOverlay.styles";
 import LanguageToggle from "./LanguageToggle";
 
@@ -65,12 +65,6 @@ export default function Header() {
                         </StyledMenuLink >
 
                         <StyledMenuLink 
-                            to="/score" 
-                            onClick={() => setOpen(false)}>
-                                {text.scoreboard.toUpperCase()}
-                        </StyledMenuLink >
-
-                        <StyledMenuLink 
                             to="/create-profile" 
                             onClick={() => setOpen(false)}>
                                 {profile ? text.changeProfile.toUpperCase() : text.createProfile.toUpperCase() }
@@ -81,6 +75,12 @@ export default function Header() {
                             onClick={() => setOpen(false)}>
                                 {text.toQuestions.toUpperCase()}
                         </StyledMenuLink > }
+
+                        <StyledMenuLink 
+                            to="/score" 
+                            onClick={() => setOpen(false)}>
+                                {text.scoreboard.toUpperCase()}
+                        </StyledMenuLink >
                     </nav>
 
                     <GhostContainer overlay>
