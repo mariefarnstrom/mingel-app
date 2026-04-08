@@ -141,22 +141,12 @@
     "sv": {
       "heading": "Välj din nivå",
       "description": "Hur utmanande vill du att din fråga ska vara?",
-      "easy": "Easy",
-      "medium": "Medium",
-      "hardcore": "Hardcore",
-      "easyPoints": "1xp",
-      "mediumPoints": "3xp",
-      "hardcorePoints": "5xp"
+      "errorFetching": "Kunde inte hämta nivåer. Försök igen."
     },
     "en": {
       "heading": "Choose your level",
       "description": "How challenging do you want your question to be?",
-      "easy": "Easy",
-      "medium": "Medium",
-      "hardcore": "Hardcore",
-      "easyPoints": "1xp",
-      "mediumPoints": "3xp",
-      "hardcorePoints": "5xp"
+      "errorFetching": "Could not fetch levels. Try again."
     }
   },
   "questions": {

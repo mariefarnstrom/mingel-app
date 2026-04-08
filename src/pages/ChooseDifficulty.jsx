@@ -5,6 +5,7 @@ import { HeadingCard, PointCard } from "../components/cards/Cards.styles";
 import { BigButton } from "../components/buttons/Button.styles";
 import { BigButtonsCard } from "../components/cards/Cards.styles";
 import { GhostContainer } from "../components/GhostContainer.styles";
+import { ErrorModal } from "../components/ErrorModal";
 
 // Icons
 import GhostIcon from "../components/icons/Ghost";
@@ -21,16 +22,25 @@ export default function ChooseDifficulty() {
     const navigate = useNavigate();
     const { lang } = useLanguage();
     const text = translations.chooseDifficulty[lang];
-    const { levels, loading } = useLevels();
+    const textCommon = translations.common[lang];
+    
+    const { 
+        levels,
+        loading,
+        errorMessage,
+        setErrorMessage
+    } = useLevels();
 
     const handleClick = (level) => {
         navigate(`/questions/${level}`);
     };
 
-    if (loading) return <p>Laddar...</p>
+    if (loading) return <p>{textCommon.loading}</p>
 
     return (
         <>
+        {errorMessage && <ErrorModal errorMessage={errorMessage} onClose={() => setErrorMessage("")} />}
+
             <HeadingCard>
                 <h3>{text.heading.toUpperCase()}</h3>
                 <p>{text.description}</p>
@@ -43,14 +53,6 @@ export default function ChooseDifficulty() {
                         <PointCard>{lvl.points}xp</PointCard>
                     </BigButton>
                 ))}
-                {/* <BigButton onClick={() => handleClick("medium")}>
-                    {text.medium.toUpperCase()}
-                    <PointCard>xp</PointCard>
-                </BigButton>
-                <BigButton onClick={() => handleClick("hard")}>
-                    {text.hardcore.toUpperCase()}
-                    <PointCard>xp</PointCard>
-                </BigButton> */}
             </BigButtonsCard>
 
             <GhostContainer>

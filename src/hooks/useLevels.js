@@ -24,7 +24,7 @@ export function useLevels () {
                 if (error) throw error;
                 setLevels(data);
             } catch (err) {
-                console.error("Error fetching levels:", err.Message);
+                console.error("Error fetching levels:", err.message);
                 setErrorMessage(text.errorFetching)
             } finally {
                 setLoading(false);
