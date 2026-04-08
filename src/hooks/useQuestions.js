@@ -19,10 +19,21 @@ export function useQuestions(level) {
 
         const fetchData = async () => {
             try {
+                // Först: Hämta level_id baserat på level-namn
+                const { data: levelData, error: levelError } = await supabase
+                    .from('levels')
+                    .select('id')
+                    .eq('level', level)
+                    .single();
+
+                if (levelError) throw levelError;
+                if (!levelData) throw new Error('Level not found');
+
+                // Sedan: Hämta questions för den level_id med join
                 const { data, error } = await supabase
                     .from('questions')
-                    .select('*')
-                    .eq('level', level);
+                    .select('*, levels(id, level, points)')
+                    .eq('level_id', levelData.id);
 
                 if (error) throw error;
                 setQuestions(data);
@@ -73,16 +84,7 @@ export function useQuestions(level) {
 
         const currentScore = data.score ?? 0;
 
-        const getPoints = (level) => {
-            switch (level) {
-                case "easy": return 1;
-                case "medium": return 3;
-                case "hard": return 5;
-                default: return 0;
-            }
-        };
-
-        const points = getPoints(questions[currentId].level);
+        const points = questions[currentId].levels.points;
         const newScore = currentScore + points;
 
         const { error: updateError } = await supabase

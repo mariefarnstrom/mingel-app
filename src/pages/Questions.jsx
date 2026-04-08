@@ -38,14 +38,17 @@ export default function Questions() {
         <ErrorModal errorMessage={text.notFound} onClose={() => navigate(-1)} />
     );
     if (currentId === null) return <p>{text.loading}</p>;
+    if (!questions[currentId] || !questions[currentId].levels) return (
+        <ErrorModal errorMessage={text.errorFetching} onClose={() => navigate(-1)} />
+    );
 
     return (
         <>
             {errorMessage && <ErrorModal errorMessage={errorMessage} onClose={() => setErrorMessage("")} />}
 
             <HeadingCard>
-                <h3>{text.level.toUpperCase()}: {questions[currentId].level.toUpperCase()}</h3>
-                <p>{questions[currentId].level} {text.points}</p>
+                <h3>{text.level.toUpperCase()}: {questions[currentId].levels.level.toUpperCase()}</h3>
+                <p>{questions[currentId].levels.points}xp</p>
             </HeadingCard>
 
             <QuestionCard>
