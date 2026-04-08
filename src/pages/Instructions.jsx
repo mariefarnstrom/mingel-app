@@ -1,6 +1,6 @@
-import { SmallLightButton, SmallButton } from "../components/buttons/Button";
-import { ButtonRow } from "../components/buttons/ButtonRow";
-import { HeadingCard, BaseCard, InstructionsCard, BigIconCard } from "../components/cards/Cards"
+import { SmallLightButton, SmallButton } from "../components/buttons/Button.styles";
+import { ButtonRow } from "../components/buttons/ButtonRow.styles";
+import { HeadingCard, BaseCard, InstructionsCard, BigIconCard } from "../components/cards/Cards.styles"
 
 // Data / Language
 import { useInstructions } from "../hooks/useInstructions";

@@ -5,13 +5,13 @@ import { useLanguage } from '../hooks/useLanguage';
 import translations from "../translations/translations.json";
 
 // Components
-import { ButtonRow } from "../components/buttons/ButtonRow";
-import { SmallButton, SmallLightButton } from "../components/buttons/Button";
-import { StyledOption, HiddenRadio } from "../components/buttons/StyledOption";
-import { HeadingCard, BaseCard, InstructionsCard } from "../components/cards/Cards"
-import { TextInput } from "../components/TextInput";
-import { AvatarContainer, CreateProfileWrapper } from "../components/buttons/AvatarContainer";
-import { AvatarOption } from "../components/buttons/AvatarOption";
+import { ButtonRow } from "../components/buttons/ButtonRow.styles";
+import { SmallButton, SmallLightButton } from "../components/buttons/Button.styles";
+import { StyledOption, HiddenRadio } from "../components/buttons/StyledOption.styles";
+import { HeadingCard, BaseCard, InstructionsCard } from "../components/cards/Cards.styles"
+import { TextInput } from "../components/TextInput.styles";
+import { AvatarContainer, CreateProfileWrapper } from "../components/buttons/AvatarContainer.styles";
+import { AvatarOption } from "../components/buttons/AvatarOption.styles";
 
 // Icons
 import RobotIcon from "../components/icons/Robot";
