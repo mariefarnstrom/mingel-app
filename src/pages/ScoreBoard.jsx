@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 import { HeadingCard } from "../components/cards/Cards.styles";
 import { ScoreBoardWrapper, ScoreBoardContainer, ScoreBoardRow, Rank, UserWrapper, UserAvatar, UserInfo, UserScore } from "../components/ScoreBoard.styles";
 import { ErrorModal } from "../components/ErrorModal";
-import { SmallButton, SmallLightButton } from "../components/buttons/Button.styles";
+import { SmallButton, SmallLightButton, WideButton } from "../components/buttons/Button.styles";
 import { ButtonRowScoreboard } from "../components/buttons/ButtonRow.styles";
 
 // Data / Language
@@ -111,15 +111,11 @@ export default function ScoreBoard() {
             </ScoreBoardWrapper>
 
             <ButtonRowScoreboard>
-                <SmallLightButton type="button" onClick={() => navigate(-1)}>
-                    <img src="backwardsArrow.svg" alt="back" />
-                    {textCommon.back.toUpperCase()}
-                </SmallLightButton>
-                <SmallButton type="button" onClick={() => navigate("/choose-difficulty")}>
-                    {textCommon.next.toUpperCase()}
-                    <img src="forwardArrow.svg" alt="forward" />
-                </SmallButton>
+                <WideButton type="button" onClick={() => navigate("/choose-difficulty")}>
+                    {textCommon.newQuestion.toUpperCase()}
+                </WideButton>
             </ButtonRowScoreboard>
+
         </>
     );
 

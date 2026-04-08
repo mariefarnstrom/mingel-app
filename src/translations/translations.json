@@ -212,7 +212,8 @@
       "webDeveloper": "Webbutvecklare",
       "webDevelopers": "Webbutvecklare",
       "digitalDesigner": "Digital designer",
-      "digitalDesigners": "Digital designers"
+      "digitalDesigners": "Digital designers",
+      "newQuestion": "Ny fråga"
     },
     "en": {
       "back": "Back",
@@ -224,7 +225,8 @@
       "webDeveloper": "Web developer",
       "webDevelopers": "Web developers",
       "digitalDesigner": "Digital designer",
-      "digitalDesigners": "Digital designers"
+      "digitalDesigners": "Digital designers",
+      "newQuestion": "New question"
     }
   }
 }
