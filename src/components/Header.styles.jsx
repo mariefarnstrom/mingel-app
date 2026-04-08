@@ -5,7 +5,7 @@ export const StyledHeader = styled.header`
     justify-content: space-between;
     position: relative;
     z-index: 10;
-    margin-bottom: 2rem;
+    margin: 1rem 0 0 0;
 `
 
 export const HamburgerMenu = styled.button`

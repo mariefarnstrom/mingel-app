@@ -65,8 +65,6 @@ export default function Score() {
 
     if (loading) return <p>{text.loading}</p>;
 
-    console.log("id:et:", thisUserName, "Profile:", profile);
-
     return (
         <>
             {errorMessage && <ErrorModal errorMessage={errorMessage} onClose={() => navigate(-1)} />}
@@ -76,7 +74,7 @@ export default function Score() {
                     <h3>{text.heading.toUpperCase()}</h3>
                     <p>{text.description}</p>
                 </HeadingCard>
-            
+
                 <LeaderBoard>
                     {users.map((user, index) => {
                         const ScoreboardIcon = iconMap[user.avatar];
