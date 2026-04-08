@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 // Components
 import { HamburgerMenu, StyledHeader } from "./Header.styles";
-import { GhostContainer } from "./GhostContainer.styles";
+import { GhostContainer, GhostWrapper } from "./GhostContainer.styles";
 import { LanguageToggleDiv, MenuOverlay, StyledMenuLink } from "./MenuOverlay.styles";
 import LanguageToggle from "./LanguageToggle";
 
@@ -52,39 +52,41 @@ export default function Header() {
 
                 <MenuOverlay>
                     <nav>
-                        <StyledMenuLink 
-                            to="/" 
+                        <StyledMenuLink
+                            to="/"
                             onClick={() => setOpen(false)}>
-                                {text.home.toUpperCase()}
+                            {text.home.toUpperCase()}
                         </StyledMenuLink >
 
-                        <StyledMenuLink 
-                            to="/instructions" 
+                        <StyledMenuLink
+                            to="/instructions"
                             onClick={() => setOpen(false)}>
-                                {text.rules.toUpperCase()}
+                            {text.rules.toUpperCase()}
                         </StyledMenuLink >
 
-                        <StyledMenuLink 
-                            to="/create-profile" 
+                        <StyledMenuLink
+                            to="/create-profile"
                             onClick={() => setOpen(false)}>
-                                {profile ? text.changeProfile.toUpperCase() : text.createProfile.toUpperCase() }
+                            {profile ? text.changeProfile.toUpperCase() : text.createProfile.toUpperCase()}
                         </StyledMenuLink >
 
-                        { profile && <StyledMenuLink 
-                            to="/choose-difficulty" 
+                        {profile && <StyledMenuLink
+                            to="/choose-difficulty"
                             onClick={() => setOpen(false)}>
-                                {text.toQuestions.toUpperCase()}
-                        </StyledMenuLink > }
+                            {text.toQuestions.toUpperCase()}
+                        </StyledMenuLink >}
 
-                        <StyledMenuLink 
-                            to="/score" 
+                        <StyledMenuLink
+                            to="/score"
                             onClick={() => setOpen(false)}>
-                                {text.scoreboard.toUpperCase()}
+                            {text.scoreboard.toUpperCase()}
                         </StyledMenuLink >
                     </nav>
 
                     <GhostContainer overlay>
-                        <GhostIcon />
+                        <GhostWrapper>
+                            <GhostIcon />
+                        </GhostWrapper>
                     </GhostContainer>
 
                     <LanguageToggleDiv>

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { HeadingCard, PointCard } from "../components/cards/Cards.styles";
 import { BigButton } from "../components/buttons/Button.styles";
 import { BigButtonsCard } from "../components/cards/Cards.styles";
-import { GhostContainer } from "../components/GhostContainer.styles";
+import { GhostContainer, GhostWrapper } from "../components/GhostContainer.styles";
 import { ErrorModal } from "../components/ErrorModal";
 
 // Icons
@@ -23,8 +23,8 @@ export default function ChooseDifficulty() {
     const { lang } = useLanguage();
     const text = translations.chooseDifficulty[lang];
     const textCommon = translations.common[lang];
-    
-    const { 
+
+    const {
         levels,
         loading,
         errorMessage,
@@ -39,7 +39,7 @@ export default function ChooseDifficulty() {
 
     return (
         <>
-        {errorMessage && <ErrorModal errorMessage={errorMessage} onClose={() => setErrorMessage("")} />}
+            {errorMessage && <ErrorModal errorMessage={errorMessage} onClose={() => setErrorMessage("")} />}
 
             <HeadingCard>
                 <h3>{text.heading.toUpperCase()}</h3>
@@ -56,7 +56,9 @@ export default function ChooseDifficulty() {
             </BigButtonsCard>
 
             <GhostContainer>
-                <GhostIcon />
+                <GhostWrapper>
+                    <GhostIcon />
+                </GhostWrapper>
             </GhostContainer>
 
         </>
