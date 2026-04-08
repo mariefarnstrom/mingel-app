@@ -26,7 +26,8 @@
       "description2": "Ju fler frågor du ställer, desto högre klättrar du på scoreboarden.",
       "registeredPlayers": "Registrerade spelare",
       "seeRules": "Se spelregler",
-      "errorFetching": "Kunde inte hämta spelare. Försök igen."
+      "errorFetching": "Kunde inte hämta spelare. Försök igen.",
+      "toQuestions": "Gå till frågor"
     },
     "en": {
       "title": "Welcome to YrgoXP",
@@ -34,7 +35,8 @@
       "description2": "The more questions you ask, the higher you climb on the scoreboard.",
       "registeredPlayers": "Registered players",
       "seeRules": "See rules",
-      "errorFetching": "Could not fetch players. Try again."
+      "errorFetching": "Could not fetch players. Try again.",
+      "toQuestions": "Go to questions"
     }
   },
   "instructions": {
@@ -200,7 +202,8 @@
       "webDeveloper": "Webbutvecklare",
       "webDevelopers": "Webbutvecklare",
       "digitalDesigner": "Digital designer",
-      "digitalDesigners": "Digital designers"
+      "digitalDesigners": "Digital designers",
+      "newQuestion": "Ny fråga"
     },
     "en": {
       "back": "Back",
@@ -212,7 +215,8 @@
       "webDeveloper": "Web developer",
       "webDevelopers": "Web developers",
       "digitalDesigner": "Digital designer",
-      "digitalDesigners": "Digital designers"
+      "digitalDesigners": "Digital designers",
+      "newQuestion": "New question"
     }
   }
 }
