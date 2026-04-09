@@ -1,21 +1,19 @@
-import { useState } from "react";
 import { ToggleContainer, ToggleButton, Slider } from "./LanguageToggle.styles";
-import { useLanguage } from "../hooks/useLanguage";
+import { useColorMode } from "../hooks/useColorMode";
 
 export default function ColorToggle() {
-    const { lang, setLang } = useLanguage();
-    const [colorMode, setColorMode] = useState('light');
+    const { colorMode, setColorMode } = useColorMode();
     
     return (
         <ToggleContainer role="group" aria-label="Choose color mode">
             <ToggleButton
-                active={colorMode === "light"}
+                active={colorMode === "dark"}
                 onClick={() => setColorMode("dark")}
             >
             </ToggleButton>
 
             <ToggleButton
-                active={colorMode === "dark"}
+                active={colorMode === "light"}
                 onClick={() => setColorMode("light")}
             >
             </ToggleButton>

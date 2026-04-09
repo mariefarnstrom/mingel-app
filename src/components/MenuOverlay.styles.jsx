@@ -51,10 +51,7 @@ export const ToggleContainer = styled.section`
 `
 
 export const ToggleDiv = styled.div`
-  /* width: calc(100% - 2rem); */
   height: 3rem;
-  /* position: absolute; */
-  /* bottom: 0; */
   display: flex;
   justify-content: space-between;
   align-items: center;

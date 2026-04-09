@@ -55,6 +55,19 @@
   }
 }
 
+[data-theme="dark"] {
+  --text: #fff;
+  --text-h: #E51536;
+  --bg: #001A52;
+  --border: #fff;
+  --pattern-bg: #ffffff80;
+  --btn-primary: #fff;
+  --btn-primary-text: #001A52;
+  --btn-secondary: #001A52;
+  --btn-secondary-text: #fff;
+  --btn-secondary-border: #fff;
+}
+
 * {
   box-sizing: border-box;
 }

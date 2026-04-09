@@ -13,6 +13,7 @@ import FinishedProfile from './pages/FinishedProfile'
 
 // Components
 import Header from './components/Header'
+import { ColorModeProvider } from './contexts/ColorModeContext';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+      <ColorModeProvider>
         <LanguageProvider>
           <Header />
           <Routes>
@@ -32,6 +34,7 @@ function App() {
             <Route path="/finished-profile" element={<FinishedProfile />} />
           </Routes>
         </LanguageProvider>
+      </ColorModeProvider>
       </BrowserRouter>
 
     </>
