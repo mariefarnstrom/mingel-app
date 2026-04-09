@@ -6,22 +6,22 @@ export const GhostContainer = styled.div`
     height: 4.5rem;
     overflow: hidden;
     position: ${({ overlay }) => (overlay ? "absolute" : "relative")};
-    bottom: ${({ overlay }) => (overlay ? "7rem" : "auto")};
+    bottom: ${({ overlay }) => (overlay ? "8rem" : "auto")};
     top: ${({ overlay }) => (overlay ? "auto" : "0.7rem")};
 `;
 
 export const GhostWrapper = styled.div`
     position: absolute;
-        top: 1.5;
-        left: 0;
-        transform: translateY(-50%);
-        animation: ${ghostMovement} 5s ease-in-out infinite;
+    top: 1.5;
+    left: 0;
+    transform: translateY(-50%);
+    animation: ${ghostMovement} 5s ease-in-out infinite;
+    width: 50px;
+    height: 50px;
+
+    svg {
         width: 50px;
         height: 50px;
-
-        img, svg {
-            width: 50px;
-            height: 50px;
-            animation: ${ghostFlip} 5s infinite;
+        animation: ${ghostFlip} 5s infinite;
     }
 `;

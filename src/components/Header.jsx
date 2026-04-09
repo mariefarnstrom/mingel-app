@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 // Components
 import { HamburgerMenu, StyledHeader } from "./Header.styles";
 import { GhostContainer, GhostWrapper } from "./GhostContainer.styles";
-import { LanguageToggleDiv, MenuOverlay, StyledMenuLink } from "./MenuOverlay.styles";
+import { ToggleDiv, MenuOverlay, StyledMenuLink, NavContainer, ToggleContainer } from "./MenuOverlay.styles";
 import LanguageToggle from "./LanguageToggle";
+import ColorToggle from "./ColorToggle";
 
 // Icons
 import GhostIcon from "./icons/Ghost";
@@ -51,6 +52,8 @@ export default function Header() {
             {open &&
 
                 <MenuOverlay>
+                    <NavContainer>
+                    
                     <nav>
                         <StyledMenuLink
                             to="/"
@@ -83,20 +86,27 @@ export default function Header() {
                         </StyledMenuLink >
                     </nav>
 
-                    <GhostContainer overlay>
-                        <GhostWrapper>
-                            <GhostIcon />
-                        </GhostWrapper>
-                    </GhostContainer>
+                        <ToggleContainer>
+                            <GhostContainer className="nav-ghost" overlay>
+                                <GhostWrapper>
+                                    <GhostIcon />
+                                </GhostWrapper>
+                            </GhostContainer>
 
-                    <LanguageToggleDiv>
-                        <span>{text.toggleLanguage.toUpperCase()}</span>
-                        <LanguageToggle />
-                    </LanguageToggleDiv>
+                            <ToggleDiv>
+                                <span>{text.toggleColor.toUpperCase()}</span>
+                                <ColorToggle />
+                            </ToggleDiv>
 
+                            <ToggleDiv>
+                                <span>{text.toggleLanguage.toUpperCase()}</span>
+                                <LanguageToggle />
+                            </ToggleDiv>
+                        </ToggleContainer>
+
+                    </NavContainer>
                 </MenuOverlay>
             }
         </>
     )
-
 }

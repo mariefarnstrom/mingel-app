@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "@emotion/styled";
+import { GhostWrapper } from "./GhostContainer.styles";
 
 export const MenuOverlay = styled.div`
   position: fixed;
@@ -29,14 +30,34 @@ export const MenuOverlay = styled.div`
   }
 `
 
-export const LanguageToggleDiv = styled.div`
-  width: calc(100% - 2rem);
-  height: 5rem;
-  position: absolute;
+export const NavContainer = styled.section`
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`
+
+export const ToggleContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+
+  .nav-ghost {
+    position: initial;
+    align-self: center;
+  }
+  
+`
+
+export const ToggleDiv = styled.div`
+  /* width: calc(100% - 2rem); */
+  height: 3rem;
+  /* position: absolute; */
+  /* bottom: 0; */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  bottom: 0;
 `
 
 export const StyledMenuLink = styled(Link)`
