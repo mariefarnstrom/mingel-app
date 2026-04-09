@@ -1,10 +1,10 @@
-import { ToggleContainer, ToggleButton, Slider } from "./LanguageToggle.styles";
+import { ToggleContainer, ToggleButton, Slider } from "./Toggles.styles";
 import { useLanguage } from "../hooks/useLanguage";
 import { useColorMode } from "../hooks/useColorMode";
 
 export default function LanguageToggle() {
     const { lang, setLang } = useLanguage();
-    const { colorMode } = useColorMode();
+    const { colorMode, setColorMode } = useColorMode();
     
     return (
         <ToggleContainer role="group" 
@@ -13,17 +13,17 @@ export default function LanguageToggle() {
                 
             <ToggleButton
                 active={lang === "sv"}
-                onClick={() => setLang("sv")}
+                onClick={() => setLang(lang === "sv" ? "en" : "sv")}
             >
             </ToggleButton>
 
             <ToggleButton
                 active={lang === "en"}
-                onClick={() => setLang("en")}
+                onClick={() => setLang(lang === "sv" ? "en" : "sv")}
             >
             </ToggleButton>
 
-            <Slider lang={lang} />
+            <Slider lang={lang} colorMode={colorMode} isColorMode={false} />
         </ToggleContainer>
     );
 }

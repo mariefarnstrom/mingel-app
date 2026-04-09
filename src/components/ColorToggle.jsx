@@ -1,4 +1,4 @@
-import { ToggleContainer, ToggleButton, Slider } from "./LanguageToggle.styles";
+import { ToggleContainer, ToggleButton, Slider } from "./Toggles.styles";
 import { useColorMode } from "../hooks/useColorMode";
 
 export default function ColorToggle() {
@@ -8,19 +8,24 @@ export default function ColorToggle() {
         <ToggleContainer role="group" 
             aria-label="Choose color mode"
             colorMode={colorMode}>
-            <ToggleButton
-                active={colorMode === "dark"}
-                onClick={() => setColorMode("dark")}
-            >
-            </ToggleButton>
 
             <ToggleButton
                 active={colorMode === "light"}
-                onClick={() => setColorMode("light")}
+                onClick={() => setColorMode(colorMode === "light" ? "dark" : "light")}
+                colorMode={colorMode}
             >
             </ToggleButton>
 
-            <Slider colorMode={colorMode} />
+            <ToggleButton
+                active={colorMode === "dark"}
+                onClick={() => setColorMode(colorMode === "light" ? "dark" : "light")}
+                colorMode={colorMode}
+            >
+            </ToggleButton>
+
+            <Slider 
+                colorMode={colorMode} 
+                isColorMode={true} />
         </ToggleContainer>
     );
 }

@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import styled from "@emotion/styled";
-import { GhostWrapper } from "./GhostContainer.styles";
 
 export const MenuOverlay = styled.div`
   position: fixed;
@@ -47,7 +46,6 @@ export const ToggleWrapper = styled.section`
     position: initial;
     align-self: center;
   }
-  
 `
 
 export const ToggleDiv = styled.div`
