@@ -15,6 +15,7 @@ import GhostIcon from "./icons/Ghost";
 import { useProfile } from "../hooks/useProfile";
 import { useLanguage } from "../hooks/useLanguage";
 import translations from "../translations/translations.json";
+import { useColorMode } from "../hooks/useColorMode";
 
 
 export default function Header() {
@@ -22,6 +23,7 @@ export default function Header() {
     const [open, setOpen] = useState(false);
     const { lang } = useLanguage();
     const { profile } = useProfile(); // Fetch profile
+    const { colorMode, setColorMode } = useColorMode();
 
     // Prevent header from scrolling when menu is open
     useEffect(() => {
@@ -45,7 +47,7 @@ export default function Header() {
                     <img src="/logo.svg" alt="" />
                 </Link>
                 <HamburgerMenu onClick={() => setOpen(!open)}>
-                    {open ? <img src='/x-icon.svg' alt='' /> : <img src='/hamburger-icon.svg' alt='' />}
+                    {open ? <img src={`/x-icon-${colorMode}.svg`} alt='' /> : <img src={`/hamburger-icon-${colorMode}.svg`} alt='' />}
                 </HamburgerMenu>
             </StyledHeader>
 
