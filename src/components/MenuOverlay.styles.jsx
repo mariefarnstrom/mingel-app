@@ -37,7 +37,7 @@ export const NavContainer = styled.section`
   justify-content: space-between;
 `
 
-export const ToggleContainer = styled.section`
+export const ToggleWrapper = styled.section`
   display: flex;
   flex-direction: column;
   gap: 1rem;

@@ -68,6 +68,10 @@ export const InstructionsCard = styled(BaseCard)`
 export const BigIconCard = styled(BaseCard)`
     padding: 5rem;
     align-items: center;
+
+    svg {
+        color: var(--text);
+    }
 `
 
 // Number of players
@@ -153,5 +157,6 @@ export const ErrorCard = styled(BaseCard)`
 
     svg {
         max-height: 3rem;
+        color: var(--text);
     }
 `

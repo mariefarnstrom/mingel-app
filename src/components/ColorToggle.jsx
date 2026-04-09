@@ -5,7 +5,9 @@ export default function ColorToggle() {
     const { colorMode, setColorMode } = useColorMode();
     
     return (
-        <ToggleContainer role="group" aria-label="Choose color mode">
+        <ToggleContainer role="group" 
+            aria-label="Choose color mode"
+            colorMode={colorMode}>
             <ToggleButton
                 active={colorMode === "dark"}
                 onClick={() => setColorMode("dark")}

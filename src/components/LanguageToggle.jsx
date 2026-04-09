@@ -1,11 +1,16 @@
 import { ToggleContainer, ToggleButton, Slider } from "./LanguageToggle.styles";
 import { useLanguage } from "../hooks/useLanguage";
+import { useColorMode } from "../hooks/useColorMode";
 
 export default function LanguageToggle() {
     const { lang, setLang } = useLanguage();
+    const { colorMode } = useColorMode();
     
     return (
-        <ToggleContainer role="group" aria-label="Choose language">
+        <ToggleContainer role="group" 
+            aria-label="Choose language"
+            colorMode={colorMode}>
+                
             <ToggleButton
                 active={lang === "sv"}
                 onClick={() => setLang("sv")}

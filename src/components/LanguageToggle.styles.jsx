@@ -3,7 +3,8 @@ import styled from "@emotion/styled";
 export const ToggleContainer = styled.div`
   position: relative;
   display: flex;
-  background-image: url("/toggle-container.svg");
+  /* background-image: url("/toggle-container.svg"); */
+  background-image: ${({ colorMode }) => `url("/toggle-container-${colorMode}.svg")`};
   background-size: contain;
   background-repeat: no-repeat;
   width: 5.2rem;

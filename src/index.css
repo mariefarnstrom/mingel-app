@@ -88,6 +88,7 @@ body {
   border-inline: 1px solid var(--border);
   text-align: center;
   background-image: url("background.svg");
+  background-color: var(--bg);
 }
 
 h1,
@@ -125,4 +126,5 @@ h5 {
 
 p {
   font-family: var(--font-body);
+  color: var(--text);
 }

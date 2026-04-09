@@ -23,5 +23,6 @@ export const GhostWrapper = styled.div`
         width: 50px;
         height: 50px;
         animation: ${ghostFlip} 5s infinite;
+        color: var(--text);
     }
 `;

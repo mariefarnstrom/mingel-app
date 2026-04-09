@@ -5,10 +5,12 @@ export const TextInput = styled.input`
     height: 3.375rem;
     border-radius: 10px;
     border: 2px solid var(--text);
+    
+    font-size: 1rem;
     text-align: center;
     font-family: var(--font-body);
+    color: var(--text);
     background: var(--bg);
-    font-size: 1rem;
 
     ::placeholder {
         color: var(--text);

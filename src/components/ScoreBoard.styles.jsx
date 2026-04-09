@@ -42,7 +42,7 @@ export const Rank = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: white;
+    background-color: var(--bg);
     color: ${({ thisUser }) => (thisUser ? "var(--accent)" : "var(--text)")};
 `;
 
