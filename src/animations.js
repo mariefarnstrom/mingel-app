@@ -1,21 +1,22 @@
 import { keyframes } from "@emotion/react";
 
 export const ghostMovement = keyframes`
-0% {
-    transform: translateX(0);
+ 0% {
+    left: 0;
   }
   25% {
-    transform: translateX(calc(50vw - 50px));
+    left: calc(50% - 25px);
   }
   50% {
-    transform: translateX(calc(100vw - 100px));
+    left: calc(100% - 50px);
   }
   75% {
-    transform: translateX(calc(50vw - 50px));
+    left: calc(50% - 25px);
   }
   100% {
-    transform: translateX(0);
-  }`
+    left: 0;
+  }
+`;
 
 export const ghostFlip = keyframes`
   0% { transform: scale(1, 1); }
