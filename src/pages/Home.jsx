@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 // Components
 import { WideButton } from "../components/buttons/Button.styles";
 import { BaseCard } from "../components/cards/Cards.styles";
-import { GhostContainer } from "../components/GhostContainer.styles";
+import { GhostContainer, GhostWrapper } from "../components/GhostContainer.styles";
 import { RegisteredPlayersCard } from "../components/cards/Cards.styles";
 import { ErrorModal } from "../components/ErrorModal";
 
@@ -78,7 +78,9 @@ export default function Home() {
             </RegisteredPlayersCard>
 
             <GhostContainer>
-                <GhostIcon />
+                <GhostWrapper>
+                    <GhostIcon />
+                </GhostWrapper>
             </GhostContainer>
 
             <WideButton onClick={() => navigate(existingProfile !== null ? "/choose-difficulty" : "/instructions")}>

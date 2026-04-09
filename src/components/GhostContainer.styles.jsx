@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { ghostMovement } from "../animations";
+import { ghostMovement, ghostFlip } from "../animations";
 
 export const GhostContainer = styled.div`
     width: ${({ overlay }) => (overlay ? "93%" : "100%")};;
@@ -8,13 +8,20 @@ export const GhostContainer = styled.div`
     position: ${({ overlay }) => (overlay ? "absolute" : "relative")};
     bottom: ${({ overlay }) => (overlay ? "7rem" : "auto")};
     top: ${({ overlay }) => (overlay ? "auto" : "0.7rem")};
+`;
 
-    img, svg {
-        position: absolute;
-        top: 2rem;
+export const GhostWrapper = styled.div`
+    position: absolute;
+        top: 1.5;
         left: 0;
         transform: translateY(-50%);
         animation: ${ghostMovement} 5s ease-in-out infinite;
         width: 50px;
+        height: 50px;
+
+        img, svg {
+            width: 50px;
+            height: 50px;
+            animation: ${ghostFlip} 5s infinite;
     }
 `;
