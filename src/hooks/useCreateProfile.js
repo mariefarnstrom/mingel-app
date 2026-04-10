@@ -41,7 +41,7 @@ export default function useCreateProfile() {
 
             // Trim and validate the name input
             const trimmedName = name.trim();
-            
+
             // Ensure minimum name length to prevent empty or single-character names
             if (trimmedName.length < 2) {
                 throw new Error(text.errorNameLength);
@@ -49,30 +49,19 @@ export default function useCreateProfile() {
 
             const validName = /^[a-zA-Z0-9äöåÄÖÅ -]+$/.test(trimmedName);
 
-            if(!validName) {
+            if (!validName) {
                 throw new Error(text.errorChars)
             }
-            
-            // If profile exists - Update
-            if (existingProfile) {
-                const profileData = { 
-                    name: existingProfile.name, 
-                    role, 
-                    avatar 
-                };
 
-                const { data, error } = await supabase
-                    .from('users')
-                    .update(profileData)
-                    .eq('name', existingProfile.name);
+            // Create profile with trimmed, validated name
+            const profileData = {
+                name: trimmedName,
+                role,
+                avatar
+            };
 
-                if(error) throw error;
-
-                localStorage.setItem('userProfile', JSON.stringify(profileData));
-                console.log("Profile updated!", data);
-                navigate('/finished-profile');
-            } else {
-                // Check for duplicate name using case-insensitive search to prevent duplicate entries
+            // Check for duplicate name using case-insensitive search to prevent duplicate entries
+            if (!existingProfile || trimmedName !== existingProfile.name) {
                 const { data: existingUser, error: checkError } = await supabase
                     .from('users')
                     .select('name')
@@ -83,24 +72,28 @@ export default function useCreateProfile() {
                 if (existingUser) {
                     throw new Error(text.nameExists);
                 }
+            }
 
-                // Create profile with trimmed, validated name
-                const profileData = { 
-                    name: trimmedName, 
-                    role, 
-                    avatar 
-                };
+            let result;
 
-                const { data, error } = await supabase
+            if (existingProfile) {
+                result = await supabase
+                    .from('users')
+                    .update(profileData)
+                    .eq('name', existingProfile.name);
+            } else {
+                result = await supabase
                     .from('users')
                     .insert([profileData]);
-
-                if(error) throw error;
-
-                localStorage.setItem('userProfile', JSON.stringify(profileData));
-                console.log("Profile created!", data);
-                navigate('/finished-profile');
             }
+
+            if (result.error) throw result.error;
+
+            localStorage.setItem('userProfile', JSON.stringify(profileData));
+            console.log(existingProfile ? "Profile updated!" : "Profile created!", result.data);
+            navigate('/finished-profile');
+
+
 
         } catch (error) {
             console.error("Upload error: ", error.message);

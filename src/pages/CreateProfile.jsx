@@ -8,7 +8,7 @@ import translations from "../translations/translations.json";
 import { ButtonRow } from "../components/buttons/ButtonRow.styles";
 import { SmallButton, SmallLightButton } from "../components/buttons/Button.styles";
 import { StyledOption } from "../components/buttons/StyledOption.styles";
-import { HeadingCard} from "../components/cards/Cards.styles"
+import { HeadingCard } from "../components/cards/Cards.styles"
 import { TextInput } from "../components/TextInput.styles";
 import { AvatarContainer, CreateProfileWrapper } from "../components/buttons/AvatarContainer.styles";
 import { AvatarOption } from "../components/buttons/AvatarOption.styles";
@@ -54,139 +54,138 @@ export default function CreateProfile() {
 
             <form onSubmit={handleSubmit}>
 
-            <CreateProfileWrapper>
-                <h3>{text.name.toUpperCase()}</h3>
-                <TextInput 
-                    type="text" 
-                    maxLength="20"
-                    placeholder={text.namePlaceholder}
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    required
-                    disabled={existingProfile !== null}
-                >
-                </TextInput>
-            </CreateProfileWrapper>
+                <CreateProfileWrapper>
+                    <h3>{text.name.toUpperCase()}</h3>
+                    <TextInput
+                        type="text"
+                        maxLength="20"
+                        placeholder={text.namePlaceholder}
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        required
+                    >
+                    </TextInput>
+                </CreateProfileWrapper>
 
-            <CreateProfileWrapper>
-                <h3>{text.chooseClass.toUpperCase()}</h3>
-                <ButtonRow>
-                    <StyledOption>
-                        <input 
-                            type="radio" 
-                            name="program" 
-                            value="WU" 
-                            checked={role === 'WU'}
-                            onChange={(e) => setRole(e.target.value)}
-                        />
-                        <div>{textCommon.webDeveloper.toUpperCase()}</div>
-                    </StyledOption>
-
-                    <StyledOption>
-                        <input 
-                            type="radio" 
-                            name="program" 
-                            value="DD" 
-                            checked={role === 'DD'}
-                            onChange={(e) => setRole(e.target.value)}
+                <CreateProfileWrapper>
+                    <h3>{text.chooseClass.toUpperCase()}</h3>
+                    <ButtonRow>
+                        <StyledOption>
+                            <input
+                                type="radio"
+                                name="program"
+                                value="WU"
+                                checked={role === 'WU'}
+                                onChange={(e) => setRole(e.target.value)}
                             />
-                        <div>{textCommon.digitalDesigner.toUpperCase()}</div>
-                    </StyledOption>
+                            <div>{textCommon.webDeveloper.toUpperCase()}</div>
+                        </StyledOption>
+
+                        <StyledOption>
+                            <input
+                                type="radio"
+                                name="program"
+                                value="DD"
+                                checked={role === 'DD'}
+                                onChange={(e) => setRole(e.target.value)}
+                            />
+                            <div>{textCommon.digitalDesigner.toUpperCase()}</div>
+                        </StyledOption>
+                    </ButtonRow>
+                </CreateProfileWrapper>
+
+                <CreateProfileWrapper>
+                    <h3>{text.chooseAvatar.toUpperCase()}</h3>
+
+                    <AvatarContainer>
+                        <AvatarOption>
+                            <input
+                                type="radio"
+                                name="avatar"
+                                value="turtle"
+                                checked={avatar === "turtle"}
+                                onChange={(e) => setAvatar(e.target.value)}
+                            />
+                            <div>
+                                <TurtleIcon />
+                            </div>
+                        </AvatarOption>
+                        <AvatarOption>
+                            <input
+                                type="radio"
+                                name="avatar"
+                                value="toast"
+                                checked={avatar === "toast"}
+                                onChange={(e) => setAvatar(e.target.value)}
+                            />
+                            <div>
+                                <ToastIcon />
+                            </div>
+                        </AvatarOption>
+                        <AvatarOption>
+                            <input
+                                type="radio"
+                                name="avatar"
+                                value="frog"
+                                checked={avatar === "frog"}
+                                onChange={(e) => setAvatar(e.target.value)}
+                            />
+                            <div>
+                                <FrogIcon />
+                            </div>
+                        </AvatarOption>
+                        <AvatarOption>
+                            <input
+                                type="radio"
+                                name="avatar"
+                                value="fish"
+                                checked={avatar === "fish"}
+                                onChange={(e) => setAvatar(e.target.value)}
+                            />
+                            <div>
+                                <FishIcon />
+                            </div>
+                        </AvatarOption>
+                        <AvatarOption>
+                            <input
+                                type="radio"
+                                name="avatar"
+                                value="pig"
+                                checked={avatar === "pig"}
+                                onChange={(e) => setAvatar(e.target.value)}
+                            />
+                            <div>
+                                <PigIcon />
+                            </div>
+                        </AvatarOption>
+                        <AvatarOption>
+                            <input
+                                type="radio"
+                                name="avatar"
+                                value="robot"
+                                checked={avatar === "robot"}
+                                onChange={(e) => setAvatar(e.target.value)}
+                            />
+                            <div>
+                                <RobotIcon />
+                            </div>
+                        </AvatarOption>
+                    </AvatarContainer>
+
+                </CreateProfileWrapper>
+
+                <ButtonRow>
+                    <SmallLightButton type="button" onClick={() => navigate(-1)}>
+                        <img src="backwardsArrow.svg" alt="back" />
+                        {textCommon.back.toUpperCase()}
+                    </SmallLightButton>
+                    <SmallButton type="submit" disabled={loading}>
+                        {loading ? textCommon.saving.toUpperCase() : textCommon.save.toUpperCase()}
+                        <img src="forwardArrow.svg" alt="forward" />
+                    </SmallButton>
                 </ButtonRow>
-            </CreateProfileWrapper>
 
-            <CreateProfileWrapper>
-                <h3>{text.chooseAvatar.toUpperCase()}</h3>
-                
-                <AvatarContainer>
-                    <AvatarOption>
-                        <input 
-                            type="radio" 
-                            name="avatar" 
-                            value="turtle" 
-                            checked={avatar === "turtle"}
-                            onChange={(e) => setAvatar(e.target.value)}
-                        />
-                        <div>
-                            <TurtleIcon />
-                        </div>
-                    </AvatarOption>
-                    <AvatarOption>
-                        <input 
-                            type="radio" 
-                            name="avatar" 
-                            value="toast" 
-                            checked={avatar === "toast"}
-                            onChange={(e) => setAvatar(e.target.value)}
-                        />
-                        <div>
-                            <ToastIcon />
-                        </div>
-                    </AvatarOption>
-                    <AvatarOption>
-                        <input 
-                            type="radio" 
-                            name="avatar" 
-                            value="frog" 
-                            checked={avatar === "frog"}
-                            onChange={(e) => setAvatar(e.target.value)}
-                        />
-                        <div>
-                            <FrogIcon />
-                        </div>
-                    </AvatarOption>
-                    <AvatarOption>
-                        <input 
-                            type="radio" 
-                            name="avatar" 
-                            value="fish" 
-                            checked={avatar === "fish"}
-                            onChange={(e) => setAvatar(e.target.value)}
-                        />
-                        <div>
-                            <FishIcon />
-                        </div>
-                    </AvatarOption>
-                    <AvatarOption>
-                        <input 
-                            type="radio" 
-                            name="avatar" 
-                            value="pig" 
-                            checked={avatar === "pig"}
-                            onChange={(e) => setAvatar(e.target.value)}
-                        />
-                        <div>
-                            <PigIcon />
-                        </div>
-                    </AvatarOption>
-                    <AvatarOption>
-                        <input 
-                            type="radio" 
-                            name="avatar" 
-                            value="robot" 
-                            checked={avatar === "robot"}
-                            onChange={(e) => setAvatar(e.target.value)}
-                        />
-                        <div>
-                            <RobotIcon />
-                        </div>
-                    </AvatarOption>
-                </AvatarContainer>
-
-            </CreateProfileWrapper>
-
-            <ButtonRow>
-                <SmallLightButton type="button" onClick={() => navigate(-1)}>
-                    <img src="backwardsArrow.svg" alt="back" />
-                    {textCommon.back.toUpperCase()}
-                </SmallLightButton>
-                <SmallButton type="submit" disabled={loading}>
-                    {loading ? textCommon.saving.toUpperCase() : textCommon.save.toUpperCase()}
-                    <img src="forwardArrow.svg" alt="forward" />
-                </SmallButton>
-            </ButtonRow>
-
-        </form>
+            </form>
 
         </>
     );
