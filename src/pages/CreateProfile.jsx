@@ -10,7 +10,7 @@ import { SmallButton, SmallLightButton } from "../components/buttons/Button.styl
 import { StyledOption } from "../components/buttons/StyledOption.styles";
 import { HeadingCard } from "../components/cards/Cards.styles"
 import { TextInput } from "../components/TextInput.styles";
-import { AvatarContainer, CreateProfileWrapper } from "../components/buttons/AvatarContainer.styles";
+import { AvatarContainer, CreateProfileWrapper } from "../components/buttons/CreateProfile.styles";
 import { AvatarOption } from "../components/buttons/AvatarOption.styles";
 
 // Icons
