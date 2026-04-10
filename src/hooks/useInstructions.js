@@ -11,7 +11,6 @@ export function useInstructions() {
     const instructions = translations.instructions[lang];
     const [currentIndex, setCurrentIndex] = useState(0);
     const currentStep = instructions[currentIndex];
-    const [colorMode, setColorMode] = useState('light');
     const navigate = useNavigate();
 
     const nextStep = () => {
@@ -37,7 +36,6 @@ export function useInstructions() {
         instructions,
         stepNumber: currentIndex + 1,
         totalSteps: instructions.length,
-        colorMode,
         nextStep,
         previousStep
     };

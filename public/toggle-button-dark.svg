@@ -1,0 +1,14 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 36" width="38" height="36">
+	<defs>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+			<path d="m2.38 11.25h-1.19-1.19v13.5h2.38v4.5h2.37v2.25h2.38v2.25h4.75v2.25h14.25v-2.25h4.75v-2.25h2.37v-2.25h2.38v-4.5h2.37v-13.5h-2.38v-4.5h-2.37v-2.25h-2.38v-2.25h-4.75v-2.25h-14.25v2.25h-4.75v2.25h-2.37v2.25h-2.38z"/>
+		</clipPath>
+	</defs>
+	<style>
+		.s0 { fill: #001a52 } 
+	</style>
+	<g clip-path="url(#cp1)">
+		<path class="s0" d="m2.38 11.25h-1.19-1.19v13.5h2.38v4.5h2.37v2.25h2.38v2.25h4.75v2.25h14.25v-2.25h4.75v-2.25h2.37v-2.25h2.38v-4.5h2.37v-13.5h-2.38v-4.5h-2.37v-2.25h-2.38v-2.25h-4.75v-2.25h-14.25v2.25h-4.75v2.25h-2.37v2.25h-2.38z"/>
+		<rect width="38" height="36" id="Enfärgad fyllning 1" style="fill: #ffffff"/>
+	</g>
+</svg>

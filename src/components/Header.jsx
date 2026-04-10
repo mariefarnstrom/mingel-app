@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 // Components
 import { HamburgerMenu, StyledHeader } from "./Header.styles";
 import { GhostContainer, GhostWrapper } from "./GhostContainer.styles";
-import { LanguageToggleDiv, MenuOverlay, StyledMenuLink } from "./MenuOverlay.styles";
+import { ToggleDiv, MenuOverlay, StyledMenuLink, NavContainer, ToggleWrapper } from "./MenuOverlay.styles";
 import LanguageToggle from "./LanguageToggle";
+import ColorToggle from "./ColorToggle";
 
 // Icons
 import GhostIcon from "./icons/Ghost";
@@ -14,6 +15,7 @@ import GhostIcon from "./icons/Ghost";
 import { useProfile } from "../hooks/useProfile";
 import { useLanguage } from "../hooks/useLanguage";
 import translations from "../translations/translations.json";
+import { useColorMode } from "../hooks/useColorMode";
 
 
 export default function Header() {
@@ -21,6 +23,7 @@ export default function Header() {
     const [open, setOpen] = useState(false);
     const { lang } = useLanguage();
     const { profile } = useProfile(); // Fetch profile
+    const { colorMode } = useColorMode();
 
     // Prevent header from scrolling when menu is open
     useEffect(() => {
@@ -44,13 +47,15 @@ export default function Header() {
                     <img src="/logo.svg" alt="" />
                 </Link>
                 <HamburgerMenu onClick={() => setOpen(!open)}>
-                    {open ? <img src='/x-icon.svg' alt='' /> : <img src='/hamburger-icon.svg' alt='' />}
+                    {open ? <img src={`/x-icon-${colorMode}.svg`} alt='' /> : <img src={`/hamburger-icon-${colorMode}.svg`} alt='' />}
                 </HamburgerMenu>
             </StyledHeader>
 
             {open &&
 
                 <MenuOverlay>
+                    <NavContainer>
+                    
                     <nav>
                         <StyledMenuLink
                             to="/"
@@ -83,20 +88,27 @@ export default function Header() {
                         </StyledMenuLink >
                     </nav>
 
-                    <GhostContainer overlay>
-                        <GhostWrapper>
-                            <GhostIcon />
-                        </GhostWrapper>
-                    </GhostContainer>
+                        <ToggleWrapper>
+                            <GhostContainer className="nav-ghost" overlay>
+                                <GhostWrapper>
+                                    <GhostIcon />
+                                </GhostWrapper>
+                            </GhostContainer>
 
-                    <LanguageToggleDiv>
-                        <span>{text.toggleLanguage.toUpperCase()}</span>
-                        <LanguageToggle />
-                    </LanguageToggleDiv>
+                            <ToggleDiv>
+                                <span>{text[`toggleColor-${colorMode}`].toUpperCase()}</span>
+                                <ColorToggle />
+                            </ToggleDiv>
 
+                            <ToggleDiv>
+                                <span>{text.toggleLanguage.toUpperCase()}</span>
+                                <LanguageToggle />
+                            </ToggleDiv>
+                        </ToggleWrapper>
+
+                    </NavContainer>
                 </MenuOverlay>
             }
         </>
     )
-
 }

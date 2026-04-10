@@ -1,3 +1,8 @@
+/* 
+ * Light mode is the default.
+ * Variables are overridden by data-theme attributes (controlled by React)
+ * and by @media (prefers-color-scheme: dark) for no-JS fallback.
+ */
 :root {
   --text: #001A52;
   --text-h: #E51536;
@@ -32,6 +37,43 @@
   }
 }
 
+/* Light theme - explicitly set when user selects light mode or system default is light */
+[data-theme="light"] {
+  --text: #001A52;
+  --text-h: #E51536;
+  --bg: #fff;
+  --border: #001A52;
+  --pattern-bg: #00000080;
+  --accent: #E51536;
+
+  --btn-primary: #001A52;
+  --btn-primary-text: #fff;
+  --btn-secondary: #fff;
+  --btn-secondary-text: #001A52;
+  --btn-secondary-border: #001A52;
+}
+
+/* Dark theme - applied when user selects dark mode or system preference is dark */
+[data-theme="dark"] {
+  --text: #fff;
+  --text-h: #E51536;
+  --bg: #001A52;
+  --border: #fff;
+  --pattern-bg: #ffffff80;
+  --accent: #E51536;
+
+  --btn-primary: #fff;
+  --btn-primary-text: #001A52;
+  --btn-secondary: #001A52;
+  --btn-secondary-text: #fff;
+  --btn-secondary-border: #fff;
+}
+
+/* 
+ * Fallback for users with JavaScript disabled or during initial page load.
+ * Respects system color scheme preference.
+ * Once React mounts, the data-theme attribute takes precedence.
+ */
 @media (prefers-color-scheme: dark) {
   :root {
     --text: #fff;
@@ -74,7 +116,8 @@ body {
   gap: 0.4rem;
   border-inline: 1px solid var(--border);
   text-align: center;
-  background-image: url("/background.svg");
+  background-image: url("background.svg");
+  background-color: var(--bg);
 }
 
 h1,
@@ -112,4 +155,5 @@ h5 {
 
 p {
   font-family: var(--font-body);
+  color: var(--text);
 }
