@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 import { HeadingCard } from "../components/cards/Cards.styles";
 import { ScoreBoardWrapper, ScoreBoardContainer, ScoreBoardRow, Rank, UserWrapper, UserAvatar, UserInfo, UserScore } from "../components/ScoreBoard.styles";
 import { ErrorModal } from "../components/ErrorModal";
-import { SmallButton, SmallLightButton, WideButton } from "../components/buttons/Button.styles";
+import { WideButton } from "../components/buttons/Button.styles";
 import { ButtonRowScoreboard } from "../components/buttons/ButtonRow.styles";
 
 // Data / Language
@@ -13,6 +13,7 @@ import { useScore } from "../hooks/useScore";
 import { useProfile } from "../hooks/useProfile";
 import { useLanguage } from "../hooks/useLanguage";
 import translations from "../translations/translations.json";
+import useCreateProfile from "../hooks/useCreateProfile";
 
 // Icons
 import RobotIcon from "../components/icons/Robot";
@@ -29,6 +30,8 @@ export default function ScoreBoard() {
         loading,
         errorMessage
     } = useScore();
+
+    const { existingProfile } = useCreateProfile();
 
     const userRowRef = useRef(null);
 
@@ -111,8 +114,11 @@ export default function ScoreBoard() {
             </ScoreBoardWrapper>
 
             <ButtonRowScoreboard>
-                <WideButton type="button" onClick={() => navigate("/choose-difficulty")}>
-                    {textCommon.newQuestion.toUpperCase()}
+                <WideButton type="button" onClick={() => navigate(existingProfile !== null ? "/choose-difficulty" : "/create-profile")}>
+                    {(existingProfile !== null ?
+                        textCommon.newQuestion
+                        : textCommon.createProfile)
+                        .toUpperCase()}
                 </WideButton>
             </ButtonRowScoreboard>
 

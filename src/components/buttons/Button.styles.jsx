@@ -11,6 +11,7 @@ export const BaseButton = styled.button`
     align-items: center;
     gap: 0.5rem;
     justify-content: center;
+    cursor: pointer;
 `;
 
 export const WideButton = styled(BaseButton)`
