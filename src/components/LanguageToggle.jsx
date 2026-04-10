@@ -4,7 +4,7 @@ import { useColorMode } from "../hooks/useColorMode";
 
 export default function LanguageToggle() {
     const { lang, setLang } = useLanguage();
-    const { colorMode, setColorMode } = useColorMode();
+    const { colorMode } = useColorMode();
     
     return (
         <ToggleContainer role="group" 
@@ -14,13 +14,15 @@ export default function LanguageToggle() {
             <ToggleButton
                 active={lang === "sv"}
                 onClick={() => setLang(lang === "sv" ? "en" : "sv")}
-            >
+                aria-label="Swedish"
+                >
             </ToggleButton>
 
             <ToggleButton
                 active={lang === "en"}
                 onClick={() => setLang(lang === "sv" ? "en" : "sv")}
-            >
+                aria-label="English"
+                >
             </ToggleButton>
 
             <Slider lang={lang} colorMode={colorMode} isColorMode={false} />

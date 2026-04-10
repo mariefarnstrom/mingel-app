@@ -13,14 +13,16 @@ export default function ColorToggle() {
                 active={colorMode === "light"}
                 onClick={() => setColorMode(colorMode === "light" ? "dark" : "light")}
                 colorMode={colorMode}
-            >
+                aria-label="Light mode"
+                >
             </ToggleButton>
 
             <ToggleButton
                 active={colorMode === "dark"}
                 onClick={() => setColorMode(colorMode === "light" ? "dark" : "light")}
                 colorMode={colorMode}
-            >
+                aria-label="Dark mode"
+                >
             </ToggleButton>
 
             <Slider 

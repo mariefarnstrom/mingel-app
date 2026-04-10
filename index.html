@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mingel-app</title>
+    <title>YRGO:XP</title>
 
     <!-- Heading font -->
      <link href="https://fonts.cdnfonts.com/css/blrrpix" rel="stylesheet">
@@ -13,7 +13,21 @@
 
 
   </head>
-  <body data-theme="light">
+  <body>
+    <script>
+      // Initialize color theme before React mounts to prevent light-first flash
+      // Reads from localStorage first, then falls back to system prefers-color-scheme
+      (function() {
+        const savedMode = localStorage.getItem('colorMode');
+        if (savedMode === 'dark' || savedMode === 'light') {
+          document.documentElement.setAttribute('data-theme', savedMode);
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
