@@ -23,7 +23,7 @@ export default function Header() {
     const [open, setOpen] = useState(false);
     const { lang } = useLanguage();
     const { profile } = useProfile(); // Fetch profile
-    const { colorMode, setColorMode } = useColorMode();
+    const { colorMode } = useColorMode();
 
     // Prevent header from scrolling when menu is open
     useEffect(() => {
