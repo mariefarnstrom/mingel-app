@@ -32,6 +32,40 @@
   }
 }
 
+[data-theme="light"] {
+  --text: #001A52;
+  --text-h: #E51536;
+  --bg: #fff;
+  --border: #001A52;
+  --pattern-bg: #00000080;
+  --accent: #E51536;
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --btn-primary: #001A52;
+  --btn-primary-text: #fff;
+  --btn-secondary: #fff;
+  --btn-secondary-text: #001A52;
+  --btn-secondary-border: #001A52;
+}
+
+[data-theme="dark"] {
+  --text: #fff;
+  --text-h: #E51536;
+  --bg: #001A52;
+  --border: #fff;
+  --pattern-bg: #ffffff80;
+  --accent: #E51536;
+  --shadow:
+    rgba(0, 0, 0, 0.1) 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --btn-primary: #fff;
+  --btn-primary-text: #001A52;
+  --btn-secondary: #001A52;
+  --btn-secondary-text: #fff;
+  --btn-secondary-border: #fff;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --text: #fff;
@@ -53,19 +87,6 @@
   #social .button-icon {
     filter: invert(1) brightness(2);
   }
-}
-
-[data-theme="dark"] {
-  --text: #fff;
-  --text-h: #E51536;
-  --bg: #001A52;
-  --border: #fff;
-  --pattern-bg: #ffffff80;
-  --btn-primary: #fff;
-  --btn-primary-text: #001A52;
-  --btn-secondary: #001A52;
-  --btn-secondary-text: #fff;
-  --btn-secondary-border: #fff;
 }
 
 * {
