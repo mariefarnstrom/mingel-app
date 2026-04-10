@@ -8,7 +8,8 @@
       "createProfile": "Skapa profil",
       "toQuestions": "Gå till frågor",
       "toggleLanguage": "Switch to English", 
-      "toggleColor": "Dark mode"
+      "toggleColor-light": "Aktivera dark mode",
+      "toggleColor-dark": "Aktivera light mode"
     },
     "en": {
       "home": "Home",
@@ -18,7 +19,8 @@
       "createProfile": "Create profile",
       "toQuestions": "Go to questions",
       "toggleLanguage": "Ändra till svenska",
-      "toggleColor": "Dark mode"
+      "toggleColor-light": "Activate dark mode",
+      "toggleColor-dark": "Activate light mode"
     }
   },
   "home": {

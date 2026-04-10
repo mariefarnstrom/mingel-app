@@ -96,7 +96,7 @@ export default function Header() {
                             </GhostContainer>
 
                             <ToggleDiv>
-                                <span>{text.toggleColor.toUpperCase()}</span>
+                                <span>{text[`toggleColor-${colorMode}`].toUpperCase()}</span>
                                 <ColorToggle />
                             </ToggleDiv>
 
