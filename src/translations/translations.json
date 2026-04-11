@@ -7,7 +7,7 @@
       "changeProfile": "Ändra profil",
       "createProfile": "Skapa profil",
       "toQuestions": "Gå till frågor",
-      "toggleLanguage": "Switch to English", 
+      "toggleLanguage": "Switch to English",
       "toggleColor-light": "Aktivera dark mode",
       "toggleColor-dark": "Aktivera light mode"
     },
@@ -207,7 +207,8 @@
       "webDevelopers": "Webbutvecklare",
       "digitalDesigner": "Digital designer",
       "digitalDesigners": "Digital designers",
-      "newQuestion": "Ny fråga"
+      "newQuestion": "Ny fråga",
+      "createProfile": "Skapa profil"
     },
     "en": {
       "back": "Back",
@@ -220,7 +221,8 @@
       "webDevelopers": "Web developers",
       "digitalDesigner": "Digital designer",
       "digitalDesigners": "Digital designers",
-      "newQuestion": "New question"
+      "newQuestion": "New question",
+      "createProfile": "Create profile"
     }
   }
 }
