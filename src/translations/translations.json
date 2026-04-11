@@ -25,7 +25,7 @@
   },
   "home": {
     "sv": {
-      "title": "Välkommen till YrgoXP",
+      "title": "Välkommen till YRGO:XP",
       "description1": "Spelet som gör det enkelt att börja prata. Samla XP genom att ställa frågor och vara aktiv i spelet.",
       "description2": "Ju fler frågor du ställer, desto högre klättrar du på scoreboarden.",
       "registeredPlayers": "Registrerade spelare",
@@ -34,7 +34,7 @@
       "toQuestions": "Gå till frågor"
     },
     "en": {
-      "title": "Welcome to YrgoXP",
+      "title": "Welcome to YRGO:XP",
       "description1": "The game that makes it easy to start talking. Collect XP by asking questions and being active in the game.",
       "description2": "The more questions you ask, the higher you climb on the scoreboard.",
       "registeredPlayers": "Registered players",
