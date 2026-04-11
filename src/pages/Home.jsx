@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 // Components
-import { WideButton } from "../components/buttons/Button.styles";
+import { WideButton } from "../components/buttons/Buttons.styles";
 import { BaseCard } from "../components/cards/Cards.styles";
 import { GhostContainer, GhostWrapper } from "../components/GhostContainer.styles";
 import { RegisteredPlayersCard } from "../components/cards/Cards.styles";

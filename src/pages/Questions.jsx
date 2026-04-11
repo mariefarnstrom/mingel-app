@@ -4,9 +4,9 @@ import { useNavigate, useParams } from "react-router-dom";
 // Components
 import { HeadingCard } from "../components/cards/Cards.styles";
 import { ButtonRow } from "../components/buttons/ButtonRow.styles";
-import { SmallButton, SmallLightButton } from "../components/buttons/Button.styles";
+import { SmallButton, SmallLightButton } from "../components/buttons/Buttons.styles";
 import { QuestionCard } from "../components/cards/Cards.styles";
-import { NewQuestionButton } from "../components/buttons/Button.styles";
+import { NewQuestionButton } from "../components/buttons/Buttons.styles";
 
 // Language
 import { useLanguage } from "../hooks/useLanguage";
