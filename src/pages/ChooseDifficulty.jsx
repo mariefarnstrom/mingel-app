@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 // Components
 import { HeadingCard, PointCard } from "../components/cards/Cards.styles";
-import { BigButton } from "../components/buttons/Button.styles";
+import { BigButton } from "../components/buttons/Buttons.styles";
 import { BigButtonsCard } from "../components/cards/Cards.styles";
 import { GhostContainer, GhostWrapper } from "../components/GhostContainer.styles";
 import { ErrorModal } from "../components/ErrorModal";

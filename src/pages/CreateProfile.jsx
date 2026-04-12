@@ -6,7 +6,8 @@ import translations from "../translations/translations.json";
 
 // Components
 import { ButtonRow } from "../components/buttons/ButtonRow.styles";
-import { SmallButton, SmallLightButton } from "../components/buttons/Button.styles";
+import NextButton from "../components/buttons/NextButton";
+import PrevButton from "../components/buttons/PrevButton";
 import { StyledOption } from "../components/buttons/StyledOption.styles";
 import { HeadingCard } from "../components/cards/Cards.styles"
 import { TextInput } from "../components/TextInput.styles";
@@ -175,18 +176,13 @@ export default function CreateProfile() {
                 </CreateProfileWrapper>
 
                 <ButtonRow>
-                    <SmallLightButton type="button" onClick={() => navigate(-1)}>
-                        <img src="backwardsArrow.svg" alt="back" />
-                        {textCommon.back.toUpperCase()}
-                    </SmallLightButton>
-                    <SmallButton type="submit" disabled={loading}>
+                    <PrevButton type="button" onClick={() => navigate(-1)}></PrevButton>
+                    <NextButton type="submit" disabled={loading}>
                         {loading ? textCommon.saving.toUpperCase() : textCommon.save.toUpperCase()}
-                        <img src="forwardArrow.svg" alt="forward" />
-                    </SmallButton>
+                    </NextButton>
                 </ButtonRow>
-
+                
             </form>
-
         </>
     );
 }

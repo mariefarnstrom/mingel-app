@@ -1,5 +1,5 @@
 import { ErrorCard } from './cards/Cards.styles';
-import { SmallButton } from './buttons/Button.styles';
+import { SmallButton } from './buttons/Buttons.styles';
 import GhostIcon from './icons/Ghost';
 
 export function ErrorModal({ errorMessage, onClose }) {

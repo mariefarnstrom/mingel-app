@@ -1,6 +1,8 @@
-import { SmallLightButton, SmallButton } from "../components/buttons/Button.styles";
+// Components
 import { ButtonRow } from "../components/buttons/ButtonRow.styles";
 import { HeadingCard, BaseCard, InstructionsCard, BigIconCard } from "../components/cards/Cards.styles"
+import NextButton from "../components/buttons/NextButton";
+import PrevButton from "../components/buttons/PrevButton";
 
 // Data / Language
 import { useInstructions } from "../hooks/useInstructions";
@@ -65,14 +67,11 @@ export default function Instructions() {
             </BaseCard>
 
             <ButtonRow>
-                <SmallLightButton onClick={previousStep}>
-                    <img src="backwardsArrow.svg" alt="back" />
-                    {textCommon.back.toUpperCase()}
-                </SmallLightButton>
-                <SmallButton onClick={nextStep}>
+                <PrevButton type="button" onClick={previousStep}></PrevButton>                
+
+                <NextButton type="button" onClick={nextStep}>
                     {textCommon.next.toUpperCase()}
-                    <img src="forwardArrow.svg" alt="forward" />
-                </SmallButton>
+                </NextButton>
             </ButtonRow>
 
         </>

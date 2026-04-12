@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { ProfileNameCard } from "../components/cards/Cards.styles";
 import { HeadingCard } from "../components/cards/Cards.styles";
 import { BigIconCard } from "../components/cards/Cards.styles";
-import { WideButton } from "../components/buttons/Button.styles";
+import { WideButton } from "../components/buttons/Buttons.styles";
 
 // Icons
 import RobotIcon from "../components/icons/Robot";
