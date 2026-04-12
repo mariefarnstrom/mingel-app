@@ -93,10 +93,6 @@
     --btn-secondary-text: #fff;
     --btn-secondary-border: #fff;
   }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
 }
 
 * {
@@ -105,6 +101,8 @@
 
 body {
   margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
 }
 
 #root {
@@ -120,6 +118,7 @@ body {
   text-align: center;
   background-image: url("background.svg");
   background-color: var(--bg);
+  overflow-y: hidden;
 }
 
 h1,
