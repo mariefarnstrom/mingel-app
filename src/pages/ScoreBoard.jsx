@@ -105,7 +105,7 @@ export default function ScoreBoard() {
                                     </UserInfo>
                                 </UserWrapper>
                                 <UserScore>
-                                    <span>{user.score}p <img src="/flame-icon.svg" alt="" aria-hidden="true" /></span>
+                                    <span>{user.score}xp <img src="/flame-icon.svg" alt="" aria-hidden="true" /></span>
                                 </UserScore>
                             </ScoreBoardRow>
                         )
