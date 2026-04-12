@@ -23,7 +23,6 @@ export function useScore() {
             if (error) throw error;
             setUsers(data);
         } catch (err) {
-            console.error("Error fetching data:", err);
             setErrorMessage(text.errorFetching);
         } finally {
             setLoading(false);
@@ -42,8 +41,6 @@ export function useScore() {
                     table: "users",
                 },
                 (payload) => {
-                    console.log("Change recieved!", payload);
-
                     setUsers((prev) => {
                         let updated = [...prev];
 

@@ -5,14 +5,12 @@ import { useLanguage } from '../hooks/useLanguage';
 import translations from "../translations/translations.json";
 
 // Components
-import { ButtonRow } from "../components/buttons/ButtonRow.styles";
+import { ButtonRow, StyledOption, AvatarContainer, CreateProfileWrapper, AvatarOption } from "../components/buttons/Buttons.styles";
 import NextButton from "../components/buttons/NextButton";
 import PrevButton from "../components/buttons/PrevButton";
-import { StyledOption } from "../components/buttons/StyledOption.styles";
 import { HeadingCard } from "../components/cards/Cards.styles"
 import { TextInput } from "../components/TextInput.styles";
-import { AvatarContainer, CreateProfileWrapper } from "../components/buttons/CreateProfile.styles";
-import { AvatarOption } from "../components/buttons/AvatarOption.styles";
+import { ErrorModal } from '../components/ErrorModal';
 
 // Icons
 import RobotIcon from "../components/icons/Robot";
@@ -21,7 +19,6 @@ import ToastIcon from "../components/icons/Toast";
 import FishIcon from "../components/icons/Fish";
 import FrogIcon from "../components/icons/Frog";
 import TurtleIcon from "../components/icons/Turtle";
-import { ErrorModal } from '../components/ErrorModal';
 
 export default function CreateProfile() {
 
@@ -35,7 +32,6 @@ export default function CreateProfile() {
         loading,
         errorMessage,
         setErrorMessage,
-        existingProfile,
         handleSubmit,
         navigate,
     } = useCreateProfile();

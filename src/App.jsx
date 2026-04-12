@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import './App.css'
 import { LanguageProvider } from './contexts/LanguageContext';
 import { useState, useEffect } from 'react';
 

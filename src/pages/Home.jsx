@@ -39,7 +39,6 @@ export default function Home() {
                 if (error) throw error;
                 setUsers(data);
             } catch (err) {
-                console.error("Error fetching users:", err.message);
                 setErrorMessage(text.errorFetching);
             } finally {
                 setLoading(false);
