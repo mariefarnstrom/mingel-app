@@ -14,12 +14,14 @@ import GhostIcon from "../components/icons/Ghost";
 import RocketIcon from "../components/icons/Rocket";
 import MegaphoneIcon from "../components/icons/Megaphone";
 import StarIcon from "../components/icons/Star";
+import TrophyIcon from "../components/icons/Trophy";
 
 const iconMap = {
     ghost: GhostIcon,
     rocket: RocketIcon,
     star: StarIcon,
     megaphone: MegaphoneIcon,
+    trophy: TrophyIcon,
 }
 
 export default function Instructions() {
