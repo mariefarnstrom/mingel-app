@@ -2,6 +2,10 @@ import styled from "@emotion/styled";
 
 export const CreateProfileWrapper = styled.section`
     padding-top: 1rem;
+
+    h3 {
+        margin: 0 0 1rem 0;
+    }
 `
 
 export const AvatarContainer = styled.div`
