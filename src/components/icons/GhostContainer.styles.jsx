@@ -12,7 +12,6 @@ export const GhostContainer = styled.div`
 
 export const GhostWrapper = styled.div`
     position: absolute;
-    top: 2rem;
     left: 0;
     transform: translateY(-50%);
     animation: ${ghostMovement} 5s ease-in-out infinite;
