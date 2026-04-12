@@ -115,8 +115,8 @@
   },
   "createProfile": {
     "sv": {
-      "heading": "Skapa din karaktär",
-      "description": "Skapa din avatar för att komma igång.",
+      "heading": "Skapa karaktär",
+      "description": "Skriv in ditt namn och välj avatar för att komma igång.",
       "name": "Namn",
       "namePlaceholder": "Ange ditt namn",
       "chooseClass": "Välj klass",
@@ -129,8 +129,8 @@
       "errorChars": "Namnet får endast innehålla bokstäver, siffror och bindestreck."
     },
     "en": {
-      "heading": "Create your character",
-      "description": "Create your avatar to get started.",
+      "heading": "Create character",
+      "description": "Type your name and choose an avatar to get started.",
       "name": "Name",
       "namePlaceholder": "Enter your name",
       "chooseClass": "Choose class",

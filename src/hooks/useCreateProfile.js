@@ -14,7 +14,7 @@ export default function useCreateProfile() {
     const { lang } = useLanguage();
     const text = translations.createProfile[lang];
     const [errorMessage, setErrorMessage] = useState("");
-    const { profile } = useProfile(); // Fetch profile
+    const { profile, updateProfile } = useProfile(); // Fetch profile + updateProfile method
     const existingProfile = profile || null;
 
     // Form data - If profile exists the data is shown from start
@@ -89,7 +89,8 @@ export default function useCreateProfile() {
 
             if (result.error) throw result.error;
 
-            localStorage.setItem('userProfile', JSON.stringify(profileData));
+            // Use updateProfile to save and dispatch event to other components
+            updateProfile(profileData);
             navigate('/finished-profile');
 
         } catch (error) {

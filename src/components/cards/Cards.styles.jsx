@@ -6,7 +6,7 @@ export const BaseCard = styled.div`
     align-self: center;
 
     width: 100%;
-    padding: 1.5rem 0.5rem;
+    padding: 1.5rem 1rem;
 
     border: 2px solid var(--border);
     border-radius: 10px;

@@ -11,7 +11,7 @@ import { GhostContainer, GhostWrapper } from "./icons/GhostContainer.styles"
 import GhostIcon from "./icons/Ghost";
 
 // Data / Language
-import { useProfile } from "../hooks/useProfile";
+import { PROFILE_UPDATED_EVENT } from "../hooks/useProfile";
 import { useLanguage } from "../hooks/useLanguage";
 import translations from "../translations/translations.json";
 import { useColorMode } from "../hooks/useColorMode";
@@ -20,9 +20,19 @@ import { useColorMode } from "../hooks/useColorMode";
 export default function Header() {
 
     const [open, setOpen] = useState(false);
+    const [profile, setProfile] = useState(null);
     const { lang } = useLanguage();
-    const { profile } = useProfile(); // Fetch profile
     const { colorMode } = useColorMode();
+
+    // Hämta initial profil
+    useEffect(() => {
+        try {
+            const savedProfile = localStorage.getItem('userProfile');
+            setProfile(savedProfile ? JSON.parse(savedProfile) : null);
+        } catch {
+            setProfile(null);
+        }
+    }, []);
 
     // Prevent header from scrolling when menu is open
     useEffect(() => {
@@ -36,13 +46,26 @@ export default function Header() {
         };
     }, [open]);
 
+    // Listen for profile updates from other components
+    useEffect(() => {
+        const handleProfileUpdate = (event) => {
+            const updatedProfile = event.detail;
+            if (updatedProfile) {
+                setProfile(updatedProfile);
+            }
+        };
+
+        window.addEventListener(PROFILE_UPDATED_EVENT, handleProfileUpdate);
+        return () => window.removeEventListener(PROFILE_UPDATED_EVENT, handleProfileUpdate);
+    }, []);
+
     const text = translations.header[lang];
 
 
     return (
         <>
             <StyledHeader>
-                <Link to="/">
+                <Link to="/" onClick={() => setOpen(false)}>
                     <img src="/logo.svg" alt="" />
                 </Link>
                 <HamburgerMenu onClick={() => setOpen(!open)}>
