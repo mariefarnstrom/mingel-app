@@ -1,4 +1,4 @@
-import { ToggleContainer, ToggleButton, Slider } from "./Toggles.styles";
+import { ToggleContainer, ToggleButton, Slider } from "./Header.styles";
 import { useColorMode } from "../hooks/useColorMode";
 import { useLanguage } from "../hooks/useLanguage";
 
