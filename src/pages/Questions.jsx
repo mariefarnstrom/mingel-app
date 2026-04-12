@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 // Components
 import { HeadingCard } from "../components/cards/Cards.styles";
-import { ButtonRow } from "../components/buttons/ButtonRow.styles";
+import { ButtonRow } from "../components/buttons/Buttons.styles";
 import NextButton from "../components/buttons/NextButton";
 import PrevButton from "../components/buttons/PrevButton";
 import { QuestionCard } from "../components/cards/Cards.styles";

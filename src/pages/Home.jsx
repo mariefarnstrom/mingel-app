@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 // Components
 import { WideButton } from "../components/buttons/Buttons.styles";
 import { BaseCard } from "../components/cards/Cards.styles";
-import { GhostContainer, GhostWrapper } from "../components/GhostContainer.styles";
+import { GhostContainer, GhostWrapper } from "../components/icons/GhostContainer.styles";
 import { RegisteredPlayersCard } from "../components/cards/Cards.styles";
 import { ErrorModal } from "../components/ErrorModal";
 
@@ -39,7 +39,6 @@ export default function Home() {
                 if (error) throw error;
                 setUsers(data);
             } catch (err) {
-                console.error("Error fetching users:", err.message);
                 setErrorMessage(text.errorFetching);
             } finally {
                 setLoading(false);

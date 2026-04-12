@@ -90,13 +90,9 @@ export default function useCreateProfile() {
             if (result.error) throw result.error;
 
             localStorage.setItem('userProfile', JSON.stringify(profileData));
-            console.log(existingProfile ? "Profile updated!" : "Profile created!", result.data);
             navigate('/finished-profile');
 
-
-
         } catch (error) {
-            console.error("Upload error: ", error.message);
             setErrorMessage(error.message);
 
         } finally {

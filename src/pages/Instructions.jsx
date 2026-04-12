@@ -1,5 +1,5 @@
 // Components
-import { ButtonRow } from "../components/buttons/ButtonRow.styles";
+import { ButtonRow } from "../components/buttons/Buttons.styles";
 import { HeadingCard, BaseCard, InstructionsCard, BigIconCard } from "../components/cards/Cards.styles"
 import NextButton from "../components/buttons/NextButton";
 import PrevButton from "../components/buttons/PrevButton";
@@ -25,14 +25,12 @@ const iconMap = {
 export default function Instructions() {
 
     const { lang } = useLanguage();
-    const text = translations.instructions[lang];
     const textCommon = translations.common[lang];
     const heading = translations.instructions.heading[lang];
     
     const { currentStep,
         stepNumber,
         totalSteps,
-        colorMode,
         nextStep,
         previousStep
     } = useInstructions();

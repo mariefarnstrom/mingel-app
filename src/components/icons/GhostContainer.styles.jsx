@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { ghostMovement, ghostFlip } from "../animations";
+import { ghostMovement, ghostFlip } from "../../animations";
 
 export const GhostContainer = styled.div`
     width: ${({ overlay }) => (overlay ? "93%" : "100%")};;

@@ -3,12 +3,11 @@ import { Link } from "react-router-dom";
 
 // Components
 import { HamburgerMenu, StyledHeader } from "./Header.styles";
-import { GhostContainer, GhostWrapper } from "./GhostContainer.styles";
-import { ToggleDiv, MenuOverlay, StyledMenuLink, NavContainer, ToggleWrapper } from "./MenuOverlay.styles";
-import LanguageToggle from "./LanguageToggle";
-import ColorToggle from "./ColorToggle";
+import { ToggleDiv, MenuOverlay, StyledMenuLink, NavContainer, ToggleWrapper } from "./Header.styles";
+import Toggle from "./Toggle";
 
 // Icons
+import { GhostContainer, GhostWrapper } from "./icons/GhostContainer.styles"
 import GhostIcon from "./icons/Ghost";
 
 // Data / Language
@@ -97,12 +96,12 @@ export default function Header() {
 
                             <ToggleDiv>
                                 <span>{text[`toggleColor-${colorMode}`].toUpperCase()}</span>
-                                <ColorToggle />
+                                <Toggle type="color" />
                             </ToggleDiv>
 
                             <ToggleDiv>
                                 <span>{text.toggleLanguage.toUpperCase()}</span>
-                                <LanguageToggle />
+                                <Toggle type="language" />
                             </ToggleDiv>
                         </ToggleWrapper>
 

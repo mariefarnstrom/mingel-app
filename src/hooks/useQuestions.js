@@ -38,7 +38,6 @@ export function useQuestions(level) {
                 if (error) throw error;
                 setQuestions(data);
             } catch (err) {
-                console.error("Error fetching questions:", err.message);
                 setErrorMessage(text.errorFetching);
             } finally {
                 setLoading(false);
@@ -65,7 +64,6 @@ export function useQuestions(level) {
         const storedUser = JSON.parse(localStorage.getItem("userProfile"));
 
         if (!storedUser) {
-            console.error("No user found");
             setErrorMessage(text.errorNoUser);
             return;
         }
@@ -77,7 +75,6 @@ export function useQuestions(level) {
             .eq("name", name)
             .single();
         if (error) {
-            console.error("Could not fetch score.", error);
             setErrorMessage(text.errorFetchingScore);
             return;
         }
@@ -93,7 +90,6 @@ export function useQuestions(level) {
             .eq("name", name);
 
         if (updateError) {
-            console.error("Could not update score:", updateError);
             setErrorMessage(text.errorUpdatingScore);
         } else {
             navigate('/score');

@@ -5,8 +5,7 @@ import { useEffect, useRef } from "react";
 import { HeadingCard } from "../components/cards/Cards.styles";
 import { ScoreBoardWrapper, ScoreBoardContainer, ScoreBoardRow, Rank, UserWrapper, UserAvatar, UserInfo, UserScore } from "../components/ScoreBoard.styles";
 import { ErrorModal } from "../components/ErrorModal";
-import { WideButton } from "../components/buttons/Buttons.styles";
-import { ButtonRowScoreboard } from "../components/buttons/ButtonRow.styles";
+import { WideButton, ButtonRowScoreboard } from "../components/buttons/Buttons.styles";
 
 // Data / Language
 import { useScore } from "../hooks/useScore";

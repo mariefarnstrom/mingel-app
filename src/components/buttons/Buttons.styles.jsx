@@ -36,18 +36,6 @@ export const SecondaryButton = styled(SmallButton)`
     border: 2px solid var(--btn-secondary-border);
 `;
 
-export const PrevButton = styled(SmallButton)`
-    background-color: ${props => props.colorMode === 'dark' ? 'var(--btn-primary)' : 'var(--btn-secondary)'};
-    color: ${props => props.colorMode === 'dark' ? 'var(--btn-primary-text)' : 'var(--btn-secondary-text)'};
-    border: 2px solid ${props => props.colorMode === 'dark' ? 'var(--btn-primary-border)' : 'var(--btn-secondary-border)'};
-`;
-
-export const SmallLightButton = styled(SmallButton)`
-    background-color: var(--btn-secondary);
-    color: var(--btn-secondary-text);
-    border: 2px solid var(--btn-secondary-text);
-`;
-
 export const BigButton = styled(BaseButton)`
     width: 100%;
     height: 7rem;
@@ -69,4 +57,129 @@ export const ChooseProfileButton = styled(BaseButton)`
     background-color: var(--btn-secondary);
     color: var(--btn-secondary-text);
     border: 2px solid var(--btn-secondary-text);
+`;
+
+// ============================================================
+// Button Layout Components (ButtonRow, grids, etc.)
+// ============================================================
+
+export const ButtonRow = styled.div`
+    display: flex;
+    gap: 1rem;
+
+    > * {
+        flex: 1;
+    }
+`;
+
+export const ButtonRowScoreboard = styled(ButtonRow)`
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    padding: 1rem;
+    width: 100%;
+    max-width: 480px;
+    left: 50%;
+    transform: translateX(-50%);
+`;
+
+// ============================================================
+// Profile Creation Components (Avatars, Options)
+// ============================================================
+
+
+export const ChooseProfileRow = styled.div`
+    display: flex;
+    gap: 0.75rem;
+
+    > * {
+        flex: 1;
+    }
+`;
+
+export const CreateProfileWrapper = styled.section`
+    padding-top: 1rem;
+
+    h3 {
+        margin: 0 0 1rem 0;
+    }
+`;
+
+export const AvatarContainer = styled.div`
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+    padding-bottom: 1.5rem;
+    width: 100%;
+`;
+
+export const HiddenRadio = styled.input`
+  display: none;
+`;
+
+export const AvatarOption = styled.label`
+  display: block;
+  cursor: pointer;
+  width: 100%;
+
+  input {
+    display: none;
+  }
+
+  div {
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--btn-secondary);
+    color: var(--btn-secondary-text);
+    border: 2px solid var(--btn-secondary-text);
+    border-radius: 10px;
+
+    overflow: hidden;
+  }
+
+  div svg {
+    width: 50%;
+    height: 50%;
+  }
+
+  input:checked + div {
+    background-color: var(--btn-primary);
+    color: var(--btn-primary-text);
+    border: none;
+  }
+`;
+
+export const StyledOption = styled.label`
+  display: block;
+  cursor: pointer;
+
+  input {
+    display: none;
+  }
+
+  div {
+    height: 4.5rem;
+    font-size: 1.25rem;
+    font-family: var(--font-heading);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--btn-secondary);
+    color: var(--btn-secondary-text);
+    border: 2px solid var(--btn-secondary-text);
+    border-radius: 10px;
+  }
+
+  input:checked + div {
+    background-color: var(--btn-primary);
+    color: var(--btn-primary-text);
+    border: none;
+  }
 `;
