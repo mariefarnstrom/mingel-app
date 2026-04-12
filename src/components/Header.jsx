@@ -7,7 +7,7 @@ import { ToggleDiv, MenuOverlay, StyledMenuLink, NavContainer, ToggleWrapper } f
 import Toggle from "./Toggle";
 
 // Icons
-import { GhostContainer, GhostWrapper } from "./icons/GhostContainer.styles"
+import { GhostContainerOverlay, GhostWrapper } from "./icons/GhostContainer.styles"
 import GhostIcon from "./icons/Ghost";
 
 // Data / Language
@@ -111,11 +111,11 @@ export default function Header() {
                         </nav>
 
                         <ToggleWrapper>
-                            <GhostContainer overlay>
+                            <GhostContainerOverlay overlay>
                                 <GhostWrapper>
                                     <GhostIcon />
                                 </GhostWrapper>
-                            </GhostContainer>
+                            </GhostContainerOverlay>
 
                             <ToggleDiv>
                                 <span>{text[`toggleColor-${colorMode}`].toUpperCase()}</span>
