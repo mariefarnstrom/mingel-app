@@ -14,19 +14,23 @@ export default function Toggle({ type }) {
     // Toggle between light and dark mode
     if (type === 'color') {
         return (
-            <ToggleContainer role="group" 
+            <ToggleContainer role="radiogroup" 
                 aria-label="Choose color mode"
                 colorMode={colorMode}>
 
                 <ToggleButton
-                    active={colorMode === "light"}
+                    role="radio"
+                    tabIndex={colorMode === "light" ? 0 : -1}
+                    aria-checked={colorMode === "light"}
                     onClick={() => setColorMode(colorMode === "light" ? "dark" : "light")}
                     colorMode={colorMode}
                     aria-label="Light mode"
                 />
 
                 <ToggleButton
-                    active={colorMode === "dark"}
+                    role="radio"
+                    tabIndex={colorMode === "dark" ? 0 : -1}
+                    aria-checked={colorMode === "dark"}
                     onClick={() => setColorMode(colorMode === "light" ? "dark" : "light")}
                     colorMode={colorMode}
                     aria-label="Dark mode"
@@ -42,18 +46,22 @@ export default function Toggle({ type }) {
     // Toggle between swedish and english
     if (type === 'language') {
         return (
-            <ToggleContainer role="group" 
+            <ToggleContainer role="radiogroup" 
                 aria-label="Choose language"
                 colorMode={colorMode}>
                     
                 <ToggleButton
-                    active={lang === "sv"}
+                    role="radio"
+                    tabIndex={lang === "sv" ? 0 : -1}
+                    aria-checked={lang === "sv"}
                     onClick={() => setLang(lang === "sv" ? "en" : "sv")}
                     aria-label="Swedish"
                 />
 
                 <ToggleButton
-                    active={lang === "en"}
+                    role="radio"
+                    tabIndex={lang === "en" ? 0 : -1}
+                    aria-checked={lang === "en"}
                     onClick={() => setLang(lang === "sv" ? "en" : "sv")}
                     aria-label="English"
                 />
