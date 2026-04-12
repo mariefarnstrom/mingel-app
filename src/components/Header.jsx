@@ -77,41 +77,41 @@ export default function Header() {
 
                 <MenuOverlay>
                     <NavContainer>
-                    
-                    <nav>
-                        <StyledMenuLink
-                            to="/"
-                            onClick={() => setOpen(false)}>
-                            {text.home.toUpperCase()}
-                        </StyledMenuLink >
 
-                        <StyledMenuLink
-                            to="/instructions"
-                            onClick={() => setOpen(false)}>
-                            {text.rules.toUpperCase()}
-                        </StyledMenuLink >
+                        <nav>
+                            <StyledMenuLink
+                                to="/"
+                                onClick={() => setOpen(false)}>
+                                {text.home.toUpperCase()}
+                            </StyledMenuLink >
 
-                        <StyledMenuLink
-                            to="/create-profile"
-                            onClick={() => setOpen(false)}>
-                            {profile ? text.changeProfile.toUpperCase() : text.createProfile.toUpperCase()}
-                        </StyledMenuLink >
+                            <StyledMenuLink
+                                to="/instructions"
+                                onClick={() => setOpen(false)}>
+                                {text.rules.toUpperCase()}
+                            </StyledMenuLink >
 
-                        {profile && <StyledMenuLink
-                            to="/choose-difficulty"
-                            onClick={() => setOpen(false)}>
-                            {text.toQuestions.toUpperCase()}
-                        </StyledMenuLink >}
+                            <StyledMenuLink
+                                to="/create-profile"
+                                onClick={() => setOpen(false)}>
+                                {profile ? text.changeProfile.toUpperCase() : text.createProfile.toUpperCase()}
+                            </StyledMenuLink >
 
-                        <StyledMenuLink
-                            to="/score"
-                            onClick={() => setOpen(false)}>
-                            {text.scoreboard.toUpperCase()}
-                        </StyledMenuLink >
-                    </nav>
+                            {profile && <StyledMenuLink
+                                to="/choose-difficulty"
+                                onClick={() => setOpen(false)}>
+                                {text.toQuestions.toUpperCase()}
+                            </StyledMenuLink >}
+
+                            <StyledMenuLink
+                                to="/score"
+                                onClick={() => setOpen(false)}>
+                                {text.scoreboard.toUpperCase()}
+                            </StyledMenuLink >
+                        </nav>
 
                         <ToggleWrapper>
-                            <GhostContainer className="nav-ghost" overlay>
+                            <GhostContainer overlay>
                                 <GhostWrapper>
                                     <GhostIcon />
                                 </GhostWrapper>
