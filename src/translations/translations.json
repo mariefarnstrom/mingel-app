@@ -59,19 +59,25 @@
         "id": 2,
         "icon": "rocket",
         "title": "Välj nivå",
-        "description": "Välj mellan Easy, Medium eller Hardcore. Svårare frågor ger mer XP."
+        "description": "Välj mellan Easy, Medium eller Hardcore. Svårare frågor ger högre XP."
       },
       {
         "id": 3,
         "icon": "megaphone",
         "title": "Ställ frågan",
-        "description": "Gå fram till ett företag och ställ frågan för att starta ett samtal. Tryck \"Klar\" sen."
+        "description": "Gå fram till ett företag och ställ frågan för att starta ett samtal. Tryck sedan \"Klar\"."
       },
       {
         "id": 4,
         "icon": "star",
         "title": "Samla XP",
-        "description": "Easy ger 1 XP, Medium 3 och Hardcore 5. Klättra på Scoreboarden och se live hur du ligger till."
+        "description": "Easy ger 1 XP, Medium 3 och Hardcore 5. Klättra på scoreboarden och se hur du ligger till live."
+      },
+      {
+        "id": 5,
+        "icon": "trophy",
+        "title": "Exklusivt pris",
+        "description": "Den lyckliga vinnaren får äran att bli omnämd i skaparnas LinkedIn-flöden. Vilken grej!"
       }
     ],
     "en": [
@@ -98,6 +104,12 @@
         "icon": "star",
         "title": "Collect XP",
         "description": "Easy gives 1 XP, Medium 3, and Hardcore 5. Climb the Scoreboard and see your rank live."
+      },
+      {
+        "id": 5,
+        "icon": "trophy",
+        "title": "Exclusive reward",
+        "description": "The lucky winner will earn the honor of a shout-out in the creators' LinkedIn feeds. What a treat!"
       }
     ]
   },
