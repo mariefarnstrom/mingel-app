@@ -4,7 +4,8 @@ import { useNavigate, useParams } from "react-router-dom";
 // Components
 import { HeadingCard } from "../components/cards/Cards.styles";
 import { ButtonRow } from "../components/buttons/ButtonRow.styles";
-import { SmallButton, SmallLightButton } from "../components/buttons/Buttons.styles";
+import NextButton from "../components/buttons/NextButton";
+import PrevButton from "../components/buttons/PrevButton";
 import { QuestionCard } from "../components/cards/Cards.styles";
 import { NewQuestionButton } from "../components/buttons/Buttons.styles";
 
@@ -60,14 +61,11 @@ export default function Questions() {
             </NewQuestionButton>
 
             <ButtonRow>
-                <SmallLightButton type="button" onClick={() => navigate(-1)}>
-                    <img src="/backwardsArrow.svg" alt="back" />
-                    {textCommon.back.toUpperCase()}
-                </SmallLightButton>
-                <SmallButton type="button" onClick={handleCompleted}>
+                <PrevButton type="button" onClick={() => navigate(-1)}>
+                </PrevButton>
+                <NextButton type="button" onClick={handleCompleted}>
                     {textCommon.done.toUpperCase()}
-                    <img src="/forwardArrow.svg" alt="forward" />
-                </SmallButton>
+                </NextButton>
             </ButtonRow>
 
         </>

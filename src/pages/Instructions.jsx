@@ -1,5 +1,4 @@
 // Components
-import { SmallLightButton, SmallButton } from "../components/buttons/Buttons.styles";
 import { ButtonRow } from "../components/buttons/ButtonRow.styles";
 import { HeadingCard, BaseCard, InstructionsCard, BigIconCard } from "../components/cards/Cards.styles"
 import NextButton from "../components/buttons/NextButton";
