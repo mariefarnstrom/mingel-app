@@ -141,7 +141,6 @@ export const ErrorCard = styled(BaseCard)`
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 300px;
-    background-color: var(--bg);
     border: 4px solid var(--accent);
 
     display: flex;
@@ -159,8 +158,6 @@ export const ErrorCard = styled(BaseCard)`
     
     button {
         width: 100px;
-        background-color: var(--btn-primary);
-        color: var(--btn-primary-text);
     }
     
     svg {
