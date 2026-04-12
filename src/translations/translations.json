@@ -130,7 +130,7 @@
     },
     "en": {
       "heading": "Create character",
-      "description": "Type your name and chose an avatar to get started.",
+      "description": "Type your name and choose an avatar to get started.",
       "name": "Name",
       "namePlaceholder": "Enter your name",
       "chooseClass": "Choose class",
