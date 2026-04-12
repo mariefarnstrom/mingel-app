@@ -11,7 +11,7 @@ import { GhostContainer, GhostWrapper } from "./icons/GhostContainer.styles"
 import GhostIcon from "./icons/Ghost";
 
 // Data / Language
-import { useProfile, PROFILE_UPDATED_EVENT } from "../hooks/useProfile";
+import { PROFILE_UPDATED_EVENT } from "../hooks/useProfile";
 import { useLanguage } from "../hooks/useLanguage";
 import translations from "../translations/translations.json";
 import { useColorMode } from "../hooks/useColorMode";
