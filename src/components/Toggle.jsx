@@ -8,12 +8,11 @@ import { useLanguage } from "../hooks/useLanguage";
  */
 
 export default function Toggle({ type }) {
-    const { colorMode } = useColorMode();
+    const { colorMode, setColorMode } = useColorMode();
     const { lang, setLang } = useLanguage();
 
     // Toggle between light and dark mode
     if (type === 'color') {
-        const { setColorMode } = useColorMode();
         return (
             <ToggleContainer role="group" 
                 aria-label="Choose color mode"
