@@ -154,8 +154,6 @@ export const StyledOptionWrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1rem;
-
-    button {}
 `
 
 export const StyledOption = styled.label`

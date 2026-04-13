@@ -14,7 +14,6 @@ export function useQuestions(level) {
     const [currentId, setCurrentId] = useState(null);
     const [errorMessage, setErrorMessage] = useState("");
 
-
     // Safely parse stored user profile with error handling
     const getStoredUser = () => {
         try {
@@ -26,16 +25,20 @@ export function useQuestions(level) {
     };
 
     const storedUser = getStoredUser();
-    
-    if (!storedUser) {
-            setErrorMessage(text.errorNoUser);
-            return;
-    }
 
-    const role = storedUser.role;
+    // Check for missing user inside effect, not during render
+    useEffect(() => {
+        if (!storedUser) {
+            setErrorMessage(text.errorNoUser);
+        }
+    }, [storedUser, text.errorNoUser]);
+
+    const role = storedUser?.role;
 
     
     useEffect(() => {
+        if (!storedUser || !role) return;
+
         setLoading(true);
 
         // Get correct questions based on company or student
@@ -69,7 +72,7 @@ export function useQuestions(level) {
         };
 
         fetchData();
-    }, [level, text, role]);
+    }, [level, role]);
 
     useEffect(() => {
         if (questions.length > 0) {
