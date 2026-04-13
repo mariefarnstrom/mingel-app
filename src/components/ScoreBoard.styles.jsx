@@ -67,16 +67,18 @@ export const UserAvatar = styled.div`
 export const UserInfo = styled.div`
     display: flex;
     flex-direction: column;
-    line-height: 1.1rem;
 
     span {
         color: ${({ thisUser }) => (thisUser ? "var(--bg)" : "var(--text)")};
         text-align: start;
+        line-height: 1.25rem;
     }
-
+    
     span:nth-of-type(2) {
         color: var(--accent);
         font-size: 0.875rem;
+        line-height: 1.125rem;
+        letter-spacing: -1%;
     }
 `;
 

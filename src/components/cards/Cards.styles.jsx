@@ -14,12 +14,8 @@ export const BaseCard = styled.div`
 
     h1 {
         margin-top: 1.5rem;
-        line-height: 3rem;
     }
 
-    p {
-        letter-spacing: -0.022em;
-    }
 
     /* Instructions step indicator */
     .progressIndicatorContainer {
@@ -132,6 +128,7 @@ export const ProfileNameCard = styled(BaseCard)`
     p {
         margin: 0;
         font-family: var(--font-heading);
+        font-size: 1.5rem;
     }
 `
 

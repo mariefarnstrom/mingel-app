@@ -23,8 +23,7 @@
   --font-body: "Courier Prime", ui-monospace, Consolas, monospace, system-ui, 'Segoe UI', Roboto, sans-serif;
   --font-heading: "Blrrpix", "Courier Prime", ui-monospace, Consolas, monospace, system-ui, 'Segoe UI', Roboto, sans-serif;
 
-  font: 18px/145% var(--font-body);
-  letter-spacing: 0.18px;
+  font: 16px/145% var(--font-body);
   color-scheme: light dark;
   color: var(--text);
   background: var(--bg);
@@ -125,7 +124,6 @@ h1,
 h2 {
   font-family: var(--font-heading);
   color: var(--text-h);
-  line-height: normal;
 }
 
 h3,
@@ -139,22 +137,31 @@ h6 {
 
 h1 {
   font-size: 3rem;
+  line-height: 3.25rem;
+  letter-spacing: 2%;
 }
 
 h2 {
   font-size: 2rem;
+  line-height: 2.75rem;
+  letter-spacing: 1%;
 }
 
 h3 {
   font-size: 1.5rem;
-}
-
-h5 {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
+  line-height: 1.5rem;
+  letter-spacing: 1%;
 }
 
 p {
   font-family: var(--font-body);
   color: var(--text);
+  font-size: 1rem;
+  line-height: 100%;
+  letter-spacing: -2.2%;
+}
+
+button {
+  font-family: var(--font-heading);
+  letter-spacing: 4%;
 }

@@ -68,7 +68,7 @@ export const StyledMenuLink = styled(Link)`
   margin: 0.5rem 0;
 
   &:visited {
-    color: var(--text);
+    color: inherit;
   }
 `;
 
