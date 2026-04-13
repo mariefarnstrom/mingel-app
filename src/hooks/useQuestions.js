@@ -13,12 +13,33 @@ export function useQuestions(level) {
     const [loading, setLoading] = useState(false);
     const [currentId, setCurrentId] = useState(null);
     const [errorMessage, setErrorMessage] = useState("");
-    const storedUser = JSON.parse(localStorage.getItem("userProfile"));
-    const role = storedUser.role;
-    const tableName = role === "CO" ? "questions_companies" : "questions";
 
+
+    // Safely parse stored user profile with error handling
+    const getStoredUser = () => {
+        try {
+            const profile = localStorage.getItem("userProfile");
+            return profile ? JSON.parse(profile) : null;
+        } catch {
+            return null;
+        }
+    };
+
+    const storedUser = getStoredUser();
+    
+    if (!storedUser) {
+            setErrorMessage(text.errorNoUser);
+            return;
+    }
+
+    const role = storedUser.role;
+
+    
     useEffect(() => {
         setLoading(true);
+
+        // Get correct questions based on company or student
+        const tableName = role === "CO" ? "questions_companies" : "questions";
 
         const fetchData = async () => {
             try {
@@ -48,7 +69,7 @@ export function useQuestions(level) {
         };
 
         fetchData();
-    }, [level, text]);
+    }, [level, text, role]);
 
     useEffect(() => {
         if (questions.length > 0) {
@@ -64,10 +85,6 @@ export function useQuestions(level) {
     const handleCompleted = async () => {
         if (currentId === null || !questions[currentId]) return;
 
-        if (!storedUser) {
-            setErrorMessage(text.errorNoUser);
-            return;
-        }
         const name = storedUser.name;
 
         const { data, error } = await supabase
