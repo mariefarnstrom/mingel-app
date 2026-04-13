@@ -29,7 +29,7 @@ export const MenuOverlay = styled.div`
   transform: translateX(-50%);
   width: 100%;
   max-width: 478px;
-  height: 100vh;
+  height: 100svh;
   padding: 1rem;
   background-color: var(--bg);
   z-index: 5;
