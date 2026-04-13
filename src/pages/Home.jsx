@@ -7,6 +7,7 @@ import { BaseCard } from "../components/cards/Cards.styles";
 import { GhostContainer, GhostWrapper } from "../components/icons/GhostContainer.styles";
 import { RegisteredPlayersCard } from "../components/cards/Cards.styles";
 import { ErrorModal } from "../components/ErrorModal";
+import { VideoWrapper, IntroVideo } from "../App.styles";
 
 // Icons
 import GhostIcon from "../components/icons/Ghost";
@@ -51,6 +52,33 @@ export default function Home() {
 
     const digitalDesignersActive = users.filter(user => user.role === 'DD').length;
     const webDevelopersActive = users.filter(user => user.role === 'WU').length;
+
+    const [showIntro, setShowIntro] = useState(!sessionStorage.getItem("introPlayed"));
+
+    useEffect(() => {
+        if (sessionStorage.getItem("introPlayed")) return;
+
+        const timer = setTimeout(() => {
+            setShowIntro(false);
+            sessionStorage.setItem("introPlayed", "true");
+        }, 2000);
+        return () => clearTimeout(timer);
+    }, []);
+
+    if (showIntro) {
+        return (
+            <VideoWrapper>
+                <IntroVideo
+                    autoPlay
+                    muted
+                    playsInline
+                    onEnded={() => setShowIntro(false)}
+                >
+                    <source src="/intro.mp4" type="video/mp4" />
+                </IntroVideo>
+            </VideoWrapper>
+        )
+    }
 
     return (
         <>
