@@ -114,7 +114,7 @@ body {
   flex-direction: column;
   gap: 0.4rem;
   text-align: center;
-  background-image: url("background.svg");
+  background-image: url("/background.svg");
   background-color: var(--bg);
   overflow-y: hidden;
 }

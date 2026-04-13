@@ -8,14 +8,16 @@ export const VideoWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (min-width: 768px) {
+  width: 480px;
+  left: 50%;
+  transform: translateX(-50%);
+}
 `;
 
 export const IntroVideo = styled.video`
   width: 100%;
   height: 100%;
   object-fit: cover;
-
-  @media (orientation: landscape) {
-    object-fit: contain;
-  }
 `;
