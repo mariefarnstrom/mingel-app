@@ -62,8 +62,9 @@ export const InstructionsCard = styled(BaseCard)`
 `
 
 export const BigIconCard = styled(BaseCard)`
-    padding: 5rem;
     align-items: center;
+    justify-content: center;
+    flex: 1;
 
     svg {
         color: var(--text);
@@ -72,6 +73,8 @@ export const BigIconCard = styled(BaseCard)`
 
 // Number of players
 export const RegisteredPlayersCard = styled(BaseCard)`
+    flex: 1;
+    justify-content: center;
     div {
         display: flex;
         justify-content: space-between;
@@ -94,7 +97,7 @@ export const RegisteredPlayersCard = styled(BaseCard)`
 export const BigButtonsCard = styled(BaseCard)`
     gap: 2rem;
     justify-content: center;
-    padding: 4rem 1.5rem;
+    padding: 3rem 1.5rem;
 `
 
 // ChooseDifficulty
@@ -115,10 +118,10 @@ export const PointCard = styled(BaseCard)`
 `
 
 export const QuestionCard = styled(BaseCard)`
-    height: 40vh;
     font-size: 1.5rem;
     padding: 1.5rem;
     justify-content: center;
+    flex: 1;
 `
 
 export const ProfileNameCard = styled(BaseCard)`
