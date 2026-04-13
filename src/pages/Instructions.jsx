@@ -29,14 +29,14 @@ export default function Instructions() {
     const { lang } = useLanguage();
     const textCommon = translations.common[lang];
     const heading = translations.instructions.heading[lang];
-    
+
     const { currentStep,
         stepNumber,
         totalSteps,
         nextStep,
         previousStep
     } = useInstructions();
-    
+
     if (!currentStep) return <p>Laddar...</p>;
     const CurrentIcon = iconMap[currentStep.icon];
 
@@ -67,7 +67,7 @@ export default function Instructions() {
             </BaseCard>
 
             <ButtonRow>
-                <PrevButton type="button" onClick={previousStep}></PrevButton>                
+                <PrevButton type="button" onClick={previousStep}></PrevButton>
 
                 <NextButton type="button" onClick={nextStep}>
                     {textCommon.next.toUpperCase()}
