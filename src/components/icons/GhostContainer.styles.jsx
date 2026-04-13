@@ -24,6 +24,7 @@ export const GhostWrapper = styled.div`
     animation: ${ghostMovement} 5s ease-in-out infinite;
     width: 50px;
     height: 50px;
+    transform: translateY(20%);
 
     svg {
         width: 50px;
