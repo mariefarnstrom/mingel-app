@@ -1,0 +1,240 @@
+{
+  "header": {
+    "sv": {
+      "home": "Hem",
+      "rules": "Regler",
+      "scoreboard": "Scoreboard",
+      "changeProfile": "Ändra profil",
+      "createProfile": "Skapa profil",
+      "toQuestions": "Gå till frågor",
+      "toggleLanguage": "Switch to English",
+      "toggleColor-light": "Aktivera dark mode",
+      "toggleColor-dark": "Aktivera light mode"
+    },
+    "en": {
+      "home": "Home",
+      "rules": "Rules",
+      "scoreboard": "Scoreboard",
+      "changeProfile": "Change profile",
+      "createProfile": "Create profile",
+      "toQuestions": "Go to questions",
+      "toggleLanguage": "Ändra till svenska",
+      "toggleColor-light": "Activate dark mode",
+      "toggleColor-dark": "Activate light mode"
+    }
+  },
+  "home": {
+    "sv": {
+      "title": "Välkommen till YRGO:XP",
+      "description1": "Spelet som gör det enkelt att börja prata. Samla XP genom att ställa frågor och vara aktiv i spelet.",
+      "description2": "Ju fler frågor du ställer, desto högre klättrar du på scoreboarden.",
+      "registeredPlayers": "Registrerade spelare",
+      "seeRules": "Se spelregler",
+      "errorFetching": "Kunde inte hämta spelare. Försök igen.",
+      "toQuestions": "Gå till frågor"
+    },
+    "en": {
+      "title": "Welcome to YRGO:XP",
+      "description1": "The game that makes it easy to start talking. Collect XP by asking questions and being active in the game.",
+      "description2": "The more questions you ask, the higher you climb on the scoreboard.",
+      "registeredPlayers": "Registered players",
+      "seeRules": "See rules",
+      "errorFetching": "Could not fetch players. Try again.",
+      "toQuestions": "Go to questions"
+    }
+  },
+  "instructions": {
+    "heading": {
+      "sv": "Spelregler",
+      "en": "Rules"
+    },
+    "sv": [
+      {
+        "id": 1,
+        "icon": "ghost",
+        "title": "Skapa profil",
+        "description": "Välj namn och avatar för att komma igång."
+      },
+      {
+        "id": 2,
+        "icon": "rocket",
+        "title": "Välj nivå",
+        "description": "Välj mellan Easy, Medium eller Hardcore. Svårare frågor ger högre XP."
+      },
+      {
+        "id": 3,
+        "icon": "megaphone",
+        "title": "Ställ frågan",
+        "description": "Gå fram till ett företag och ställ frågan för att starta ett samtal. Tryck sedan \"Klar\"."
+      },
+      {
+        "id": 4,
+        "icon": "star",
+        "title": "Samla XP",
+        "description": "Easy ger 1 XP, Medium 3 och Hardcore 5. Klättra på scoreboarden och se hur du ligger till live."
+      },
+      {
+        "id": 5,
+        "icon": "trophy",
+        "title": "Exklusivt pris",
+        "description": "Den lyckliga vinnaren får äran att bli omnämnd i skaparnas LinkedIn-flöden. Vilken grej!"
+      }
+    ],
+    "en": [
+      {
+        "id": 1,
+        "icon": "ghost",
+        "title": "Create profile",
+        "description": "Choose a name and avatar to get started."
+      },
+      {
+        "id": 2,
+        "icon": "rocket",
+        "title": "Choose level",
+        "description": "Choose between Easy, Medium, or Hardcore. Harder questions reward more XP."
+      },
+      {
+        "id": 3,
+        "icon": "megaphone",
+        "title": "Ask the question",
+        "description": "Approach a company and ask the question to start a conversation. Then press 'Done'."
+      },
+      {
+        "id": 4,
+        "icon": "star",
+        "title": "Collect XP",
+        "description": "Easy gives 1 XP, Medium 3, and Hardcore 5. Climb the Scoreboard and see your rank live."
+      },
+      {
+        "id": 5,
+        "icon": "trophy",
+        "title": "Exclusive reward",
+        "description": "The lucky winner will earn the honor of a shout-out in the creators' LinkedIn feeds. What a treat!"
+      }
+    ]
+  },
+  "createProfile": {
+    "sv": {
+      "heading": "Skapa karaktär",
+      "description": "Skriv in ditt namn och välj avatar för att komma igång.",
+      "name": "Namn",
+      "namePlaceholder": "Ange ditt namn",
+      "chooseClass": "Välj klass",
+      "chooseAvatar": "Välj din avatar",
+      "submit": "Skapa profil",
+      "nameExists": "Det finns redan en spelare med det här namnet. Välj ett annat.",
+      "errorRole": "Du måste välja en klass.",
+      "errorAvatar": "Du måste välja en avatar.",
+      "errorNameLength": "Ditt namn måste vara minst två tecken långt.",
+      "errorChars": "Namnet får endast innehålla bokstäver, siffror och bindestreck."
+    },
+    "en": {
+      "heading": "Create character",
+      "description": "Type your name and choose an avatar to get started.",
+      "name": "Name",
+      "namePlaceholder": "Enter your name",
+      "chooseClass": "Choose class",
+      "chooseAvatar": "Choose your avatar",
+      "submit": "Create profile",
+      "nameExists": "A player with this name already exists. Choose another.",
+      "errorRole": "Please select a class.",
+      "errorAvatar": "Please select an avatar.",
+      "errorNameLength": "Name must be at least two characters long.",
+      "errorChars": "Your name can only contain letters, numbers, and hyphens."
+    }
+  },
+  "finishedProfile": {
+    "sv": {
+      "heading": "Du är redo!",
+      "description": "Dags att börja samla XP och starta samtal.",
+      "button": "Börja spela!"
+    },
+    "en": {
+      "heading": "You are ready!",
+      "description": "It's time to collect XP by starting conversations.",
+      "button": "Start playing!"
+    }
+  },
+  "chooseDifficulty": {
+    "sv": {
+      "heading": "Välj din nivå",
+      "description": "Hur utmanande vill du att din fråga ska vara?",
+      "errorFetching": "Kunde inte hämta nivåer. Försök igen."
+    },
+    "en": {
+      "heading": "Choose your level",
+      "description": "How challenging do you want your question to be?",
+      "errorFetching": "Could not fetch levels. Try again."
+    }
+  },
+  "questions": {
+    "sv": {
+      "level": "Nivå",
+      "loading": "Laddar fråga...",
+      "notFound": "Inga frågor hittades. Försök igen.",
+      "generateNew": "Generera ny fråga",
+      "back": "Tillbaka",
+      "done": "Klar",
+      "errorFetching": "Kunde inte hämta frågor. Försök igen.",
+      "errorNoUser": "Ingen användare hittades. Skapa en profil först.",
+      "errorFetchingScore": "Kunde inte hämta din XP. Försök igen.",
+      "errorUpdatingScore": "Kunde inte uppdatera XP. Försök igen."
+    },
+    "en": {
+      "level": "Level",
+      "loading": "Loading question...",
+      "notFound": "No questions found. Try again.",
+      "generateNew": "Generate new question",
+      "back": "Back",
+      "done": "Done",
+      "errorFetching": "Could not fetch questions. Try again.",
+      "errorNoUser": "No user found. Create a profile first.",
+      "errorFetchingScore": "Could not fetch your score. Try again.",
+      "errorUpdatingScore": "Could not update score. Try again."
+    }
+  },
+  "score": {
+    "sv": {
+      "heading": "Scoreboard",
+      "description": "Se vem som leder just nu!",
+      "loading": "Laddar scoreboard...",
+      "errorFetching": "Kunde inte hämta scoreboard. Försök igen."
+    },
+    "en": {
+      "heading": "Scoreboard",
+      "description": "See who's leading right now!",
+      "loading": "Loading scoreboard...",
+      "errorFetching": "Could not fetch scoreboard. Try again."
+    }
+  },
+  "common": {
+    "sv": {
+      "back": "Tillbaka",
+      "next": "Nästa",
+      "done": "Klar",
+      "loading": "Laddar...",
+      "save": "Spara",
+      "saving": "Sparar...",
+      "webDeveloper": "Webbutvecklare",
+      "webDevelopers": "Webbutvecklare",
+      "digitalDesigner": "Digital designer",
+      "digitalDesigners": "Digital designers",
+      "newQuestion": "Ny fråga",
+      "createProfile": "Skapa profil"
+    },
+    "en": {
+      "back": "Back",
+      "next": "Next",
+      "done": "Done",
+      "loading": "Loading...",
+      "save": "Save",
+      "saving": "Saving...",
+      "webDeveloper": "Web developer",
+      "webDevelopers": "Web developers",
+      "digitalDesigner": "Digital designer",
+      "digitalDesigners": "Digital designers",
+      "newQuestion": "New question",
+      "createProfile": "Create profile"
+    }
+  }
+}

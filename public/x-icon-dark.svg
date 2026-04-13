@@ -1,0 +1,14 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="44" height="44">
+	<defs>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+			<path d="m28 20h-4v-4h4zm-8 8h-4v-4h4zm-4 4h-4v-4h4zm16-16h-4v-4h4zm-12 4h-4v-4h4zm8 8h-4v-4h4zm4 4h-4v-4h4zm-16-16h-4v-4h4z"/>
+		</clipPath>
+	</defs>
+	<style>
+		.s0 { fill: #001a52 } 
+	</style>
+	<g clip-path="url(#cp1)">
+		<path fill-rule="evenodd" class="s0" d="m28 20h-4v-4h4zm-8 8h-4v-4h4zm-4 4h-4v-4h4zm16-16h-4v-4h4zm-12 4h-4v-4h4zm8 8h-4v-4h4zm4 4h-4v-4h4zm-16-16h-4v-4h4z"/>
+		<rect width="44" height="44" id="Enfärgad fyllning 1" style="fill: #ffffff"/>
+	</g>
+</svg>
