@@ -19,7 +19,7 @@ export const ScoreBoardContainer = styled.div`
 
     flex: 1;
     min-height: 0;
-    max-height: calc(100vh - 350px); /* Remove to make list flow down */
+    max-height: calc(100svh - 325px); /* Remove to make list flow down */
     overflow-x: hidden;
     overflow-y: auto;
     scroll-behavior: smooth;
@@ -67,16 +67,18 @@ export const UserAvatar = styled.div`
 export const UserInfo = styled.div`
     display: flex;
     flex-direction: column;
-    line-height: 1.1rem;
 
     span {
         color: ${({ thisUser }) => (thisUser ? "var(--bg)" : "var(--text)")};
         text-align: start;
+        line-height: 1.25rem;
     }
-
+    
     span:nth-of-type(2) {
         color: var(--accent);
         font-size: 0.875rem;
+        line-height: 1.125rem;
+        letter-spacing: -0.0088em;
     }
 `;
 

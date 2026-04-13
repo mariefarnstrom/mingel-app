@@ -219,6 +219,8 @@
       "webDevelopers": "Webbutvecklare",
       "digitalDesigner": "Digital designer",
       "digitalDesigners": "Digital designers",
+      "company": "Företag",
+      "companies": "Företag",
       "newQuestion": "Ny fråga",
       "createProfile": "Skapa profil"
     },
@@ -233,6 +235,8 @@
       "webDevelopers": "Web developers",
       "digitalDesigner": "Digital designer",
       "digitalDesigners": "Digital designers",
+      "company": "Company",
+      "companies": "Companies",
       "newQuestion": "New question",
       "createProfile": "Create profile"
     }

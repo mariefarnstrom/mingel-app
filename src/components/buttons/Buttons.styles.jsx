@@ -1,59 +1,55 @@
 import styled from '@emotion/styled';
 
 export const BaseButton = styled.button`
+    font-size: 1.5rem;
+    line-height: 24px;
+    letter-spacing: 0.06em;
+
     background-color: var(--btn-primary);
     color: var(--btn-primary-text);
     border: none;
-    max-width: 100%;
     border-radius: 10px;
-    font-family: var(--font-heading);
+    max-width: 100%;
+
     display: flex;
     align-items: center;
-    gap: 0.5rem;
     justify-content: center;
+    gap: 0.5rem;
     cursor: pointer;
 `;
 
 export const WideButton = styled(BaseButton)`
     height: 4.25rem;
-    font-size: 1.5rem;
 `;
 
 export const SmallButton = styled(BaseButton)`
     height: 4.25rem;
-    font-size: 1.5rem;
 `;
 
-export const PrimaryButton = styled(SmallButton)`
-    background-color: var(--btn-primary);
-    color: var(--btn-primary-text);
+export const PrimaryButton = styled(BaseButton)`
+    height: 4.25rem;
     border: 2px solid var(--btn-primary-border);
 `;
 
-export const SecondaryButton = styled(SmallButton)`
+export const SecondaryButton = styled(BaseButton)`
+    height: 4.25rem;
     background-color: var(--btn-secondary);
     color: var(--btn-secondary-text);
     border: 2px solid var(--btn-secondary-border);
 `;
 
 export const BigButton = styled(BaseButton)`
+    font-size: 3.5rem;
+    line-height: 60px;
+    letter-spacing: 0.07em;
+
     width: 100%;
     height: 7rem;
-    font-size: 3.5rem;
     position: relative;
 `;
 
 export const NewQuestionButton = styled(BaseButton)`
     height: 7rem;
-    font-size: 1.5rem;
-    background-color: var(--btn-secondary);
-    color: var(--btn-secondary-text);
-    border: 2px solid var(--btn-secondary-text);
-`;
-
-export const ChooseProfileButton = styled(BaseButton)`
-    height: 4.5rem;
-    font-size: 1.25rem;
     background-color: var(--btn-secondary);
     color: var(--btn-secondary-text);
     border: 2px solid var(--btn-secondary-text);

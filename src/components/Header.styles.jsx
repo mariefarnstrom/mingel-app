@@ -29,7 +29,7 @@ export const MenuOverlay = styled.div`
   transform: translateX(-50%);
   width: 100%;
   max-width: 478px;
-  height: 100vh;
+  height: 100svh;
   padding: 1rem;
   background-color: var(--bg);
   z-index: 5;
@@ -55,7 +55,7 @@ export const MenuOverlay = styled.div`
 `;
 
 export const NavContainer = styled.section`
-  height: 100dvh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -68,7 +68,7 @@ export const StyledMenuLink = styled(Link)`
   margin: 0.5rem 0;
 
   &:visited {
-    color: var(--text);
+    color: inherit;
   }
 `;
 
