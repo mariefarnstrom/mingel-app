@@ -59,7 +59,7 @@ export default function Home({ showIntro, setShowIntro }) {
         const timer = setTimeout(() => {
             setShowIntro(false);
             sessionStorage.setItem("introPlayed", "true");
-        }, 2000);
+        }, 3000);
         return () => clearTimeout(timer);
     }, []);
 
