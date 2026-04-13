@@ -18,7 +18,7 @@ import { useLanguage } from "../hooks/useLanguage";
 import useCreateProfile from "../hooks/useCreateProfile";
 import translations from "../translations/translations.json";
 
-export default function Home() {
+export default function Home({ showIntro, setShowIntro }) {
 
     const navigate = useNavigate();
     const [users, setUsers] = useState([]);
@@ -52,8 +52,6 @@ export default function Home() {
 
     const digitalDesignersActive = users.filter(user => user.role === 'DD').length;
     const webDevelopersActive = users.filter(user => user.role === 'WU').length;
-
-    const [showIntro, setShowIntro] = useState(!sessionStorage.getItem("introPlayed"));
 
     useEffect(() => {
         if (sessionStorage.getItem("introPlayed")) return;

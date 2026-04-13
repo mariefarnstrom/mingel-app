@@ -13,18 +13,22 @@ import FinishedProfile from './pages/FinishedProfile'
 // Components
 import Header from './components/Header'
 import { ColorModeProvider } from './contexts/ColorModeContext';
+import { useState } from 'react';
 
 
 function App() {
+  const [showIntro, setShowIntro] = useState(
+    !sessionStorage.getItem("introPlayed")
+  );
 
   return (
     <>
       <BrowserRouter>
         <ColorModeProvider>
           <LanguageProvider>
-            <Header />
+            {!showIntro && <Header />}
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Home showIntro={showIntro} setShowIntro={setShowIntro} />} />
               <Route path="/instructions" element={<Instructions />} />
               <Route path="/questions/:level" element={<Questions />} />
               <Route path="/score" element={<ScoreBoard />} />
