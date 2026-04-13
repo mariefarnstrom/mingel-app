@@ -2,21 +2,29 @@ import styled from "@emotion/styled";
 import { ghostMovement, ghostFlip } from "../../animations";
 
 export const GhostContainer = styled.div`
-    width: ${({ overlay }) => (overlay ? "93%" : "100%")};;
+    width: 100%;
     height: 4.5rem;
     overflow: hidden;
-    position: ${({ overlay }) => (overlay ? "absolute" : "relative")};
-    bottom: ${({ overlay }) => (overlay ? "8rem" : "auto")};
-    top: ${({ overlay }) => (overlay ? "auto" : "0.7rem")};
+    position: relative;
+`;
+
+export const GhostContainerOverlay = styled.div`
+    position: relative;
+    width: 100%;
+    height: 4.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
 `;
 
 export const GhostWrapper = styled.div`
     position: absolute;
     left: 0;
-    transform: translateY(-50%);
     animation: ${ghostMovement} 5s ease-in-out infinite;
     width: 50px;
     height: 50px;
+    transform: translateY(20%);
 
     svg {
         width: 50px;
