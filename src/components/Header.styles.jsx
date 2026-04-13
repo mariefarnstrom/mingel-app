@@ -55,7 +55,7 @@ export const MenuOverlay = styled.div`
 `;
 
 export const NavContainer = styled.section`
-  height: 100dvh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

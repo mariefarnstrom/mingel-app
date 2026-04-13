@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const BaseButton = styled.button`
     font-size: 1.5rem;
     line-height: 24px;
-    letter-spacing: 4%;
+    letter-spacing: 0.06em;
 
     background-color: var(--btn-primary);
     color: var(--btn-primary-text);
@@ -41,7 +41,7 @@ export const SecondaryButton = styled(BaseButton)`
 export const BigButton = styled(BaseButton)`
     font-size: 3.5rem;
     line-height: 60px;
-    letter-spacing: 2%;
+    letter-spacing: 0.07em;
 
     width: 100%;
     height: 7rem;

@@ -78,7 +78,7 @@ export const UserInfo = styled.div`
         color: var(--accent);
         font-size: 0.875rem;
         line-height: 1.125rem;
-        letter-spacing: -1%;
+        letter-spacing: -0.0088em;
     }
 `;
 
