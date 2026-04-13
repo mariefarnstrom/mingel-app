@@ -111,6 +111,7 @@ export const PointCard = styled(BaseCard)`
 
     color: var(--text);
     font-size: 1.5rem;
+    letter-spacing: normal;
 `
 
 export const QuestionCard = styled(BaseCard)`
