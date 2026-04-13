@@ -13,6 +13,9 @@ export function useQuestions(level) {
     const [loading, setLoading] = useState(false);
     const [currentId, setCurrentId] = useState(null);
     const [errorMessage, setErrorMessage] = useState("");
+    const storedUser = JSON.parse(localStorage.getItem("userProfile"));
+    const role = storedUser.role;
+    const tableName = role === "CO" ? "questions_companies" : "questions";
 
     useEffect(() => {
         setLoading(true);
@@ -31,7 +34,7 @@ export function useQuestions(level) {
 
                 // Sedan: Hämta questions för den level_id med join
                 const { data, error } = await supabase
-                    .from('questions')
+                    .from(tableName)
                     .select('*, levels(id, level, points)')
                     .eq('level_id', levelData.id);
 
@@ -60,8 +63,6 @@ export function useQuestions(level) {
 
     const handleCompleted = async () => {
         if (currentId === null || !questions[currentId]) return;
-
-        const storedUser = JSON.parse(localStorage.getItem("userProfile"));
 
         if (!storedUser) {
             setErrorMessage(text.errorNoUser);
