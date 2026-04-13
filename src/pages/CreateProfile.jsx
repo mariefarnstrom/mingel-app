@@ -88,6 +88,17 @@ export default function CreateProfile() {
                             />
                             <div>{textCommon.digitalDesigner.toUpperCase()}</div>
                         </StyledOption>
+
+                        <StyledOption>
+                            <input
+                                type="radio"
+                                name="company"
+                                value="CO"
+                                checked={role === 'CO'}
+                                onChange={(e) => setRole(e.target.value)}
+                            />
+                            <div>FÖRETAG</div>
+                        </StyledOption>
                     </ButtonRow>
                 </CreateProfileWrapper>
 

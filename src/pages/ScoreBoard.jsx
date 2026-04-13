@@ -54,6 +54,7 @@ export default function ScoreBoard() {
     const roleMap = {
         DD: textCommon.digitalDesigner,
         WU: textCommon.webDeveloper,
+        CO: "företag"
     }
 
     const iconMap = {

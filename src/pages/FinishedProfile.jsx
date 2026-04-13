@@ -39,6 +39,7 @@ export default function FinishedProfile() {
     const roleMap = {
         DD: textCommon.digitalDesigner,
         WU: textCommon.webDeveloper,
+        CO: "företag"
     }
 
     const ProfileIcon = iconMap[profile.avatar];
