@@ -16,6 +16,8 @@ import MegaphoneIcon from "../components/icons/Megaphone";
 import StarIcon from "../components/icons/Star";
 import TrophyIcon from "../components/icons/Trophy";
 
+// Map icon string identifiers from translations to React components
+// Allows dynamic icon rendering based on instruction data
 const iconMap = {
     ghost: GhostIcon,
     rocket: RocketIcon,
