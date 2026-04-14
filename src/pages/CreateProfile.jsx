@@ -1,5 +1,5 @@
 import useCreateProfile from '../hooks/useCreateProfile';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 // Language
 import { useLanguage } from '../hooks/useLanguage';
@@ -49,9 +49,9 @@ export default function CreateProfile() {
     return (
         <>
             {errorMessage && (
-                <ErrorModal 
-                    errorMessage={errorMessage} 
-                    onClose={() => setErrorMessage("")} 
+                <ErrorModal
+                    errorMessage={errorMessage}
+                    onClose={() => setErrorMessage("")}
                 />
             )}
 
@@ -64,33 +64,33 @@ export default function CreateProfile() {
 
                 <CreateProfileWrapper>
                     <h3>{text.chooseClass.toUpperCase()}</h3>
-                    
+
                     <StyledOptionWrapper>
-                    <ButtonRow>
+                        <ButtonRow>
 
-                        <StyledOption>
-                            <input
-                                type="radio"
-                                name="program"
-                                value="WU"
-                                checked={role === 'WU'}
-                                onChange={(e) => setRole(e.target.value)}
-                            />
-                            <div>{textCommon.webDeveloper.toUpperCase()}</div>
-                        </StyledOption>
+                            <StyledOption>
+                                <input
+                                    type="radio"
+                                    name="program"
+                                    value="WU"
+                                    checked={role === 'WU'}
+                                    onChange={(e) => setRole(e.target.value)}
+                                />
+                                <div>{textCommon.webDeveloper.toUpperCase()}</div>
+                            </StyledOption>
 
-                        <StyledOption>
-                            <input
-                                type="radio"
-                                name="program"
-                                value="DD"
-                                checked={role === 'DD'}
-                                onChange={(e) => setRole(e.target.value)}
-                            />
-                            <div>{textCommon.digitalDesigner.toUpperCase()}</div>
-                        </StyledOption>
+                            <StyledOption>
+                                <input
+                                    type="radio"
+                                    name="program"
+                                    value="DD"
+                                    checked={role === 'DD'}
+                                    onChange={(e) => setRole(e.target.value)}
+                                />
+                                <div>{textCommon.digitalDesigner.toUpperCase()}</div>
+                            </StyledOption>
 
-                    </ButtonRow>
+                        </ButtonRow>
 
                         <StyledOption>
                             <input
@@ -99,7 +99,7 @@ export default function CreateProfile() {
                                 value="CO"
                                 checked={role === 'CO'}
                                 onChange={(e) => setRole(e.target.value)}
-                                />
+                            />
                             <div>{textCommon.company.toUpperCase()}</div>
                         </StyledOption>
 
@@ -205,7 +205,7 @@ export default function CreateProfile() {
                         {loading ? textCommon.saving.toUpperCase() : textCommon.save.toUpperCase()}
                     </NextButton>
                 </ButtonRow>
-                
+
             </form>
         </>
     );

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 // Language
@@ -6,7 +6,7 @@ import { useLanguage } from "./useLanguage";
 import translations from "../translations/translations.json";
 
 export function useInstructions() {
-    
+
     const { lang } = useLanguage();
     const instructions = translations.instructions[lang];
     const [currentIndex, setCurrentIndex] = useState(0);
