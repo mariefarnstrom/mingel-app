@@ -41,36 +41,17 @@ export default function CreateProfile() {
     const text = translations.createProfile[lang];
     const textCommon = translations.common[lang];
 
-    const [shouldShowError, setShouldShowError] = useState(false);
-
-    // Delay render of error modal to eliminate flicker
-    useEffect(() => {
-        if (errorMessage) {
-            const id = setTimeout(() => {
-                setShouldShowError(true);
-            }, 50);
-
-            return () => clearTimeout(id);
-        } else {
-            setShouldShowError(false);
-        }
-    }, [errorMessage]);
-
     // Clear error when language changes
     useEffect(() => {
         setErrorMessage("");
-        setShouldShowError(false);
     }, [lang]);
 
     return (
         <>
-            {shouldShowError && (
+            {errorMessage && (
                 <ErrorModal 
                     errorMessage={errorMessage} 
-                    onClose={() => {
-                        setShouldShowError(false);
-                        setErrorMessage("");
-                    }} 
+                    onClose={() => setErrorMessage("")} 
                 />
             )}
 
