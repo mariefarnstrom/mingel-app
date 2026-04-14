@@ -32,25 +32,9 @@ export default function ChooseDifficulty() {
         setErrorMessage
     } = useLevels();
 
-    const [shouldShowError, setShouldShowError] = useState(false);
-
-    // Delay render of error modal to eliminate flicker
-    useEffect(() => {
-        if (errorMessage) {
-            const id = setTimeout(() => {
-                setShouldShowError(true);
-            }, 50);
-
-            return () => clearTimeout(id);
-        } else {
-            setShouldShowError(false);
-        }
-    }, [errorMessage]);
-
     // Clear error when language changes
     useEffect(() => {
         setErrorMessage("");
-        setShouldShowError(false);
     }, [lang]);
 
     const handleClick = (level) => {
@@ -61,15 +45,7 @@ export default function ChooseDifficulty() {
 
     return (
         <>
-            {shouldShowError && (
-                <ErrorModal 
-                    errorMessage={errorMessage} 
-                    onClose={() => {
-                        setShouldShowError(false);
-                        setErrorMessage("");
-                    }} 
-                />
-            )}
+            {errorMessage && <ErrorModal errorMessage={errorMessage} onClose={() => setErrorMessage("")} />}
 
             <HeadingCard>
                 <h3>{text.heading.toUpperCase()}</h3>

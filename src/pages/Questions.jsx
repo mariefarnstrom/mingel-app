@@ -57,13 +57,9 @@ export default function Questions() {
 
     // Loading view
     if (loading) return <p>{text.loading}</p>
-    if (questions.length === 0) return (
-        <ErrorModal errorMessage={text.notFound} onClose={() => navigate(-1)} />
-    );
+    if (questions.length === 0) return <p>{text.loading}</p>
     if (currentId === null) return <p>{text.loading}</p>;
-    if (!questions[currentId] || !questions[currentId].levels) return (
-        <ErrorModal errorMessage={text.errorFetching} onClose={() => navigate(-1)} />
-    );
+    if (!questions[currentId] || !questions[currentId].levels) return <p>{text.loading}</p>;
 
     return (
         <>

@@ -31,9 +31,12 @@ export default function ScoreBoard() {
     } = useScore();
 
     const { existingProfile } = useCreateProfile();
+    const { profile } = useProfile();
+    const navigate = useNavigate();
+    const { lang } = useLanguage();
 
     const userRowRef = useRef(null);
-    const [shouldShowError, setShouldShowError] = useState(false);
+    const thisUserName = profile?.name;
 
     useEffect(() => {
         if (userRowRef.current) {
@@ -44,30 +47,6 @@ export default function ScoreBoard() {
         }
     }, [users])
 
-    // Delay render of error modal to eliminate flicker
-    useEffect(() => {
-        if (errorMessage) {
-            const id = setTimeout(() => {
-                setShouldShowError(true);
-            }, 50);
-
-            return () => clearTimeout(id);
-        } else {
-            setShouldShowError(false);
-        }
-    }, [errorMessage]);
-
-    // Clear error when language changes
-    useEffect(() => {
-        setErrorMessage("");
-        setShouldShowError(false);
-    }, [lang]);
-
-    const { profile } = useProfile();
-    const thisUserName = profile?.name;
-
-    const navigate = useNavigate();
-    const { lang } = useLanguage();
     const text = translations.score[lang];
     const textCommon = translations.common[lang];
 
@@ -90,15 +69,7 @@ export default function ScoreBoard() {
 
     return (
         <>
-            {shouldShowError && (
-                <ErrorModal 
-                    errorMessage={errorMessage} 
-                    onClose={() => {
-                        setShouldShowError(false);
-                        navigate(-1);
-                    }} 
-                />
-            )}
+            {errorMessage && <ErrorModal errorMessage={errorMessage} onClose={() => navigate(-1)} />}
 
             <ScoreBoardWrapper>
                 <HeadingCard>
