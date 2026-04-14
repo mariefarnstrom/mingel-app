@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // Components
 import { HeadingCard } from "../components/cards/Cards.styles";
@@ -33,6 +33,7 @@ export default function ScoreBoard() {
     const { existingProfile } = useCreateProfile();
 
     const userRowRef = useRef(null);
+    const [shouldShowError, setShouldShowError] = useState(false);
 
     useEffect(() => {
         if (userRowRef.current) {
@@ -42,6 +43,19 @@ export default function ScoreBoard() {
             });
         }
     }, [users])
+
+    // Delay render of error modal to eliminate flicker
+    useEffect(() => {
+        if (errorMessage) {
+            const id = setTimeout(() => {
+                setShouldShowError(true);
+            }, 50);
+
+            return () => clearTimeout(id);
+        } else {
+            setShouldShowError(false);
+        }
+    }, [errorMessage]);
 
     const { profile } = useProfile();
     const thisUserName = profile?.name;
@@ -70,7 +84,15 @@ export default function ScoreBoard() {
 
     return (
         <>
-            {errorMessage && <ErrorModal errorMessage={errorMessage} onClose={() => navigate(-1)} />}
+            {shouldShowError && (
+                <ErrorModal 
+                    errorMessage={errorMessage} 
+                    onClose={() => {
+                        setShouldShowError(false);
+                        navigate(-1);
+                    }} 
+                />
+            )}
 
             <ScoreBoardWrapper>
                 <HeadingCard>
