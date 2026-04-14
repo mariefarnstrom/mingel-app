@@ -189,8 +189,8 @@
       "done": "Done",
       "errorFetching": "Could not fetch questions. Try again.",
       "errorNoUser": "No user found. Create a profile first.",
-      "errorFetchingScore": "Could not fetch your score. Try again.",
-      "errorUpdatingScore": "Could not update score. Try again."
+      "errorFetchingScore": "Could not fetch your XP. Try again.",
+      "errorUpdatingScore": "Could not update XP. Try again."
     }
   },
   "score": {

@@ -73,7 +73,6 @@ export const BigIconCard = styled(BaseCard)`
 
 // Number of players
 export const RegisteredPlayersCard = styled(BaseCard)`
-    flex: 1;
     justify-content: center;
     div {
         display: flex;

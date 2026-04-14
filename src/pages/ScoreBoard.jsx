@@ -1,5 +1,5 @@
-import { Navigate, useNavigate } from "react-router-dom";
-import { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
 
 // Components
 import { HeadingCard } from "../components/cards/Cards.styles";
@@ -33,6 +33,7 @@ export default function ScoreBoard() {
     const { existingProfile } = useCreateProfile();
 
     const userRowRef = useRef(null);
+    const [displayError, setDisplayError] = useState(false);
 
     useEffect(() => {
         if (userRowRef.current) {
@@ -50,6 +51,18 @@ export default function ScoreBoard() {
     const { lang } = useLanguage();
     const text = translations.score[lang];
     const textCommon = translations.common[lang];
+
+    // Close error message when language changes
+    useEffect(() => {
+        setDisplayError(false);
+    }, [lang]);
+
+    // Show error modal only when a NEW error message appears
+    useEffect(() => {
+        if (errorMessage) {
+            setDisplayError(true);
+        }
+    }, [errorMessage]);
 
     const roleMap = {
         DD: textCommon.digitalDesigner,
@@ -70,7 +83,7 @@ export default function ScoreBoard() {
 
     return (
         <>
-            {errorMessage && <ErrorModal errorMessage={errorMessage} onClose={() => navigate(-1)} />}
+            {errorMessage && displayError && <ErrorModal errorMessage={errorMessage} onClose={() => { setDisplayError(false); navigate(-1); }} />}
 
             <ScoreBoardWrapper>
                 <HeadingCard>
