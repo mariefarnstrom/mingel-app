@@ -1,15 +1,11 @@
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 // Components
 import { HeadingCard, PointCard } from "../components/cards/Cards.styles";
 import { BigButton } from "../components/buttons/Buttons.styles";
 import { BigButtonsCard } from "../components/cards/Cards.styles";
-import { GhostContainer, GhostWrapper } from "../components/icons/GhostContainer.styles";
 import { ErrorModal } from "../components/ErrorModal";
-
-// Icons
-import GhostIcon from "../components/icons/Ghost";
 
 // Hooks
 import { useLevels } from "../hooks/useLevels";
