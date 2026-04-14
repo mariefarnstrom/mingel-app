@@ -76,8 +76,8 @@
       {
         "id": 5,
         "icon": "trophy",
-        "title": "Exklusivt pris",
-        "description": "Den lyckliga vinnaren får äran att bli omnämnd i skaparnas LinkedIn-flöden. Vilken grej!"
+        "title": "Hemligt pris",
+        "description": "Den lyckliga vinnaren får ett hemligt pris. Väl värt att kämpa för!"
       }
     ],
     "en": [
@@ -108,8 +108,8 @@
       {
         "id": 5,
         "icon": "trophy",
-        "title": "Exclusive reward",
-        "description": "The lucky winner will earn the honor of a shout-out in the creators' LinkedIn feeds. What a treat!"
+        "title": "Secret reward",
+        "description": "The lucky winner will earn a secret price. Well worth the effort!"
       }
     ]
   },
