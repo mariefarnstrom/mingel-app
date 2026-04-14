@@ -81,7 +81,12 @@ export function useQuestions(level) {
     }, [questions]);
 
     const setRandomQuestion = () => {
-        const randomId = Math.floor(Math.random() * questions.length);
+        let randomId = Math.floor(Math.random() * questions.length);
+
+        while (randomId === currentId) {
+            randomId = Math.floor(Math.random() * questions.length);
+        }
+
         setCurrentId(randomId);
     };
 
