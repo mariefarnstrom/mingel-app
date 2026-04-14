@@ -33,7 +33,7 @@ export default function ScoreBoard() {
     const { existingProfile } = useCreateProfile();
 
     const userRowRef = useRef(null);
-    const [displayError, setDisplayError] = useState(true);
+    const [displayError, setDisplayError] = useState(false);
 
     useEffect(() => {
         if (userRowRef.current) {
@@ -56,6 +56,13 @@ export default function ScoreBoard() {
     useEffect(() => {
         setDisplayError(false);
     }, [lang]);
+
+    // Show error modal only when a NEW error message appears
+    useEffect(() => {
+        if (errorMessage) {
+            setDisplayError(true);
+        }
+    }, [errorMessage]);
 
     const roleMap = {
         DD: textCommon.digitalDesigner,
