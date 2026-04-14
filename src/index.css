@@ -23,6 +23,8 @@
   --font-body: "Courier Prime", ui-monospace, Consolas, monospace, system-ui, 'Segoe UI', Roboto, sans-serif;
   --font-heading: "Blrrpix", "Courier Prime", ui-monospace, Consolas, monospace, system-ui, 'Segoe UI', Roboto, sans-serif;
 
+  --bg-image: url("/background.svg");
+
   font: 16px/145% var(--font-body);
   color-scheme: light dark;
   color: var(--text);
@@ -68,6 +70,8 @@
   --btn-secondary: #001A52;
   --btn-secondary-text: #fff;
   --btn-secondary-border: #fff;
+
+  --bg-image: url("/background-dark.svg");
 }
 
 /* 
@@ -114,7 +118,7 @@ body {
   flex-direction: column;
   gap: 0.4rem;
   text-align: center;
-  background-image: url("/background.svg");
+  background-image: var(--bg-image);
   background-color: var(--bg);
   overflow-y: hidden;
 }
