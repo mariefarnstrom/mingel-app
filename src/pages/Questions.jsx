@@ -1,6 +1,6 @@
 import { useQuestions } from "../hooks/useQuestions";
 import { useNavigate, useParams } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 // Components
 import { HeadingCard } from "../components/cards/Cards.styles";
@@ -34,10 +34,19 @@ export default function Questions() {
         handleCompleted
     } = useQuestions(level);
 
+    const [displayError, setDisplayError] = useState(false);
+
     // Close error message when language changes
     useEffect(() => {
         setErrorMessage("");
     }, [lang, setErrorMessage]);
+
+    // Show error modal only when a NEW error message appears
+    useEffect(() => {
+        if (errorMessage) {
+            setDisplayError(true);
+        }
+    }, [errorMessage]);
 
     // Loading view
     if (loading) return <p>{text.loading}</p>
@@ -51,7 +60,7 @@ export default function Questions() {
 
     return (
         <>
-            {errorMessage && <ErrorModal errorMessage={errorMessage} onClose={() => setErrorMessage("")} />}
+            {errorMessage && displayError && <ErrorModal errorMessage={errorMessage} onClose={() => { setDisplayError(false); setErrorMessage(""); }} />}
 
             <HeadingCard>
                 <h3>{text.level.toUpperCase()}: {questions[currentId].levels.level.toUpperCase()}</h3>
