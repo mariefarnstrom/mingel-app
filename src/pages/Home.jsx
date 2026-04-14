@@ -24,7 +24,6 @@ export default function Home({ showIntro, setShowIntro }) {
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
-    const [displayError, setDisplayError] = useState(false);
     const { lang } = useLanguage();
     const text = translations.home[lang];
     const textCommon = translations.common[lang];
@@ -49,18 +48,6 @@ export default function Home({ showIntro, setShowIntro }) {
 
         fetchUsers();
     }, []);
-
-    // Close error message when language changes
-    useEffect(() => {
-        setDisplayError(false);
-    }, [lang]);
-
-    // Show error modal only when a NEW error message appears
-    useEffect(() => {
-        if (errorMessage) {
-            setDisplayError(true);
-        }
-    }, [errorMessage]);
 
 
     const digitalDesignersActive = users.filter(user => user.role === 'DD').length;
@@ -94,7 +81,7 @@ export default function Home({ showIntro, setShowIntro }) {
 
     return (
         <>
-            {errorMessage && displayError && <ErrorModal errorMessage={errorMessage} onClose={() => { setDisplayError(false); setErrorMessage(""); }} />}
+            {errorMessage && <ErrorModal errorMessage={errorMessage} onClose={() => setErrorMessage("")} />}
 
             <BaseCard>
                 <h1>{text.title.toUpperCase()}</h1>
