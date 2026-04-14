@@ -7,6 +7,7 @@ import { BaseCard } from "../components/cards/Cards.styles";
 import { GhostContainer, GhostWrapper } from "../components/icons/GhostContainer.styles";
 import { RegisteredPlayersCard } from "../components/cards/Cards.styles";
 import { ErrorModal } from "../components/ErrorModal";
+import { VideoWrapper, IntroVideo } from "../App.styles";
 
 // Icons
 import GhostIcon from "../components/icons/Ghost";
@@ -17,7 +18,7 @@ import { useLanguage } from "../hooks/useLanguage";
 import useCreateProfile from "../hooks/useCreateProfile";
 import translations from "../translations/translations.json";
 
-export default function Home() {
+export default function Home({ showIntro, setShowIntro }) {
 
     const navigate = useNavigate();
     const [users, setUsers] = useState([]);
@@ -51,6 +52,32 @@ export default function Home() {
 
     const digitalDesignersActive = users.filter(user => user.role === 'DD').length;
     const webDevelopersActive = users.filter(user => user.role === 'WU').length;
+    const companiesActive = users.filter(user => user.role === 'CO').length;
+
+    useEffect(() => {
+        if (sessionStorage.getItem("introPlayed")) return;
+
+        const timer = setTimeout(() => {
+            setShowIntro(false);
+            sessionStorage.setItem("introPlayed", "true");
+        }, 3000);
+        return () => clearTimeout(timer);
+    }, []);
+
+    if (showIntro) {
+        return (
+            <VideoWrapper>
+                <IntroVideo
+                    autoPlay
+                    muted
+                    playsInline
+                    onEnded={() => setShowIntro(false)}
+                >
+                    <source src="/intro.mp4" type="video/mp4" />
+                </IntroVideo>
+            </VideoWrapper>
+        )
+    }
 
     return (
         <>
@@ -73,6 +100,11 @@ export default function Home() {
                 <div>
                     <p>{textCommon.webDevelopers.toUpperCase()}:</p>
                     <p>{loading ? textCommon.loading : webDevelopersActive}</p>
+                </div>
+
+                <div>
+                    <p>{textCommon.companies.toUpperCase()}:</p>
+                    <p>{loading ? textCommon.loading : companiesActive}</p>
                 </div>
             </RegisteredPlayersCard>
 

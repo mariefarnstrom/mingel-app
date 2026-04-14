@@ -14,12 +14,39 @@ export function useQuestions(level) {
     const [currentId, setCurrentId] = useState(null);
     const [errorMessage, setErrorMessage] = useState("");
 
+    // Safely parse stored user profile with error handling
+    const getStoredUser = () => {
+        try {
+            const profile = localStorage.getItem("userProfile");
+            return profile ? JSON.parse(profile) : null;
+        } catch {
+            return null;
+        }
+    };
+
+    const storedUser = getStoredUser();
+
+    // Check for missing user inside effect, not during render
     useEffect(() => {
+        if (!storedUser) {
+            setErrorMessage(text.errorNoUser);
+        }
+    }, [storedUser, text.errorNoUser]);
+
+    const role = storedUser?.role;
+
+    
+    useEffect(() => {
+        if (!storedUser || !role) return;
+
         setLoading(true);
+
+        // Get correct questions based on company or student
+        const tableName = role === "CO" ? "questions_companies" : "questions";
 
         const fetchData = async () => {
             try {
-                // Först: Hämta level_id baserat på level-namn
+                // First: Get level_id based on level name
                 const { data: levelData, error: levelError } = await supabase
                     .from('levels')
                     .select('id')
@@ -29,9 +56,9 @@ export function useQuestions(level) {
                 if (levelError) throw levelError;
                 if (!levelData) throw new Error('Level not found');
 
-                // Sedan: Hämta questions för den level_id med join
+                // Then: Get questions for that level_id with join
                 const { data, error } = await supabase
-                    .from('questions')
+                    .from(tableName)
                     .select('*, levels(id, level, points)')
                     .eq('level_id', levelData.id);
 
@@ -45,28 +72,35 @@ export function useQuestions(level) {
         };
 
         fetchData();
-    }, [level, text]);
+    }, [level, role]);
 
     useEffect(() => {
         if (questions.length > 0) {
-            setRandomQuestion();
+            // Initialize first question when questions load
+            // or when currentId is null/invalid
+            if (currentId === null || currentId >= questions.length) {
+                setCurrentId(Math.floor(Math.random() * questions.length));
+            }
         }
-    }, [questions]);
+    }, [questions, currentId]);
 
     const setRandomQuestion = () => {
-        const randomId = Math.floor(Math.random() * questions.length);
+        if (currentId === null || questions.length === 0) return;
+
+        // Ensure the same question is never selected twice in a row
+        // Keep generating random IDs until we get one different from the current
+        let randomId = Math.floor(Math.random() * questions.length);
+
+        while (randomId === currentId) {
+            randomId = Math.floor(Math.random() * questions.length);
+        }
+
         setCurrentId(randomId);
     };
 
     const handleCompleted = async () => {
         if (currentId === null || !questions[currentId]) return;
 
-        const storedUser = JSON.parse(localStorage.getItem("userProfile"));
-
-        if (!storedUser) {
-            setErrorMessage(text.errorNoUser);
-            return;
-        }
         const name = storedUser.name;
 
         const { data, error } = await supabase

@@ -76,8 +76,8 @@
       {
         "id": 5,
         "icon": "trophy",
-        "title": "Exklusivt pris",
-        "description": "Den lyckliga vinnaren får äran att bli omnämnd i skaparnas LinkedIn-flöden. Vilken grej!"
+        "title": "Hemligt pris",
+        "description": "Den lyckliga vinnaren får ett hemligt pris. Väl värt att kämpa för!"
       }
     ],
     "en": [
@@ -108,8 +108,8 @@
       {
         "id": 5,
         "icon": "trophy",
-        "title": "Exclusive reward",
-        "description": "The lucky winner will earn the honor of a shout-out in the creators' LinkedIn feeds. What a treat!"
+        "title": "Secret reward",
+        "description": "The lucky winner will earn a secret price. Well worth the effort!"
       }
     ]
   },
@@ -119,7 +119,7 @@
       "description": "Skriv in ditt namn och välj avatar för att komma igång.",
       "name": "Namn",
       "namePlaceholder": "Ange ditt namn",
-      "chooseClass": "Välj klass",
+      "chooseClass": "Välj roll",
       "chooseAvatar": "Välj din avatar",
       "submit": "Skapa profil",
       "nameExists": "Det finns redan en spelare med det här namnet. Välj ett annat.",
@@ -133,11 +133,11 @@
       "description": "Type your name and choose an avatar to get started.",
       "name": "Name",
       "namePlaceholder": "Enter your name",
-      "chooseClass": "Choose class",
+      "chooseClass": "Choose role",
       "chooseAvatar": "Choose your avatar",
       "submit": "Create profile",
       "nameExists": "A player with this name already exists. Choose another.",
-      "errorRole": "Please select a class.",
+      "errorRole": "Please select a role.",
       "errorAvatar": "Please select an avatar.",
       "errorNameLength": "Name must be at least two characters long.",
       "errorChars": "Your name can only contain letters, numbers, and hyphens."
@@ -172,7 +172,7 @@
       "level": "Nivå",
       "loading": "Laddar fråga...",
       "notFound": "Inga frågor hittades. Försök igen.",
-      "generateNew": "Generera ny fråga",
+      "generateNew": "Byt fråga",
       "back": "Tillbaka",
       "done": "Klar",
       "errorFetching": "Kunde inte hämta frågor. Försök igen.",
@@ -184,7 +184,7 @@
       "level": "Level",
       "loading": "Loading question...",
       "notFound": "No questions found. Try again.",
-      "generateNew": "Generate new question",
+      "generateNew": "Change question",
       "back": "Back",
       "done": "Done",
       "errorFetching": "Could not fetch questions. Try again.",
@@ -219,6 +219,8 @@
       "webDevelopers": "Webbutvecklare",
       "digitalDesigner": "Digital designer",
       "digitalDesigners": "Digital designers",
+      "company": "Företag",
+      "companies": "Företag",
       "newQuestion": "Ny fråga",
       "createProfile": "Skapa profil"
     },
@@ -233,6 +235,8 @@
       "webDevelopers": "Web developers",
       "digitalDesigner": "Digital designer",
       "digitalDesigners": "Digital designers",
+      "company": "Company",
+      "companies": "Companies",
       "newQuestion": "New question",
       "createProfile": "Create profile"
     }

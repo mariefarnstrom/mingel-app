@@ -23,8 +23,9 @@
   --font-body: "Courier Prime", ui-monospace, Consolas, monospace, system-ui, 'Segoe UI', Roboto, sans-serif;
   --font-heading: "Blrrpix", "Courier Prime", ui-monospace, Consolas, monospace, system-ui, 'Segoe UI', Roboto, sans-serif;
 
-  font: 18px/145% var(--font-body);
-  letter-spacing: 0.18px;
+  --bg-image: url("/background.svg");
+
+  font: 16px/145% var(--font-body);
   color-scheme: light dark;
   color: var(--text);
   background: var(--bg);
@@ -69,6 +70,8 @@
   --btn-secondary: #001A52;
   --btn-secondary-text: #fff;
   --btn-secondary-border: #fff;
+
+  --bg-image: url("/background-dark.svg");
 }
 
 /* 
@@ -114,9 +117,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-  border-inline: 1px solid var(--border);
   text-align: center;
-  background-image: url("background.svg");
+  background-image: var(--bg-image);
   background-color: var(--bg);
   overflow-y: hidden;
 }
@@ -125,7 +127,6 @@ h1,
 h2 {
   font-family: var(--font-heading);
   color: var(--text-h);
-  line-height: normal;
 }
 
 h3,
@@ -139,6 +140,7 @@ h6 {
 
 h1 {
   font-size: 3rem;
+  line-height: 3.25rem;
 }
 
 h2 {
@@ -149,12 +151,15 @@ h3 {
   font-size: 1.5rem;
 }
 
-h5 {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-}
-
 p {
   font-family: var(--font-body);
   color: var(--text);
+  font-size: 1rem;
+
+  line-height: 1.2rem;
+  letter-spacing: -0.024rem;
+}
+
+button {
+  font-family: var(--font-heading);
 }

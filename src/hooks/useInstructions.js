@@ -14,6 +14,8 @@ export function useInstructions() {
     const navigate = useNavigate();
 
     const nextStep = () => {
+        // Advance to next instruction or navigate to profile creation on completion
+        // Handles boundary check to prevent going past last instruction
         if (currentIndex < instructions.length - 1) {
             setCurrentIndex(prev => prev + 1);
 

@@ -55,12 +55,6 @@ export default function ChooseDifficulty() {
                 ))}
             </BigButtonsCard>
 
-            <GhostContainer>
-                <GhostWrapper>
-                    <GhostIcon />
-                </GhostWrapper>
-            </GhostContainer>
-
         </>
     );
 }

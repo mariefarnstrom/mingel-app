@@ -10,7 +10,7 @@ export const StyledHeader = styled.header`
     justify-content: space-between;
     position: relative;
     z-index: 10;
-    margin: 1rem 0 0 0;
+    /* margin: 1rem 0 0 0; */
 `;
 
 export const HamburgerMenu = styled.button`
@@ -29,7 +29,7 @@ export const MenuOverlay = styled.div`
   transform: translateX(-50%);
   width: 100%;
   max-width: 478px;
-  height: 100vh;
+  height: 100svh;
   padding: 1rem;
   background-color: var(--bg);
   z-index: 5;
@@ -55,7 +55,7 @@ export const MenuOverlay = styled.div`
 `;
 
 export const NavContainer = styled.section`
-  height: 100dvh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -68,7 +68,7 @@ export const StyledMenuLink = styled(Link)`
   margin: 0.5rem 0;
 
   &:visited {
-    color: var(--text);
+    color: inherit;
   }
 `;
 
@@ -145,6 +145,8 @@ export const Slider = styled.div`
   height: 1.69rem;
   width: 1.78rem;
 
+  // Calculate position based on color mode to account for different animation states
+  // Prevents layout shift when switching between light and dark themes
   left: ${({ lang, colorMode, isColorMode }) => {
     if (!isColorMode && lang !== undefined) {
       return lang === "sv"

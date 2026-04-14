@@ -1,14 +1,12 @@
-<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="44" height="44">
-	<defs>
-		<clipPath clipPathUnits="userSpaceOnUse" id="cp1">
-			<path d="m28 20h-4v-4h4zm-8 8h-4v-4h4zm-4 4h-4v-4h4zm16-16h-4v-4h4zm-12 4h-4v-4h4zm8 8h-4v-4h4zm4 4h-4v-4h4zm-16-16h-4v-4h4z"/>
-		</clipPath>
-	</defs>
-	<style>
-		.s0 { fill: #001a52 } 
-	</style>
-	<g clip-path="url(#cp1)">
-		<path fill-rule="evenodd" class="s0" d="m28 20h-4v-4h4zm-8 8h-4v-4h4zm-4 4h-4v-4h4zm16-16h-4v-4h4zm-12 4h-4v-4h4zm8 8h-4v-4h4zm4 4h-4v-4h4zm-16-16h-4v-4h4z"/>
-		<rect width="44" height="44" id="Enfärgad fyllning 1" style="fill: #ffffff"/>
-	</g>
+<svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M28 16H24V20H28V16Z" fill="white"/>
+<path d="M20 24H16V28H20V24Z" fill="white"/>
+<path d="M16 28H12V32H16V28Z" fill="white"/>
+<path d="M32 12H28V16H32V12Z" fill="white"/>
+<path d="M20 16H16V20H20V16Z" fill="white"/>
+<path d="M24 20H20V24H24V20Z" fill="white"/>
+<path d="M24 20H20V24H24V20Z" fill="white"/>
+<path d="M28 24H24V28H28V24Z" fill="white"/>
+<path d="M32 28H28V32H32V28Z" fill="white"/>
+<path d="M16 12H12V16H16V12Z" fill="white"/>
 </svg>

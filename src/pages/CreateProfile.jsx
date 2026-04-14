@@ -5,7 +5,7 @@ import { useLanguage } from '../hooks/useLanguage';
 import translations from "../translations/translations.json";
 
 // Components
-import { ButtonRow, StyledOption, AvatarContainer, CreateProfileWrapper, AvatarOption } from "../components/buttons/Buttons.styles";
+import { ButtonRow, StyledOption, AvatarContainer, CreateProfileWrapper, StyledOptionWrapper, AvatarOption } from "../components/buttons/Buttons.styles";
 import NextButton from "../components/buttons/NextButton";
 import PrevButton from "../components/buttons/PrevButton";
 import { HeadingCard } from "../components/cards/Cards.styles"
@@ -52,21 +52,11 @@ export default function CreateProfile() {
             <form onSubmit={handleSubmit}>
 
                 <CreateProfileWrapper>
-                    <h3>{text.name.toUpperCase()}</h3>
-                    <TextInput
-                        type="text"
-                        maxLength="20"
-                        placeholder={text.namePlaceholder}
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        required
-                    >
-                    </TextInput>
-                </CreateProfileWrapper>
-
-                <CreateProfileWrapper>
                     <h3>{text.chooseClass.toUpperCase()}</h3>
+                    
+                    <StyledOptionWrapper>
                     <ButtonRow>
+
                         <StyledOption>
                             <input
                                 type="radio"
@@ -88,7 +78,34 @@ export default function CreateProfile() {
                             />
                             <div>{textCommon.digitalDesigner.toUpperCase()}</div>
                         </StyledOption>
+
                     </ButtonRow>
+
+                        <StyledOption>
+                            <input
+                                type="radio"
+                                name="program"
+                                value="CO"
+                                checked={role === 'CO'}
+                                onChange={(e) => setRole(e.target.value)}
+                                />
+                            <div>{textCommon.company.toUpperCase()}</div>
+                        </StyledOption>
+
+                    </StyledOptionWrapper>
+                </CreateProfileWrapper>
+
+                <CreateProfileWrapper>
+                    <h3>{text.name.toUpperCase()}</h3>
+                    <TextInput
+                        type="text"
+                        maxLength="20"
+                        placeholder={text.namePlaceholder}
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        required
+                    >
+                    </TextInput>
                 </CreateProfileWrapper>
 
                 <CreateProfileWrapper>
