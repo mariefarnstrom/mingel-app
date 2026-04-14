@@ -3,7 +3,7 @@ import { ghostMovement, ghostFlip } from "../../animations";
 
 export const GhostContainer = styled.div`
     width: 100%;
-    height: 4.5rem;
+    min-height: 4.5rem;
     overflow: hidden;
     position: relative;
     flex: ${({ grow }) => (grow ? 1 : "unset")};
