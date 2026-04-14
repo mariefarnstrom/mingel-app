@@ -6,6 +6,7 @@ export const GhostContainer = styled.div`
     height: 4.5rem;
     overflow: hidden;
     position: relative;
+    flex: ${({ grow }) => (grow ? 1 : "unset")};
 `;
 
 export const GhostContainerOverlay = styled.div`
@@ -24,7 +25,8 @@ export const GhostWrapper = styled.div`
     animation: ${ghostMovement} 5s ease-in-out infinite;
     width: 50px;
     height: 50px;
-    transform: translateY(20%);
+    top: ${({ alignBottom }) => (alignBottom ? "auto" : "0")};
+    bottom: ${({ alignBottom }) => (alignBottom ? "0" : "auto")};
 
     svg {
         width: 50px;

@@ -108,8 +108,8 @@ export default function Home({ showIntro, setShowIntro }) {
                 </div>
             </RegisteredPlayersCard>
 
-            <GhostContainer>
-                <GhostWrapper>
+            <GhostContainer grow>
+                <GhostWrapper alignBottom>
                     <GhostIcon />
                 </GhostWrapper>
             </GhostContainer>
