@@ -1,4 +1,5 @@
 import useCreateProfile from '../hooks/useCreateProfile';
+import { useEffect } from 'react';
 
 // Language
 import { useLanguage } from '../hooks/useLanguage';
@@ -39,6 +40,11 @@ export default function CreateProfile() {
     const { lang } = useLanguage();
     const text = translations.createProfile[lang];
     const textCommon = translations.common[lang];
+
+    // Close error message when language changes
+    useEffect(() => {
+        setErrorMessage("");
+    }, [lang, setErrorMessage]);
 
     return (
         <>

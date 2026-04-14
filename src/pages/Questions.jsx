@@ -1,5 +1,6 @@
 import { useQuestions } from "../hooks/useQuestions";
 import { useNavigate, useParams } from "react-router-dom";
+import { useEffect } from "react";
 
 // Components
 import { HeadingCard } from "../components/cards/Cards.styles";
@@ -32,6 +33,11 @@ export default function Questions() {
         setRandomQuestion,
         handleCompleted
     } = useQuestions(level);
+
+    // Close error message when language changes
+    useEffect(() => {
+        setErrorMessage("");
+    }, [lang, setErrorMessage]);
 
     // Loading view
     if (loading) return <p>{text.loading}</p>
