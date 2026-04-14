@@ -46,7 +46,7 @@ export function useQuestions(level) {
 
         const fetchData = async () => {
             try {
-                // Först: Hämta level_id baserat på level-namn
+                // First: Get level_id based on level name
                 const { data: levelData, error: levelError } = await supabase
                     .from('levels')
                     .select('id')
@@ -56,7 +56,7 @@ export function useQuestions(level) {
                 if (levelError) throw levelError;
                 if (!levelData) throw new Error('Level not found');
 
-                // Sedan: Hämta questions för den level_id med join
+                // Then: Get questions for that level_id with join
                 const { data, error } = await supabase
                     .from(tableName)
                     .select('*, levels(id, level, points)')
@@ -75,15 +75,20 @@ export function useQuestions(level) {
     }, [level, role]);
 
     useEffect(() => {
-        if (questions.length > 0 && currentId === null) {
-            // Initiera första frågan
-            setCurrentId(Math.floor(Math.random() * questions.length));
+        if (questions.length > 0) {
+            // Initialize first question when questions load
+            // or when currentId is null/invalid
+            if (currentId === null || currentId >= questions.length) {
+                setCurrentId(Math.floor(Math.random() * questions.length));
+            }
         }
-    }, [questions]);
+    }, [questions, currentId]);
 
     const setRandomQuestion = () => {
         if (currentId === null || questions.length === 0) return;
 
+        // Ensure the same question is never selected twice in a row
+        // Keep generating random IDs until we get one different from the current
         let randomId = Math.floor(Math.random() * questions.length);
 
         while (randomId === currentId) {

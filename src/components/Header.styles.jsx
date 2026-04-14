@@ -145,6 +145,8 @@ export const Slider = styled.div`
   height: 1.69rem;
   width: 1.78rem;
 
+  // Calculate position based on color mode to account for different animation states
+  // Prevents layout shift when switching between light and dark themes
   left: ${({ lang, colorMode, isColorMode }) => {
     if (!isColorMode && lang !== undefined) {
       return lang === "sv"

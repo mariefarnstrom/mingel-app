@@ -31,6 +31,8 @@ export function useScore() {
 
     useEffect(() => {
         fetchUsers();
+        // Subscribe to real-time updates on the users table
+        // Handles INSERT, UPDATE, and DELETE events, maintaining sorted leaderboard
         const channel = supabase
             .channel("scoreboard")
             .on(

@@ -17,6 +17,8 @@ import { useState } from 'react';
 
 
 function App() {
+  // Track if intro animation has played in current session
+  // Uses sessionStorage to show intro only once per browser session
   const [showIntro, setShowIntro] = useState(
     !sessionStorage.getItem("introPlayed")
   );
