@@ -57,6 +57,12 @@ export default function ScoreBoard() {
         }
     }, [errorMessage]);
 
+    // Clear error when language changes
+    useEffect(() => {
+        setErrorMessage("");
+        setShouldShowError(false);
+    }, [lang]);
+
     const { profile } = useProfile();
     const thisUserName = profile?.name;
 

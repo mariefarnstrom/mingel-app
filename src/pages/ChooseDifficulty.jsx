@@ -47,6 +47,12 @@ export default function ChooseDifficulty() {
         }
     }, [errorMessage]);
 
+    // Clear error when language changes
+    useEffect(() => {
+        setErrorMessage("");
+        setShouldShowError(false);
+    }, [lang]);
+
     const handleClick = (level) => {
         navigate(`/questions/${level}`);
     };

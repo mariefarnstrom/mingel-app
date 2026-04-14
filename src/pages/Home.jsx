@@ -63,6 +63,12 @@ export default function Home({ showIntro, setShowIntro }) {
         }
     }, [errorMessage]);
 
+    // Clear error when language changes
+    useEffect(() => {
+        setErrorMessage("");
+        setShouldShowError(false);
+    }, [lang]);
+
 
     const digitalDesignersActive = users.filter(user => user.role === 'DD').length;
     const webDevelopersActive = users.filter(user => user.role === 'WU').length;

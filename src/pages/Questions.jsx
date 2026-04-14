@@ -49,6 +49,12 @@ export default function Questions() {
         }
     }, [errorMessage]);
 
+    // Clear error when language changes
+    useEffect(() => {
+        setErrorMessage("");
+        setShouldShowError(false);
+    }, [lang]);
+
     // Loading view
     if (loading) return <p>{text.loading}</p>
     if (questions.length === 0) return (

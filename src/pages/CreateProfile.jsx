@@ -56,6 +56,12 @@ export default function CreateProfile() {
         }
     }, [errorMessage]);
 
+    // Clear error when language changes
+    useEffect(() => {
+        setErrorMessage("");
+        setShouldShowError(false);
+    }, [lang]);
+
     return (
         <>
             {shouldShowError && (
