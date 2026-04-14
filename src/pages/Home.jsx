@@ -49,6 +49,11 @@ export default function Home({ showIntro, setShowIntro }) {
         fetchUsers();
     }, []);
 
+    // Clear error when language changes
+    useEffect(() => {
+        setErrorMessage("");
+    }, [lang]);
+
 
     const digitalDesignersActive = users.filter(user => user.role === 'DD').length;
     const webDevelopersActive = users.filter(user => user.role === 'WU').length;

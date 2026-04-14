@@ -147,12 +147,12 @@
     "sv": {
       "heading": "Du är redo!",
       "description": "Dags att börja samla XP och starta samtal.",
-      "button": "Börja spela!"
+      "button": "Börja mingla!"
     },
     "en": {
       "heading": "You are ready!",
       "description": "It's time to collect XP by starting conversations.",
-      "button": "Start playing!"
+      "button": "Start mingling!"
     }
   },
   "chooseDifficulty": {

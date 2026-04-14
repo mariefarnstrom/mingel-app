@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 // Components
 import { HeadingCard, PointCard } from "../components/cards/Cards.styles";
@@ -32,10 +32,10 @@ export default function ChooseDifficulty() {
         setErrorMessage
     } = useLevels();
 
-    // Close error message when language changes
+    // Clear error when language changes
     useEffect(() => {
         setErrorMessage("");
-    }, [lang, setErrorMessage]);
+    }, [lang]);
 
     const handleClick = (level) => {
         navigate(`/questions/${level}`);

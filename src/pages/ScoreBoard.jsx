@@ -31,9 +31,12 @@ export default function ScoreBoard() {
     } = useScore();
 
     const { existingProfile } = useCreateProfile();
+    const { profile } = useProfile();
+    const navigate = useNavigate();
+    const { lang } = useLanguage();
 
     const userRowRef = useRef(null);
-    const [displayError, setDisplayError] = useState(false);
+    const thisUserName = profile?.name;
 
     useEffect(() => {
         if (userRowRef.current) {
@@ -44,25 +47,8 @@ export default function ScoreBoard() {
         }
     }, [users])
 
-    const { profile } = useProfile();
-    const thisUserName = profile?.name;
-
-    const navigate = useNavigate();
-    const { lang } = useLanguage();
     const text = translations.score[lang];
     const textCommon = translations.common[lang];
-
-    // Close error message when language changes
-    useEffect(() => {
-        setDisplayError(false);
-    }, [lang]);
-
-    // Show error modal only when a NEW error message appears
-    useEffect(() => {
-        if (errorMessage) {
-            setDisplayError(true);
-        }
-    }, [errorMessage]);
 
     const roleMap = {
         DD: textCommon.digitalDesigner,
@@ -83,7 +69,7 @@ export default function ScoreBoard() {
 
     return (
         <>
-            {errorMessage && displayError && <ErrorModal errorMessage={errorMessage} onClose={() => { setDisplayError(false); navigate(-1); }} />}
+            {errorMessage && <ErrorModal errorMessage={errorMessage} onClose={() => navigate(-1)} />}
 
             <ScoreBoardWrapper>
                 <HeadingCard>

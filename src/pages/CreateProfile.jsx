@@ -1,5 +1,5 @@
 import useCreateProfile from '../hooks/useCreateProfile';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 // Language
 import { useLanguage } from '../hooks/useLanguage';
@@ -41,14 +41,19 @@ export default function CreateProfile() {
     const text = translations.createProfile[lang];
     const textCommon = translations.common[lang];
 
-    // Close error message when language changes
+    // Clear error when language changes
     useEffect(() => {
         setErrorMessage("");
-    }, [lang, setErrorMessage]);
+    }, [lang]);
 
     return (
         <>
-            {errorMessage && <ErrorModal errorMessage={errorMessage} onClose={() => setErrorMessage("")} />}
+            {errorMessage && (
+                <ErrorModal 
+                    errorMessage={errorMessage} 
+                    onClose={() => setErrorMessage("")} 
+                />
+            )}
 
             <HeadingCard>
                 <h3>{text.heading.toUpperCase()}</h3>

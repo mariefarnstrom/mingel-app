@@ -1,6 +1,6 @@
 import { useQuestions } from "../hooks/useQuestions";
 import { useNavigate, useParams } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 // Components
 import { HeadingCard } from "../components/cards/Cards.styles";
@@ -34,24 +34,44 @@ export default function Questions() {
         handleCompleted
     } = useQuestions(level);
 
-    // Close error message when language changes
+    const [shouldShowError, setShouldShowError] = useState(false);
+
+    // Delay render of error modal to eliminate flicker
+    useEffect(() => {
+        if (errorMessage) {
+            const id = setTimeout(() => {
+                setShouldShowError(true);
+            }, 50);
+
+            return () => clearTimeout(id);
+        } else {
+            setShouldShowError(false);
+        }
+    }, [errorMessage]);
+
+    // Clear error when language changes
     useEffect(() => {
         setErrorMessage("");
-    }, [lang, setErrorMessage]);
+        setShouldShowError(false);
+    }, [lang]);
 
     // Loading view
     if (loading) return <p>{text.loading}</p>
-    if (questions.length === 0) return (
-        <ErrorModal errorMessage={text.notFound} onClose={() => navigate(-1)} />
-    );
+    if (questions.length === 0) return <p>{text.loading}</p>
     if (currentId === null) return <p>{text.loading}</p>;
-    if (!questions[currentId] || !questions[currentId].levels) return (
-        <ErrorModal errorMessage={text.errorFetching} onClose={() => navigate(-1)} />
-    );
+    if (!questions[currentId] || !questions[currentId].levels) return <p>{text.loading}</p>;
 
     return (
         <>
-            {errorMessage && <ErrorModal errorMessage={errorMessage} onClose={() => setErrorMessage("")} />}
+            {shouldShowError && (
+                <ErrorModal 
+                    errorMessage={errorMessage} 
+                    onClose={() => {
+                        setShouldShowError(false);
+                        setErrorMessage("");
+                    }} 
+                />
+            )}
 
             <HeadingCard>
                 <h3>{text.level.toUpperCase()}: {questions[currentId].levels.level.toUpperCase()}</h3>
