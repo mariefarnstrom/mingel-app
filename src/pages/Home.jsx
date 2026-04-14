@@ -24,6 +24,7 @@ export default function Home({ showIntro, setShowIntro }) {
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
+    const [shouldShowError, setShouldShowError] = useState(false);
     const { lang } = useLanguage();
     const text = translations.home[lang];
     const textCommon = translations.common[lang];
@@ -48,6 +49,25 @@ export default function Home({ showIntro, setShowIntro }) {
 
         fetchUsers();
     }, []);
+
+    // Delay render of error modal to eliminate flicker
+    useEffect(() => {
+        if (errorMessage) {
+            const id = setTimeout(() => {
+                setShouldShowError(true);
+            }, 50);
+
+            return () => clearTimeout(id);
+        } else {
+            setShouldShowError(false);
+        }
+    }, [errorMessage]);
+
+    // Clear error when language changes
+    useEffect(() => {
+        setErrorMessage("");
+        setShouldShowError(false);
+    }, [lang]);
 
 
     const digitalDesignersActive = users.filter(user => user.role === 'DD').length;
@@ -81,7 +101,15 @@ export default function Home({ showIntro, setShowIntro }) {
 
     return (
         <>
-            {errorMessage && <ErrorModal errorMessage={errorMessage} onClose={() => setErrorMessage("")} />}
+            {shouldShowError && (
+                <ErrorModal 
+                    errorMessage={errorMessage} 
+                    onClose={() => {
+                        setShouldShowError(false);
+                        setErrorMessage("");
+                    }} 
+                />
+            )}
 
             <BaseCard>
                 <h1>{text.title.toUpperCase()}</h1>

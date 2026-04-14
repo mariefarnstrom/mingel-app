@@ -1,5 +1,5 @@
 import useCreateProfile from '../hooks/useCreateProfile';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 // Language
 import { useLanguage } from '../hooks/useLanguage';
@@ -41,9 +41,38 @@ export default function CreateProfile() {
     const text = translations.createProfile[lang];
     const textCommon = translations.common[lang];
 
+    const [shouldShowError, setShouldShowError] = useState(false);
+
+    // Delay render of error modal to eliminate flicker
+    useEffect(() => {
+        if (errorMessage) {
+            const id = setTimeout(() => {
+                setShouldShowError(true);
+            }, 50);
+
+            return () => clearTimeout(id);
+        } else {
+            setShouldShowError(false);
+        }
+    }, [errorMessage]);
+
+    // Clear error when language changes
+    useEffect(() => {
+        setErrorMessage("");
+        setShouldShowError(false);
+    }, [lang]);
+
     return (
         <>
-            {errorMessage && <ErrorModal errorMessage={errorMessage} onClose={() => setErrorMessage("")} />}
+            {shouldShowError && (
+                <ErrorModal 
+                    errorMessage={errorMessage} 
+                    onClose={() => {
+                        setShouldShowError(false);
+                        setErrorMessage("");
+                    }} 
+                />
+            )}
 
             <HeadingCard>
                 <h3>{text.heading.toUpperCase()}</h3>
