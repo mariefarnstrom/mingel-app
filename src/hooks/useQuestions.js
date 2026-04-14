@@ -75,12 +75,15 @@ export function useQuestions(level) {
     }, [level, role]);
 
     useEffect(() => {
-        if (questions.length > 0) {
-            setRandomQuestion();
+        if (questions.length > 0 && currentId === null) {
+            // Initiera första frågan
+            setCurrentId(Math.floor(Math.random() * questions.length));
         }
     }, [questions]);
 
     const setRandomQuestion = () => {
+        if (currentId === null || questions.length === 0) return;
+
         let randomId = Math.floor(Math.random() * questions.length);
 
         while (randomId === currentId) {
