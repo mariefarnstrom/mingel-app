@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
 
 // Components
 import { HeadingCard, PointCard } from "../components/cards/Cards.styles";
@@ -32,20 +31,6 @@ export default function ChooseDifficulty() {
         setErrorMessage
     } = useLevels();
 
-    const [displayError, setDisplayError] = useState(false);
-
-    // Close error message when language changes
-    useEffect(() => {
-        setDisplayError(false);
-    }, [lang]);
-
-    // Show error modal only when a NEW error message appears
-    useEffect(() => {
-        if (errorMessage) {
-            setDisplayError(true);
-        }
-    }, [errorMessage]);
-
     const handleClick = (level) => {
         navigate(`/questions/${level}`);
     };
@@ -54,7 +39,7 @@ export default function ChooseDifficulty() {
 
     return (
         <>
-            {errorMessage && displayError && <ErrorModal errorMessage={errorMessage} onClose={() => { setDisplayError(false); setErrorMessage(""); }} />}
+            {errorMessage && <ErrorModal errorMessage={errorMessage} onClose={() => setErrorMessage("")} />}
 
             <HeadingCard>
                 <h3>{text.heading.toUpperCase()}</h3>
