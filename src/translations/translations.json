@@ -65,7 +65,7 @@
         "id": 3,
         "icon": "megaphone",
         "title": "Ställ frågan",
-        "description": "Gå fram till ett företag och ställ frågan för att starta ett samtal. Tryck sedan \"Klar\"."
+        "description": "Gå fram till en person och ställ frågan för att starta ett samtal. Tryck sedan \"Klar\"."
       },
       {
         "id": 4,
@@ -97,7 +97,7 @@
         "id": 3,
         "icon": "megaphone",
         "title": "Ask the question",
-        "description": "Approach a company and ask the question to start a conversation. Then press 'Done'."
+        "description": "Approach someone and ask the question to start a conversation. Then press 'Done'."
       },
       {
         "id": 4,
