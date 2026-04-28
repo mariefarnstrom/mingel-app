@@ -78,7 +78,7 @@ export default function Home({ showIntro, setShowIntro }) {
                     playsInline
                     onEnded={() => setShowIntro(false)}
                 >
-                    <source src="/intro.mp4" type="video/mp4" />
+                    <source src="intro.mp4" type="video/mp4" />
                 </IntroVideo>
             </VideoWrapper>
         )

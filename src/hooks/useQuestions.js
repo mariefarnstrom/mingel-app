@@ -35,7 +35,7 @@ export function useQuestions(level) {
 
     const role = storedUser?.role;
 
-    
+
     useEffect(() => {
         if (!storedUser || !role) return;
 
@@ -109,7 +109,12 @@ export function useQuestions(level) {
             .eq("name", name)
             .single();
         if (error) {
-            setErrorMessage(text.errorFetchingScore);
+            // User not found in database - navigate home to create new profile
+            if (error.code === 'PGRST116') {
+                navigate('/');
+            } else {
+                setErrorMessage(text.errorFetchingScore);
+            }
             return;
         }
 

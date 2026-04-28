@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { LanguageProvider } from './contexts/LanguageContext';
 
 // Pages
@@ -16,7 +16,10 @@ import { ColorModeProvider } from './contexts/ColorModeContext';
 import { useState } from 'react';
 
 
-function App() {
+function AppContent() {
+  const location = useLocation();
+  const isHomeRoute = location.pathname === '/';
+
   // Track if intro animation has played in current session
   // Uses sessionStorage to show intro only once per browser session
   const [showIntro, setShowIntro] = useState(
@@ -25,26 +28,33 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <ColorModeProvider>
-          <LanguageProvider>
-            {!showIntro && <Header />}
-            <Routes>
-              <Route path="/" element={<Home showIntro={showIntro} setShowIntro={setShowIntro} />} />
-              <Route path="/instructions" element={<Instructions />} />
-              <Route path="/questions/:level" element={<Questions />} />
-              <Route path="/score" element={<ScoreBoard />} />
-              <Route path="/create-profile" element={<CreateProfile />} />
-              <Route path="/choose-difficulty" element={<ChooseDifficulty />} />
-              <Route path="/finished-profile" element={<FinishedProfile />} />
-            </Routes>
-          </LanguageProvider>
-        </ColorModeProvider>
-      </BrowserRouter>
+      {!(isHomeRoute && showIntro) && <Header />}
+      <Routes>
+        <Route path="/" element={<Home showIntro={showIntro} setShowIntro={setShowIntro} />} />
+        <Route path="/instructions" element={<Instructions />} />
+        <Route path="/questions/:level" element={<Questions />} />
+        <Route path="/score" element={<ScoreBoard />} />
+        <Route path="/create-profile" element={<CreateProfile />} />
+        <Route path="/choose-difficulty" element={<ChooseDifficulty />} />
+        <Route path="/finished-profile" element={<FinishedProfile />} />
+      </Routes>
 
     </>
 
   )
+}
+
+
+function App() {
+  return (
+    <BrowserRouter>
+      <ColorModeProvider>
+        <LanguageProvider>
+          <AppContent />
+        </LanguageProvider>
+      </ColorModeProvider>
+    </BrowserRouter>
+  );
 }
 
 export default App
